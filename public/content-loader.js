@@ -1,17 +1,10 @@
-// $(document).ready(function(){
-//     contentLoader();
-// });
-
-
-
 async function contentLoader(load) {
 
     const url = "https://cdn.glitch.com/88ee8401-866c-4005-b70e-7fed0d9b68ba%2Fdata-test.JSON?v=1572291112969";
     const reponse = await fetch(url);
     const data = await reponse.json();
 
-
-    // const load = sessionStorage.getItem("pick");
+    $("head").append("<title>" + load + "</title>");
 
     for (let i = 0; i < data.length ; i++) {
         
