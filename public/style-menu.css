@@ -53,42 +53,53 @@ nav a:hover{
     color: red;
 }
 
-/* <------------ Main Page -----------------> */
+/* Menu */
 
 main {
-    display: grid;
-    margin: 0;
     grid-area: content;
-    grid-gap: 10px;
-    grid-auto-flow: row;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(auto-fill,minmax(auto,max-content));
-}
-
-main > div {
-    margin: 1em;
-    min-height: 100px;
-    max-height: 250px;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 0px 6px 10px -1px rgba(0,0,0,0.75);
-}
-
-main > div h2 {
-    margin: 0;
-    padding: 0 0 0 3%;
-    color: white;
-    background: black;
-    border-radius: 2px 2px 0 0;
-    text-align: left;
-}
-
-main > div p {
-    text-align: start;
     padding: 10px;
-    font-size: 16px;
+    text-align: center;
 }
 
+.lessonSelector {
+    margin: 0 30%;
+    min-height: 30vh;
+    box-shadow: 12px 11px 30px 0px rgba(0,0,0,0.69);
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+.lessonSelector > h2 {
+    text-align: center;
+    color: black;
+}
+
+
+.lessonSelector div {
+    display: grid;
+    grid-auto-flow: rows;
+    grid-template-rows: repeat(auto-fill,min-conten);
+}
+
+.lessonSelector div a {
+    transition: .4s;
+    place-self: center;
+    text-decoration: none;
+    margin-bottom: 5px;
+    background: black;
+    color: white;
+    padding: 5px 0;
+    font-size: 1.3em;
+    width: 50%;
+}
+
+.lessonSelector div a:hover {
+    background: red;
+    width: 75%;
+    padding: 10px 0;
+    font-size: 1.4em;
+    transition: .4s;
+}
 
 /* Footer */
 
@@ -96,15 +107,6 @@ footer {
     grid-area: footer;
     background: lightgreen;
     color: black;
-}
-
-/* test div */
-
-.test-div {
-    height: 100px;
-    width: 100px;
-    background: greenyellow;
-    place-content: center;
 }
 
 /* <---------- Media Queries ----------> */

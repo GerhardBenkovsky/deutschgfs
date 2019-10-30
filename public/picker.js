@@ -10,16 +10,11 @@ async function createSelector() {
     $("main").append("<section class='lessonSelector'></section>");
     $(".lessonSelector").append("<h2></h2>");
     $(".lessonSelector > h2").text("Pick your lesson: ");
-    $(".lessonSelector").append("<p></p>");
-    $(".lessonSelector > p").text("Pick your Lesson here -->");
-
-    $(".lessonSelector").append("<select name='lessonSelector' id='Selector'></select>");
+    $(".lessonSelector").append("<div></div>");
 
     for (let i = 0; i < data.length ; i++) {
-        $(".lessonSelector > select").append("<option value = ' " + data[i].id + " '>" + data[i].id +"</option>");
+        $(".lessonSelector > div").append("<a href='"+data[i].id+"'>" + data[i].title +"</a>");
     }
-    $(".lessonSelector").append("<button id='activator'>Submit</button>");
-    btnLoader();
 }
 
 // End -----------------
