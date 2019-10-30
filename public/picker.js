@@ -34,10 +34,7 @@ function btnLoader() {
     let loaded = true;
     $("#activator").click(function () {
         if (loaded === true){
-
-            let load = $("#Selector option:selected").text();
-            sessionStorage.setItem("pick",load);
-            location.href = "/content"
+            location.href = $("#Selector option:selected").text();
         }
     });
 }
