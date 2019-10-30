@@ -4,7 +4,7 @@ async function contentLoader(load) {
     const reponse = await fetch(url);
     const data = await reponse.json();
 
-    $("head").append("<title>" + load + "</title>");
+    $("head > title").text(load.charAt(0).toUpperCase() + load.substr(1).toLowerCase());
 
     for (let i = 0; i < data.length ; i++) {
         
