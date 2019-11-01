@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import Display from "./components/display";
 import * as serviceWorker from "./serviceWorker";
+import "./index.css";
+import MainPage from "./components/mainpage.jsx";
 
-ReactDOM.render(<Display />, document.getElementById("root"));
+ReactDOM.render(<MainPage />, document.getElementById("root"));
 
 serviceWorker.unregister();
