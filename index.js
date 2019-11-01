@@ -1,17 +1,24 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const fs = require('fs');
-
-app.set("view engine", "ejs");
+const fs = require("fs");
 
 app.use(express.static("public"));
 
-app.listen(3000, () => console.log("Listening at 3000"));
+app.listen(5000, () => console.log("Listening at 5000"));
 
-app.get("/", (req, res) => {
-  res.render('index',);
-  });
-
-app.get("/:load/",(req,res) => {
-  res.render('content', {load: req.params.load});
+app.get("/getdata/:id", (req, res) => {
+  let data = JSON.parse(fs.readFileSync("data-test.json"));
+  let answer = [];
+  if (req.params.id === "all") {
+    res.json(data);
+  }
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].id === req.params.id) {
+      answer.push(data[i]);
+    }
+  }
+  if (answer.length === 0) {
+    res.json({ error: "none" });
+  }
+  res.json(answer);
 });
