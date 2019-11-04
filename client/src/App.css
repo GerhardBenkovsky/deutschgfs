@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.Content {
+  margin-top: 60px;
+  width: 100%;
+  place-self: center top;
+}
