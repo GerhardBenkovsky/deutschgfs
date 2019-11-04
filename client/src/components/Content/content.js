@@ -1,7 +1,11 @@
 import React from "react";
 
 export default class Content extends React.Component {
-  state = {};
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   render() {
     return (
       <div>

@@ -10,18 +10,25 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: "Selbsthilfegruppe Deutsch"
+      Navbar: [
+        { name: "Home", link: "/" },
+        { name: "About", link: "/about" },
+        { name: "Help", link: "/help" },
+        { name: "Contact", link: "/contact" }
+      ]
     };
   }
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <Navbar />
-          <Router>
-            <Route path="/" exact component={StartPage} />
-            <Route path="/:id" exact component={Content} />
-          </Router>
+          <Navbar items={this.state.Navbar} />
+          <div className="Content">
+            <Router>
+              <Route path="/" exact component={StartPage} />
+              <Route path="/:id" exact component={Content} />
+            </Router>
+          </div>
         </div>
       </div>
     );
