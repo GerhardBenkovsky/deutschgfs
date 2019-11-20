@@ -1,30 +1,38 @@
-import React from "react";
+import React, { Component } from "react";
+
+import "./navbar.css";
 
 import NavbarItem from "./navbaritem";
 
-export default function Navbar(props) {
-  const nav = {
-    height: 60,
-    background: "#282c34",
-    width: "100%",
-    position: "fixed",
-    margin: "0",
-    zIndex: "100"
-  };
-  const navul = {
-    listStyle: "none",
-    display: "flex",
-    flexDirection: "row",
-    margin: "auto",
-    justifyContent: "space-around",
-    padding: "10px 20px 10px 20px"
-  };
+export default class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      Navbar: [
+        { name: "Home", link: "/" },
+        { name: "About", link: "/about" },
+        { name: "Help", link: "/help" },
+        { name: "Contact", link: "/contact" }
+      ],
+      collapsed: true
+    };
+  }
 
-  return (
-    <nav style={nav}>
-      <ul style={navul}>
-        <NavbarItem items={props.items} />
-      </ul>
-    </nav>
-  );
+  componentDidMount() {}
+
+  render() {
+    return (
+      <header className="App-header">
+        <nav>
+          <div id="Logo">
+            <a href="/">Logo</a>
+          </div>
+
+          <ul>
+            <NavbarItem items={this.state.Navbar} key={this.state.Navbar} />
+          </ul>
+        </nav>
+      </header>
+    );
+  }
 }

@@ -1,15 +1,14 @@
 import React from "react";
 
 export default function NavbarItem(props) {
-  const style = {
+  const link = {
     textDecoration: "none",
-    color: "white",
-    alignSelf: "center"
+    color: "white"
   };
 
   return props.items.map(item => (
     <li key={item.name}>
-      <a href={item.link} style={style}>
+      <a href={item.link} style={link}>
         {item.name}
       </a>
     </li>

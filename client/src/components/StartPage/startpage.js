@@ -1,29 +1,32 @@
 import React from "react";
+import Lessons from "./lessons";
+import axios from "axios";
+
+import "./lessonstyle.css";
 
 export default class StartPage extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-
-    this.getdata = this.getdata.bind(this);
-  }
-
-  async getdata() {
-    const response = await fetch("./getdata/all");
-    const data = await response.json();
-    this.setState(state => ({
-      data: data
-    }));
+  constructor(props) {
+    super(props);
+    this.state = {
+      content: []
+    };
   }
 
   componentDidMount() {
-    this.getdata();
+    axios.get(`/getdata/all`).then(res => {
+      this.setState({ content: res.data });
+    });
+    window.title = "Selbsthilegruppe Deutsch";
   }
 
   render() {
+    const style = {
+      display: "flex",
+      flexDirection: "row"
+    };
     return (
-      <div>
-        <h1>Hello</h1>
+      <div className="content-wrapper">
+        <Lessons data={this.state.content} style={style} />
       </div>
     );
   }
