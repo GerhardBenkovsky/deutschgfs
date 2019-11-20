@@ -1,0 +1,35 @@
+.content-wrapper {
+  --borderRadius: 5px;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0;
+}
+
+.lessonCard {
+  background: red;
+  margin: 0.7em;
+  min-height: 25vh;
+  border-radius: var(--borderRadius);
+}
+
+.lessonCard a {
+  text-decoration: none;
+  color: white;
+}
+
+.lessonCard a h2 {
+  text-align: start;
+  padding: 2% 0 0 3%;
+  margin: 0;
+  background: black;
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+}
+
+@media (max-width: 800px) {
+  .content-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

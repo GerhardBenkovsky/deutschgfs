@@ -1,0 +1,52 @@
+.InputFrom {
+  display: flex;
+  flex-direction: row;
+  background: blue;
+  width: 100%;
+  min-height: 100vh;
+  text-align: start;
+}
+
+form {
+  margin: 0;
+}
+
+form input {
+  margin: 0.3em auto;
+  width: 60%;
+  height: 5%;
+}
+form input[type="submit"] {
+  background: green;
+  border: none;
+  border-radius: 5px;
+  width: 25%;
+  height: 2.5em;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  margin: auto 1%;
+  height: 2em;
+  width: 10%;
+  font-weight: bold;
+  background: #777;
+}
+
+#addLink {
+  background: yellowgreen;
+}
+
+#removeLink {
+  background: red;
+}
+
+#newLessonButton {
+  background: blue;
+  height: ;
+}
+#editButton {
+  background: blue;
+}
