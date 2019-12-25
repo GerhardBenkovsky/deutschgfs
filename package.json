@@ -17,9 +17,6 @@
   "engines": {
     "node": "8.x"
   },
-  "repository": {
-    "url": "https://deutsch.glitch.me/"
-  },
   "license": "MIT",
   "keywords": [
     "Selbsthilfe",

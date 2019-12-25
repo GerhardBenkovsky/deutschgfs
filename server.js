@@ -3,7 +3,7 @@ const app = express();
 const fs = require("fs");
 
 app.use(express.static("public"));
-cd;
+
 app.listen(5000, () => console.log("Listening at 5000"));
 
 app.get("/getdata/:id", (req, res) => {
