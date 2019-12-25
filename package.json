@@ -2,9 +2,12 @@
   "name": "selbsthilfegruppedeutscg",
   "version": "0.0.1",
   "description": "Selbstlernhilfe",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js",
+    "server": "node server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm start\" \"npm run client\""
   },
   "dependencies": {
     "ejs": "^2.7.1",
@@ -18,8 +21,11 @@
   },
   "license": "MIT",
   "keywords": [
-    "Selbsthile",
+    "Selbsthilfe",
     "lernen",
     "Deutsch"
-  ]
+  ],
+  "devDependencies": {
+    "concurrently": "^5.0.0"
+  }
 }

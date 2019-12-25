@@ -1,0 +1,29 @@
+* {
+  --nav-height: 52px;
+  --background: #333;
+}
+
+#root {
+  min-height: 100%;
+}
+
+.App {
+  text-align: center;
+  min-height: 100%;
+  font-family: "Roboto";
+}
+
+.App-header {
+  width: 100%;
+  max-height: var(--nav-height);
+  z-index: 9999;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh - 52px;
+  margin: 0;
+  overflow: hidden;
+}
