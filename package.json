@@ -7,8 +7,9 @@
     "start": "node server.js",
     "server": "node server.js",
     "client": "npm start --prefix client",
+    "build": "npm build --prefix client",
     "dev": "concurrently \"npm start\" \"npm run client\"",
-    "production": "concurrently \"npm start\" \"npm build client\""
+    "production": "concurrently \"npm start\" \"npm run build\""
   },
   "dependencies": {
     "ejs": "^2.7.1",
