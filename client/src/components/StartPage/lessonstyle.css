@@ -4,12 +4,7 @@
 
 .content-wrapper {
   margin: 0;
-  background-image: linear-gradient(
-    0deg,
-    rgba(150, 150, 150, 1) 0%,
-    rgba(75, 75, 75, 1) 55%,
-    rgba(23, 23, 23, 1) 100%
-  );
+  background: white;
   padding-top: 3%;
 }
 
