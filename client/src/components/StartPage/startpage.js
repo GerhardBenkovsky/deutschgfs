@@ -13,7 +13,7 @@ export default class StartPage extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`/getdata/all`).then(res => {
+    axios.get(`https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1577300605946`).then(res => {
       this.setState({ content: res.data });
     });
     window.title = "Selbsthilegruppe Deutsch";
