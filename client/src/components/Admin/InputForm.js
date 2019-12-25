@@ -22,7 +22,7 @@ class InputForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
+    console.log(this.state.Output);
   }
 
   handleChange(event) {
@@ -34,7 +34,6 @@ class InputForm extends React.Component {
         [event.target.name]: event.target.value
       }
     }));
-    // this.setState({ Output: { [event.target.name]: event.target.value } });
   }
 
   getInputData(what) {
@@ -69,7 +68,7 @@ class InputForm extends React.Component {
     return (
       <div className="InputForm" style={style}>
         <button onClick={this.props.reset}>Reset</button>
-        <h1>Admin Panel</h1>
+        <h1>Add new Lesson</h1>
         <form onSubmit={this.handleSubmit}>
           <Input
             data={this.state.inputTypes}
@@ -77,10 +76,14 @@ class InputForm extends React.Component {
             getInputData={this.getInputData}
           />
           <br />
-          <button onClick={this.addLink.bind(this)} id="addLink">
+          <button onClick={this.addLink.bind(this)} id="addLink" type="button">
             Add link
           </button>
-          <button onClick={this.removeLink.bind(this)} id="removeLink">
+          <button
+            onClick={this.removeLink.bind(this)}
+            id="removeLink"
+            type="button"
+          >
             Remove link
           </button>
           <br />

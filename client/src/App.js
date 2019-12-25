@@ -32,6 +32,9 @@ class App extends React.Component {
             <Route path="/lesson/:id" exact component={Content} />
           </Router>
         </div>
+        <footer style={{ alignSelf: "end", height: "100px" }}>
+          This is the footer
+        </footer>
       </div>
     );
   }

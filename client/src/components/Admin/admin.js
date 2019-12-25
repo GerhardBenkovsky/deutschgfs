@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import InputForm from "./InputForm";
+import EditLesson from "./editComp";
 
 import "./style.css";
 
@@ -37,7 +38,7 @@ export default class AdminPanel extends Component {
     ) : this.state.render === "newLesson" ? (
       <InputForm reset={this.resetRender.bind(this)} />
     ) : (
-      <button onClick={this.resetRender.bind(this)}>RESET</button>
+      <EditLesson reset={this.resetRender.bind(this)} />
     );
   }
 }
