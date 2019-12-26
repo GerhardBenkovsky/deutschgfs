@@ -28,7 +28,7 @@ export default class Content extends React.Component {
       <div key={this.state.content.id} className="lesson">
         <h1>{this.state.content.title}</h1>
         <p>{this.state.content.content}</p>
-        <div className="Video-Wrapper" style={{ width: "35%" }}>
+        <div className="Video-Wrapper">
           <Iframe link={this.state.content.link1} />
         </div>
       </div>

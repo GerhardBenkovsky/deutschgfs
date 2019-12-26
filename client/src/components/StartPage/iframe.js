@@ -11,12 +11,12 @@ function Iframe(props) {
   if (yout[1] === "youtube") {
     return (
       <div className="player-wrapper">
-        {console.log(yout)}
         <ReactPlayer
           className="react-player"
           url={props.link}
           width="100%"
           height="100%"
+          controls="true"
         />
       </div>
     );

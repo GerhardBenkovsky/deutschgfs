@@ -3,6 +3,8 @@ import Lessons from "./lessons";
 
 import "./lessonstyle.css";
 
+import StartpageLoader from "../HOC/StartpageLoader";
+
 class StartPage extends React.Component {
   constructor(props) {
     super(props);
@@ -22,4 +24,4 @@ class StartPage extends React.Component {
   }
 }
 
-export default StartPage;
+export default StartpageLoader(StartPage);
