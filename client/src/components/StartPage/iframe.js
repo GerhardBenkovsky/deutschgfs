@@ -1,19 +1,21 @@
 import React from "react";
 
+import ReactPlayer from "react-player";
+
 export default function Iframe(props) {
   let splited = props.link.split("/");
   let yout = splited[2].split(".");
 
   if (yout[1] === "youtube") {
     return (
-      <iframe
-        className="frame"
-        title={props.id}
-        src={props.link}
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
+      <div className="player-wrapper">
+        <ReactPlayer
+          className="react-player"
+          url={props.link}
+          width="100%"
+          height="100%"
+        />
+      </div>
     );
   }
 

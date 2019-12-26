@@ -11,10 +11,10 @@ import AdminPanel from "./components/Admin/admin";
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      content: []
+    };
   }
-
-  componentDidMount() {}
 
   render() {
     const body = {

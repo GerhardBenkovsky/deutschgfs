@@ -11,10 +11,8 @@ export default function Lessons(props) {
         <p>{item.content}</p>
       </div>
 
-      <div className="Videp-Wrap">
-        <div className="video">
-          <Iframe link={item.link1} id={item.id} />
-        </div>
+      <div className="imgcontent">
+        <Iframe link={item.link1} id={item.id} />
       </div>
     </div>
   ));

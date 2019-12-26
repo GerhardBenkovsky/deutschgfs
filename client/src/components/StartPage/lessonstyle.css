@@ -14,20 +14,26 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  min-height: 39vh;
-  height: max-content;
-  place-content: center;
+  min-height: min-content;
+  align-content: center;
   margin: auto;
   width: 75%;
   margin-bottom: 5em;
-  padding: 5px;
+  padding: 7px;
+  padding-left: 2%;
+  padding-right: 2%;
   border: 2px solid black;
   border-radius: 5px;
   background: white;
+  color: white;
 }
 
-.lessonCard:nth-child(even) {
+.lessonCard:nth-child(odd) {
   background: #333;
+  flex-direction: row-reverse;
+}
+.lessonCard:nth-child(even) {
+  color: black;
 }
 
 .lessonCard::after {
@@ -35,72 +41,87 @@
   content: "";
   height: 5px;
   width: 50%;
+  left: 25%;
   border-radius: 8px;
   background-color: red;
   bottom: -3em;
+}
+
+/* Video/IMG content div */
+
+.imgcontent {
+  width: 35%;
+  display: inline-block;
+  align-content: center;
 }
 
 /* TEXT CONTENT */
 
 .text {
   height: 100%;
-  width: 45%;
-  color: red;
+  width: 65%;
   display: flex;
   flex-direction: column;
+  text-align: start;
 }
 
 .text a {
   margin-top: 0.6em;
   text-decoration: none;
   color: red;
-  text-align: start;
   font-size: 2em;
-  padding-left: 5%;
+  padding-left: 3%;
 }
 
 .text p {
   padding-top: 3%;
   text-align: start;
   font-size: 1em;
-  padding-left: 5%;
+  padding-left: 3%;
 }
 
 /* Video */
 
-.Video-Wrap {
-  height: 100%;
-}
-
-.video {
+.player-wrapper {
   position: relative;
-  margin-top: 3%;
-  min-height: 315px;
-  height: min-content;
-  width: 560px;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+  margin: 5% auto;
 }
 
-.video .frame {
-  left: 0;
-  top: 0;
+.react-player {
   position: absolute;
-  width: 560px;
-  min-height: 315px;
-  height: min-content;
-  border: 2px solid gray;
-  border-radius: 3px;
+  top: 0;
+  left: 0;
 }
 
-/* FLIP */
-
-.lessonCard:nth-child(2n) {
-  flex-direction: row-reverse;
+.lessonCard img {
+  height: 100%;
+  width: 100%;
 }
 
-@media (max-width: 800px) {
+@media (min-width: 1200px) {
+  .imgcontent {
+    width: 40%;
+  }
+  .text {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .imgcontent {
+    width: 45%;
+  }
+  .text {
+    width: 55%;
+  }
+}
+
+@media (max-width: 1000px) {
   .content-wrapper {
     min-height: 100vh;
     margin: auto;
+    padding: 0;
   }
 
   /* CONTENT */
@@ -111,10 +132,20 @@
     height: min-content;
     margin: auto;
     display: block;
+    border-radius: 0;
+    border: 0;
   }
 
   .lessonCard::after {
-    display: none;
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 100%;
+    z-index: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+    background-color: crimson;
   }
 
   /* TEXT */
@@ -127,23 +158,16 @@
   .text a {
     margin-top: 0;
     text-decoration: none;
-    text-align: center;
+    text-align: start;
+    text-decoration: underline 2px;
     font-size: 1.5em;
   }
-  .text p {
-    text-overflow: ellipsis;
-  }
 
-  /* VIDEO */
-
-  .video {
-    display: block;
-    height: 157.5px;
+  .imgcontent {
     width: 100%;
   }
 
-  .video iframe {
-    width: 280px;
-    height: 157.5px;
+  .player-wrapper {
+    margin: auto;
   }
 }
