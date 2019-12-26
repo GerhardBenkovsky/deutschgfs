@@ -1,26 +1,22 @@
 import React from "react";
 import Lessons from "./lessons";
-import axios from "axios";
 
 import "./lessonstyle.css";
 
-export default class StartPage extends React.Component {
+import Loader from "../HOC/Loader";
+
+class StartPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: []
+      load: false
     };
   }
 
   componentDidMount() {
-    axios
-      .get(
-        `https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1577300605946`
-      )
-      .then(res => {
-        this.setState({ content: res.data });
-      });
-    window.title = "Selbsthilegruppe Deutsch";
+    if (this.props.content.length !== 0) {
+      this.setState({ load: true });
+    }
   }
 
   render() {
@@ -28,10 +24,14 @@ export default class StartPage extends React.Component {
       display: "flex",
       flexDirection: "row"
     };
-    return (
+    return this.state.load ? (
       <div className="content-wrapper">
-        <Lessons data={this.state.content} style={style} />
+        <Lessons content={this.props.content} style={style} />
       </div>
+    ) : (
+      <Loader />
     );
   }
 }
+
+export default StartPage;

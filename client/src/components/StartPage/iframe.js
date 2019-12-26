@@ -2,7 +2,7 @@ import React from "react";
 
 import ReactPlayer from "react-player";
 
-export default function Iframe(props) {
+function Iframe(props) {
   let splited = props.link.split("/");
   let yout = splited[2].split(".");
 
@@ -21,3 +21,5 @@ export default function Iframe(props) {
 
   return <img className="frame" src={props.link} alt={props.link} />;
 }
+
+export default Iframe;
