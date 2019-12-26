@@ -11,8 +11,9 @@ function Lessons(props) {
         <p>{item.content}</p>
       </div>
 
-      <div className="imgcontent"></div>
-      <Iframe link={item.link1} id={item.id} />
+      <div className="imgcontent">
+        <Iframe link={item.link1} id={item.id} />
+      </div>
     </div>
   ));
 }
