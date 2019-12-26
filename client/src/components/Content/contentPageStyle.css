@@ -1,5 +1,8 @@
 .lesson {
-  background: red;
   text-align: start;
   margin: 0.7em;
+}
+
+.Video-Wrapper {
+  width: 35%;
 }

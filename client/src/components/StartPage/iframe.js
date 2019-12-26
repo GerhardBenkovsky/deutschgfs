@@ -2,7 +2,9 @@ import React from "react";
 
 import ReactPlayer from "react-player";
 
-export default function Iframe(props) {
+import videoLoader from "../HOC/videoLoader";
+
+function Iframe(props) {
   let splited = props.link.split("/");
   let yout = splited[2].split(".");
 
@@ -14,6 +16,7 @@ export default function Iframe(props) {
           url={props.link}
           width="100%"
           height="100%"
+          controls="true"
         />
       </div>
     );
@@ -21,3 +24,5 @@ export default function Iframe(props) {
 
   return <img className="frame" src={props.link} alt={props.link} />;
 }
+
+export default videoLoader(Iframe);

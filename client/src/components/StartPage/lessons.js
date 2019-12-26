@@ -3,8 +3,8 @@ import "./lessonstyle.css";
 
 import Iframe from "./iframe";
 
-export default function Lessons(props) {
-  return props.data.map(item => (
+function Lessons(props) {
+  return props.content.map(item => (
     <div key={item.id} className="lessonCard">
       <div className="text">
         <a href={"/lesson/" + item.id}>{item.title}</a>
@@ -17,3 +17,5 @@ export default function Lessons(props) {
     </div>
   ));
 }
+
+export default Lessons;

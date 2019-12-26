@@ -4,7 +4,6 @@
 
 .content-wrapper {
   margin: 0;
-  background: white;
   padding-top: 3%;
 }
 
@@ -24,16 +23,12 @@
   padding-right: 2%;
   border: 2px solid black;
   border-radius: 5px;
-  background: white;
   color: white;
+  background: #444;
 }
 
 .lessonCard:nth-child(odd) {
-  background: #333;
   flex-direction: row-reverse;
-}
-.lessonCard:nth-child(even) {
-  color: black;
 }
 
 .lessonCard::after {
@@ -95,7 +90,6 @@
 }
 
 .lessonCard img {
-  height: 100%;
   width: 100%;
 }
 

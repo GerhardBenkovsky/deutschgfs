@@ -1,33 +1,39 @@
 import React from "react";
-import axios from "axios";
 
 import "./contentPageStyle.css";
+
+import Iframe from "../StartPage/iframe";
+import Loader from "../HOC/videoLoader";
 
 export default class Content extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: []
+      content: [],
+      load: false
     };
   }
 
   componentDidMount() {
-    axios
-      .get(
-        `https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1577300605946/` +
-          window.location.pathname.split("/")[2]
-      )
-      .then(res => {
-        this.setState({ content: res.data });
-      });
+    for (let i = 0; i < this.props.content.length; i++) {
+      if (this.props.content[i].id === window.location.pathname.split("/")[2]) {
+        this.setState({ content: this.props.content[i] });
+        this.setState({ load: true });
+      }
+    }
   }
 
   render() {
-    return this.state.content.map(item => (
-      <div key={item.id} className="lesson">
-        <h1>{item.title}</h1>
-        <p>{item.content}</p>
+    return this.state.load ? (
+      <div key={this.state.content.id} className="lesson">
+        <h1>{this.state.content.title}</h1>
+        <p>{this.state.content.content}</p>
+        <div className="Video-Wrapper">
+          <Iframe link={this.state.content.link1} />
+        </div>
       </div>
-    ));
+    ) : (
+      <Loader />
+    );
   }
 }
