@@ -10,7 +10,7 @@ const videoLoaderHOC = WrappedComponent => {
       ) : (
         <div
           className="Loader"
-          style={{ margin: "auto", height: "100%" }}
+          style={{ margin: "auto", placeSelf: "center" }}
         ></div>
       );
     }
