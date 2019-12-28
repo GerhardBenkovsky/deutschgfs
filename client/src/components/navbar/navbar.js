@@ -8,17 +8,21 @@ export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Navbar: [
-        { name: "Home", link: "/" },
-        { name: "About", link: "/about" },
-        { name: "Help", link: "/help" },
-        { name: "Contact", link: "/contact" }
-      ],
-      collapsed: true
+      collapsed: true,
+      navbar: true
     };
   }
 
-  componentDidMount() {}
+  handleScroll(event) {}
+
+  handleAbout() {
+    const footer = document.getElementById("footer-left");
+    footer.scrollIntoView(true);
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll.bind(this));
+  }
 
   render() {
     return (
@@ -29,7 +33,11 @@ export default class Navbar extends Component {
           </div>
 
           <ul>
-            <NavbarItem items={this.state.Navbar} key={this.state.Navbar} />
+            <NavbarItem
+              items={this.props.Navbar}
+              key={this.props.Navbar}
+              aboutClick={this.handleAbout.bind(this)}
+            />
           </ul>
         </nav>
       </header>

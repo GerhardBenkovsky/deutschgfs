@@ -1,3 +1,8 @@
+header {
+  position: sticky;
+  top: 0;
+}
+
 nav {
   height: var(--nav-height);
   margin: 0;
@@ -21,6 +26,13 @@ nav ul {
 nav ul li {
   margin: auto 2% auto 15%;
   font-size: 1.3em;
+}
+
+nav ul li a,
+nav ul li p {
+  text-decoration: none;
+  color: white;
+  margin: auto;
 }
 
 #Logo {
