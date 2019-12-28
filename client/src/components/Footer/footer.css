@@ -11,18 +11,16 @@ footer section {
   width: 25%;
 }
 
-#footer-left ul {
+#footer-right ul {
   display: flex;
   flex-direction: column;
   list-style: none;
   height: 80%;
   justify-content: space-around;
   align-content: center;
-  /* padding: 10% 0 0 10%; */
-  border: 1px solid white;
 }
 
-#footer-left ul li a {
+#footer-right ul li a {
   text-decoration: none;
   color: var(--link-color);
 }

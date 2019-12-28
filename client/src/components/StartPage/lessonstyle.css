@@ -4,7 +4,22 @@
 
 .content-wrapper {
   margin: 0;
-  padding-top: 3%;
+}
+
+.banner {
+  height: calc(100vh - var(--nav-height));
+  background: yellowgreen;
+  margin-bottom: 3%;
+}
+
+.banner-content {
+  height: calc(100vh - calc(2 * var(--nav-height)));
+}
+
+.banner-bar {
+  background: red;
+  height: var(--nav-height);
+  justify-self: end;
 }
 
 /* Cards */
@@ -29,6 +44,15 @@
 
 .lessonCard:nth-child(odd) {
   flex-direction: row-reverse;
+}
+
+.lessonCard:nth-last-child(1) {
+  margin-bottom: 1em;
+  padding-bottom: 0;
+}
+
+.lessonCard:nth-last-child(1)::after {
+  display: none;
 }
 
 .lessonCard::after {

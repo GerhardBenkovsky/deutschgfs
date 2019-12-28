@@ -15,10 +15,10 @@ class App extends React.Component {
     super();
     this.state = {
       Navlinks: [
-        { name: "Home", link: "/" },
         { name: "About", link: "/about" },
         { name: "Help", link: "/help" },
-        { name: "Contact", link: "/contact" }
+        { name: "Contact", link: "/contact" },
+        { name: "Home", link: "/" }
       ],
       content: []
     };
@@ -42,7 +42,11 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Navbar Navbar={this.state.Navlinks} />
+        <Navbar
+          Navbar={this.state.Navlinks}
+          style={{ paddingBottom: this.state.showNav, transition: "0.4s" }}
+        />
+
         <div className="Content" style={body}>
           <Router>
             <Route path="/adminPanel" exact component={AdminPanel} />

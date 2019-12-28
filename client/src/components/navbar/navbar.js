@@ -9,27 +9,41 @@ export default class Navbar extends Component {
     super(props);
     this.state = {
       collapsed: true,
-      navbar: true
+      navbar: true,
+      prevPageOffset: window.pageYOffset
     };
   }
 
-  handleScroll(event) {}
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = event => {
+    window.pageYOffset > this.state.prevPageOffset
+      ? this.setState({ navbar: false })
+      : this.setState({ navbar: true });
+
+    this.setState({ prevPageOffset: window.pageYOffset });
+  };
 
   handleAbout() {
     const footer = document.getElementById("footer-left");
     footer.scrollIntoView(true);
   }
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll.bind(this));
-  }
-
   render() {
     return (
-      <header className="App-header">
+      <header
+        className={this.state.navbar ? "App-header" : "App-header-hidden"}
+        style={this.props.style}
+      >
         <nav>
           <div id="Logo">
-            <a href="/">Logo</a>
+            <a href="/">Deutschselbsthilfegruppe</a>
           </div>
 
           <ul>

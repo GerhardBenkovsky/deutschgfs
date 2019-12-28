@@ -18,6 +18,10 @@ class StartPage extends React.Component {
     };
     return (
       <div className="content-wrapper">
+        <div className="banner">
+          <div className="banner-content"></div>
+          <div className="banner-bar"></div>
+        </div>
         <Lessons content={this.props.content} style={style} />
       </div>
     );
