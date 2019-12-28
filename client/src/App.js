@@ -5,6 +5,7 @@ import axios from "axios";
 import "./App.css";
 
 import Navbar from "./components/navbar/navbar";
+import Footer from "./components/Footer/Footer";
 import StartPage from "./components/StartPage/startpage";
 import Content from "./components/Content/content";
 import AdminPanel from "./components/Admin/admin";
@@ -13,6 +14,12 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      Navlinks: [
+        { name: "Home", link: "/" },
+        { name: "About", link: "/about" },
+        { name: "Help", link: "/help" },
+        { name: "Contact", link: "/contact" }
+      ],
       content: []
     };
   }
@@ -35,7 +42,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Navbar />
+        <Navbar Navbar={this.state.Navlinks} />
         <div className="Content" style={body}>
           <Router>
             <Route path="/adminPanel" exact component={AdminPanel} />
@@ -52,9 +59,7 @@ class App extends React.Component {
             />
           </Router>
         </div>
-        <footer style={{ alignSelf: "end", height: "100px" }}>
-          This is the footer
-        </footer>
+        <Footer links={this.state.Navlinks} />
       </div>
     );
   }

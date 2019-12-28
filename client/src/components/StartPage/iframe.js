@@ -16,7 +16,7 @@ function Iframe(props) {
           url={props.link}
           width="100%"
           height="100%"
-          controls="true"
+          controls={true}
         />
       </div>
     );
