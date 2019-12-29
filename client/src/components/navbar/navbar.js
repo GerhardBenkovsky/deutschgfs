@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import "./navbar.css";
+import "./navbar-dropdown.css";
 
 import NavbarItem from "./navbaritem";
 
@@ -10,6 +11,8 @@ export default class Navbar extends Component {
     this.state = {
       collapsed: true,
       navbar: true,
+      hamburgerMenu: false,
+      dropdown: false,
       prevPageOffset: window.pageYOffset
     };
 
@@ -18,6 +21,10 @@ export default class Navbar extends Component {
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+
+    this.setState({ navbar: false });
+
+    console.log(this.state.hamburgerMenu + "   " + window.innerWidth);
   }
 
   componentWillUnmount() {
@@ -47,7 +54,6 @@ export default class Navbar extends Component {
     return (
       <header
         className={this.state.navbar ? "App-header" : "App-header-hidden"}
-        style={this.props.style}
       >
         <nav>
           <div id="Logo">

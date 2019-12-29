@@ -77,6 +77,12 @@ nav ul li i:hover {
   margin: auto;
 }
 
+@media (min-width: 900px) {
+  nav ul li {
+    margin: auto 10% auto 30%;
+  }
+}
+
 @media (max-width: 600px) {
   nav ul {
     margin: auto;
@@ -86,16 +92,12 @@ nav ul li i:hover {
   nav ul li {
     justify-content: end;
     font-size: 1.1em;
+    margin: auto;
+    padding: 0;
   }
   #Logo {
     transform: scaleY(0);
     transition: 0.4s;
     display: none;
-  }
-}
-
-@media (min-width: 900px) {
-  nav ul li {
-    margin: auto 10% auto 30%;
   }
 }

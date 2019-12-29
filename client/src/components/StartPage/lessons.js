@@ -11,9 +11,9 @@ function Lessons(props) {
   return (
     <ContentConsumer>
       {content => {
-        return content.map(item => (
-          <div key={item.id} className={"lessonCard " + item.id}>
-            <div className="text">
+        return content.map((item, index) => (
+          <div key={item.id} className="lessonCard">
+            <div className="text" id={item.id}>
               <a href={"/lernen/" + item.id}>{item.title}</a>
               <p>{item.description}</p>
             </div>
