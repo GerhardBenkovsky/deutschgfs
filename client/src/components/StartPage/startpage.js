@@ -13,6 +13,17 @@ class StartPage extends React.Component {
     this.state = {};
   }
 
+  handleClick(event) {
+    event.persist();
+    console.log(event.target);
+    const element = document.getElementById(event.target.innerText);
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center"
+    });
+  }
+
   render() {
     const style = {
       display: "flex",
@@ -21,7 +32,7 @@ class StartPage extends React.Component {
     return (
       <div className="content-wrapper">
         <Banner />
-        <BannerBar />
+        <BannerBar scrollIntoView={this.handleClick} />
         {this.props.hasError ? <Error /> : <Lessons style={style} />}
       </div>
     );

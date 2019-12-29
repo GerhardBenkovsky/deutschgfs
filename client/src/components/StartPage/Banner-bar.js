@@ -10,16 +10,9 @@ class BannerBar extends Component {
     this.state = {
       element: ""
     };
-    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {}
-
-  handleClick(event) {
-    event.persist();
-    let item = document.getElementById(event.currentTarget.id.toString());
-    item.scrollIntoView({ behavior: "smooth" });
-  }
 
   render() {
     return (
@@ -29,9 +22,7 @@ class BannerBar extends Component {
             <ul>
               {content.map((item, index) => (
                 <li key={item.id + index}>
-                  <p id={item.id} onClick={this.handleClick}>
-                    {item.title}
-                  </p>
+                  <p onClick={this.props.scrollIntoView}>{item.title}</p>
                 </li>
               ))}
             </ul>
