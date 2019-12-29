@@ -8,7 +8,7 @@
 
 .banner {
   height: calc(100vh - var(--nav-height));
-  background: yellowgreen;
+  background: var(--banner-background);
   margin-bottom: 3%;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .banner-bar {
-  background: red;
+  background: var(--banner-bar-background);
   height: var(--nav-height);
   justify-self: end;
 }
@@ -39,7 +39,7 @@
   border: 2px solid black;
   border-radius: 5px;
   color: white;
-  background: #444;
+  background: var(--card-background);
 }
 
 .lessonCard:nth-child(odd) {
@@ -62,7 +62,7 @@
   width: 50%;
   left: 25%;
   border-radius: 8px;
-  background-color: red;
+  background-color: var(--card-br);
   bottom: -3em;
 }
 
@@ -87,7 +87,7 @@
 .text a {
   margin-top: 0.6em;
   text-decoration: none;
-  color: red;
+  color: var(--card-header);
   font-size: 2em;
   padding-left: 3%;
 }
@@ -163,7 +163,7 @@
     bottom: 0;
     left: 0;
     border-radius: 0;
-    background-color: crimson;
+    background-color: var(--card-br);
   }
 
   /* TEXT */

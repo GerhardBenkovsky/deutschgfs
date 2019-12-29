@@ -7,10 +7,8 @@ export default function NavbarItem(props) {
         <p onClick={props.aboutClick}>{item.name}</p>
       </li>
     ) : item.name === "Home" ? (
-      <li>
-        <a href={item.link}>
-          <i className="fas fa-home"></i>
-        </a>
+      <li key={item.name}>
+        <i className="fas fa-home" onClick={props.scrollToTop}></i>
       </li>
     ) : (
       <li key={item.name}>

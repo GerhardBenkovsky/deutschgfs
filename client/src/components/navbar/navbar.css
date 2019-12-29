@@ -15,7 +15,7 @@ nav {
   z-index: 9998;
   display: flex;
   flex-direction: row;
-  background: #233;
+  background: var(--nav-background);
   justify-content: space-between;
 }
 
@@ -37,7 +37,7 @@ nav ul li {
 nav ul li a,
 nav ul li p {
   text-decoration: none;
-  color: white;
+  color: var(--nav-link-color);
   margin: auto;
 }
 
@@ -45,21 +45,21 @@ nav ul li a:hover,
 nav ul li p:hover {
   text-decoration: none;
   cursor: pointer;
-  color: white;
+  color: var(--nav-link-color-hover);
 }
 
-nav ul li a i {
+nav ul li i {
   color: red;
   font-size: 1.7em;
   place-self: center;
-  color: #333;
-  background: white;
+  color: var(--nav-background);
+  background: var(--logo-background);
   padding: 4px;
   border-radius: 5px;
 }
 
-nav ul li a i:hover {
-  background: crimson;
+nav ul li i:hover {
+  background: var(--logo-background-hover);
   transition: 0.3s;
 }
 
@@ -68,11 +68,12 @@ nav ul li a i:hover {
   z-index: 9999;
 }
 
-#Logo a {
-  text-decoration: none;
-  color: red;
+#Logo p {
+  cursor: pointer;
+  color: var(--logo-color);
   font-size: 1.7em;
   font-style: bold;
+  margin: auto;
 }
 
 @media (max-width: 600px) {

@@ -12,6 +12,8 @@ export default class Navbar extends Component {
       navbar: true,
       prevPageOffset: window.pageYOffset
     };
+
+    this.scrollToTop = this.scrollToTop.bind(this);
   }
 
   componentDidMount() {
@@ -30,9 +32,15 @@ export default class Navbar extends Component {
     this.setState({ prevPageOffset: window.pageYOffset });
   };
 
+  scrollToTop() {
+    window.location.pathname === "/"
+      ? window.scrollTo({ top: 0, behavior: "smooth" })
+      : (window.location.pathname = "/");
+  }
+
   handleAbout() {
     const footer = document.getElementById("footer-left");
-    footer.scrollIntoView(true);
+    footer.scrollIntoView({ behavior: "smooth" });
   }
 
   render() {
@@ -43,7 +51,7 @@ export default class Navbar extends Component {
       >
         <nav>
           <div id="Logo">
-            <a href="/">Deutschselbsthilfegruppe</a>
+            <p onClick={this.scrollToTop}>Deutschselbsthilfegruppe</p>
           </div>
 
           <ul>
@@ -51,6 +59,7 @@ export default class Navbar extends Component {
               items={this.props.Navbar}
               key={this.props.Navbar}
               aboutClick={this.handleAbout.bind(this)}
+              scrollToTop={this.scrollToTop}
             />
           </ul>
         </nav>

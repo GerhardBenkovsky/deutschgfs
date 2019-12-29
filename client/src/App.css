@@ -1,6 +1,44 @@
 * {
+  /* General Colors */
+  --theme: #343a40;
+  --contrast: #f8f9fa;
+  --darkgray: #333;
+  --white: white;
+
+  /* NAV Bar */
+
   --nav-height: 52px;
-  --background: #333;
+  --nav-background: #333;
+  --logo-color: red;
+  --logo-background: white;
+  --logo-background-hover: crimson;
+
+  /* Banner */
+
+  --banner-background: yellowgreen;
+  --banner-bar-background: red;
+
+  /* Lesson Cards */
+
+  --card-background: var(--theme);
+  --card-br: crimson;
+  --card-header: red;
+
+  /* Links */
+
+  --nav-link-color: white;
+  --nav-link-color-hover: white;
+
+  --link-color: white;
+  --link-hover: yellowgreen;
+
+  /* Text */
+
+  --text-color: white;
+
+  /* Footer */
+
+  --footer-background: crimson;
 }
 
 #root {

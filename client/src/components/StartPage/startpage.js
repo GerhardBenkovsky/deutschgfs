@@ -3,7 +3,7 @@ import Lessons from "./lessons";
 
 import "./lessonstyle.css";
 
-import StartpageLoader from "../HOC/StartpageLoader";
+import Error from "./Error";
 
 class StartPage extends React.Component {
   constructor(props) {
@@ -22,10 +22,14 @@ class StartPage extends React.Component {
           <div className="banner-content"></div>
           <div className="banner-bar"></div>
         </div>
-        <Lessons content={this.props.content} style={style} />
+        {this.props.hasError ? (
+          <Error />
+        ) : (
+          <Lessons content={this.props.content} style={style} />
+        )}
       </div>
     );
   }
 }
 
-export default StartpageLoader(StartPage);
+export default StartPage;

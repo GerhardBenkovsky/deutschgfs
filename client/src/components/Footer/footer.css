@@ -1,7 +1,7 @@
 footer {
   height: 20vh;
   width: 100%;
-  background: crimson;
+  background: var(--footer-background);
   display: flex;
   flex-direction: row;
   justify-content: center;

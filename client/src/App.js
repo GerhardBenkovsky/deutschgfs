@@ -15,23 +15,42 @@ class App extends React.Component {
     super();
     this.state = {
       Navlinks: [
-        { name: "About", link: "/about" },
         { name: "Help", link: "/help" },
         { name: "Contact", link: "/contact" },
+        { name: "About", link: "/about" },
         { name: "Home", link: "/" }
       ],
+      contentHasError: false,
+      contentErrorType: "",
       content: []
     };
+
+    this.getLessons = this.getLessons.bind(this);
+  }
+
+  async getLessons() {
+    try {
+      const response = await axios.get(
+        "https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON"
+      );
+      console.log(response);
+      this.setState({ content: response.data });
+    } catch (error) {
+      this.setState({ contentHasError: true });
+      if (error.response) {
+        this.setState({ contentErrorType: "Server Down" });
+      } else if (error.request) {
+        this.setState({ contentErrorType: "Connection problem" });
+      } else {
+        this.setState({
+          contentErrorType: "There seems to be a Problem,please try again later"
+        });
+      }
+    }
   }
 
   componentDidMount() {
-    axios
-      .get(
-        `https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1577300605946`
-      )
-      .then(res => {
-        this.setState({ content: res.data });
-      });
+    this.getLessons();
     window.title = "Selbsthilegruppe Deutsch";
   }
 
@@ -53,11 +72,16 @@ class App extends React.Component {
             <Route
               exact
               path="/"
-              component={() => <StartPage content={this.state.content} />}
+              component={() => (
+                <StartPage
+                  content={this.state.content}
+                  hasError={this.state.contentHasError}
+                />
+              )}
             />
 
             <Route
-              path="/lesson/:id"
+              path="/lernen/:id"
               exact
               component={() => <Content content={this.state.content} />}
             />
