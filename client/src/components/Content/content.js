@@ -27,10 +27,13 @@ export default class Content extends React.Component {
     return this.state.load ? (
       <div key={this.state.content.id} className="lesson">
         <h1>{this.state.content.title}</h1>
-        <p>{this.state.content.content}</p>
+        <p>{this.state.content.description}</p>
         <div className="Video-Wrapper">
           <Iframe link={this.state.content.link1} />
         </div>
+        {this.state.content.link2 ? (
+          <a href={this.state.content.link2}>{this.state.content.link2}</a>
+        ) : null}
       </div>
     ) : (
       <Loader />

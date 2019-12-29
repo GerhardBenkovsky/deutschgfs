@@ -8,7 +8,7 @@
   /* NAV Bar */
 
   --nav-height: 52px;
-  --nav-background: #333;
+  --nav-background: var(--theme);
   --logo-color: red;
   --logo-background: white;
   --logo-background-hover: crimson;
@@ -17,6 +17,7 @@
 
   --banner-background: yellowgreen;
   --banner-bar-background: red;
+  --banner-bar-border: black;
 
   /* Lesson Cards */
 

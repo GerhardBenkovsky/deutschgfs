@@ -4,6 +4,8 @@ import Lessons from "./lessons";
 import "./lessonstyle.css";
 
 import Error from "./Error";
+import Banner from "./Banner";
+import BannerBar from "./Banner-bar";
 
 class StartPage extends React.Component {
   constructor(props) {
@@ -18,12 +20,9 @@ class StartPage extends React.Component {
     };
     return (
       <div className="content-wrapper">
-        <div className="banner">
-          <div className="banner-content"></div>
-          <div className="banner-bar"></div>
-        </div>
+        <Banner />
+        <BannerBar />
         {this.props.hasError ? <Error /> : <Lessons style={style} />}
-        )}
       </div>
     );
   }
