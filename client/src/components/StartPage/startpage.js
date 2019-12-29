@@ -22,10 +22,7 @@ class StartPage extends React.Component {
           <div className="banner-content"></div>
           <div className="banner-bar"></div>
         </div>
-        {this.props.hasError ? (
-          <Error />
-        ) : (
-          <Lessons content={this.props.content} style={style} />
+        {this.props.hasError ? <Error /> : <Lessons style={style} />}
         )}
       </div>
     );

@@ -10,6 +10,8 @@ import StartPage from "./components/StartPage/startpage";
 import Content from "./components/Content/content";
 import AdminPanel from "./components/Admin/admin";
 
+import { ContentProvider } from "./components/Context/contentContext";
+
 class App extends React.Component {
   constructor() {
     super();
@@ -33,7 +35,6 @@ class App extends React.Component {
       const response = await axios.get(
         "https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON"
       );
-      console.log(response);
       this.setState({ content: response.data });
     } catch (error) {
       this.setState({ contentHasError: true });
@@ -66,27 +67,27 @@ class App extends React.Component {
           style={{ paddingBottom: this.state.showNav, transition: "0.4s" }}
         />
 
-        <div className="Content" style={body}>
-          <Router>
-            <Route path="/adminPanel" exact component={AdminPanel} />
-            <Route
-              exact
-              path="/"
-              component={() => (
-                <StartPage
-                  content={this.state.content}
-                  hasError={this.state.contentHasError}
-                />
-              )}
-            />
+        <ContentProvider value={this.state.content}>
+          <div className="Content" style={body}>
+            <Router>
+              <Route path="/adminPanel" exact component={AdminPanel} />
+              <Route
+                exact
+                path="/"
+                component={() => (
+                  <StartPage hasError={this.state.contentHasError} />
+                )}
+              />
 
-            <Route
-              path="/lernen/:id"
-              exact
-              component={() => <Content content={this.state.content} />}
-            />
-          </Router>
-        </div>
+              <Route
+                path="/lernen/:id"
+                exact
+                component={() => <Content content={this.state.content} />}
+              />
+            </Router>
+          </div>
+        </ContentProvider>
+
         <Footer links={this.state.Navlinks} />
       </div>
     );
