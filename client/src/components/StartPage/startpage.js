@@ -15,7 +15,6 @@ class StartPage extends React.Component {
 
   handleClick(event) {
     event.persist();
-    console.log(event.target);
     const element = document.getElementById(event.target.innerText);
     element.scrollIntoView({
       behavior: "smooth",

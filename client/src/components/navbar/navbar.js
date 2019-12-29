@@ -9,26 +9,27 @@ export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapsed: true,
+      menu: "#desktop",
+      collapsed: false,
       navbar: true,
-      hamburgerMenu: false,
       dropdown: false,
       prevPageOffset: window.pageYOffset
     };
 
     this.scrollToTop = this.scrollToTop.bind(this);
+    this.handleCollapse = this.handleCollapse.bind(this);
   }
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
-
-    this.setState({ navbar: false });
-
-    console.log(this.state.hamburgerMenu + "   " + window.innerWidth);
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
+
+    window.innerWidth < "1000px"
+      ? this.setState({ menu: "#hamburger" })
+      : this.setState({ menu: "#desktop" });
   }
 
   handleScroll = event => {
@@ -50,12 +51,54 @@ export default class Navbar extends Component {
     footer.scrollIntoView({ behavior: "smooth" });
   }
 
+  handleCollapse() {
+    this.setState(prevState => ({ collapsed: !prevState.collapsed }));
+    console.log("hello");
+  }
+
   render() {
-    return (
+    return this.state.hamburgerMenu ? (
       <header
         className={this.state.navbar ? "App-header" : "App-header-hidden"}
       >
-        <nav>
+        {this.state.collapsed ? (
+          <nav>
+            <div className="dropdown-menu">
+              <i
+                className="fas fa-bars"
+                onClick={() =>
+                  this.state.collapsed
+                    ? this.setState({ collapsed: false })
+                    : this.setState({ collapsed: true })
+                }
+              ></i>
+            </div>
+
+            {this.state.collapsed ? (
+              <div></div>
+            ) : (
+              <ul>
+                <NavbarItem
+                  items={this.props.Navbar}
+                  key={this.props.Navbar}
+                  aboutClick={this.handleAbout.bind(this)}
+                  scrollToTop={this.scrollToTop}
+                />
+              </ul>
+            )}
+          </nav>
+        ) : (
+          <nav></nav>
+        )}
+      </header>
+    ) : (
+      <header
+        className={this.state.navbar ? "App-header" : "App-header-hidden"}
+      >
+        <nav id="hamburger">
+          <i className="fas fa-bars"></i>
+        </nav>
+        <nav id="desktop">
           <div id="Logo">
             <p onClick={this.scrollToTop}>Deutschselbsthilfegruppe</p>
           </div>
@@ -66,6 +109,7 @@ export default class Navbar extends Component {
               key={this.props.Navbar}
               aboutClick={this.handleAbout.bind(this)}
               scrollToTop={this.scrollToTop}
+              menu={this.state.menu}
             />
           </ul>
         </nav>

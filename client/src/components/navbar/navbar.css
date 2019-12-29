@@ -16,10 +16,13 @@ nav {
   display: flex;
   flex-direction: row;
   background: var(--nav-background);
+}
+
+#desktop {
   justify-content: space-between;
 }
 
-nav ul {
+#desktop ul {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -29,27 +32,27 @@ nav ul {
   place-content: flex-end;
 }
 
-nav ul li {
+#desktop ul li {
   margin: auto 2% auto 15%;
   font-size: 1.3em;
   cursor: pointer;
 }
 
-nav ul li a,
-nav ul li p {
+#desktop ul li a,
+#desktop ul li p {
   text-decoration: none;
   color: var(--nav-link-color);
   margin: auto;
 }
 
-nav ul li a:hover,
-nav ul li p:hover {
+#desktop ul li a:hover,
+#desktop ul li p:hover {
   text-decoration: none;
   cursor: pointer;
   color: var(--nav-link-color-hover);
 }
 
-nav ul li i {
+#desktop ul li i {
   color: red;
   font-size: 1.7em;
   place-self: center;
@@ -59,7 +62,7 @@ nav ul li i {
   border-radius: 5px;
 }
 
-nav ul li i:hover {
+#desktop ul li i:hover {
   background: var(--logo-background-hover);
   transition: 0.3s;
 }
@@ -75,26 +78,16 @@ nav ul li i:hover {
   font-size: 1.7em;
   font-style: bold;
   margin: auto;
+  padding: 3%;
 }
 
-@media (min-width: 900px) {
-  nav ul li {
-    margin: auto 10% auto 30%;
+@media (max-width: 1000px) {
+  #desktop {
+    display: none;
   }
 }
 
 @media (max-width: 600px) {
-  nav ul {
-    margin: auto;
-    width: 100%;
-    padding: 0;
-  }
-  nav ul li {
-    justify-content: end;
-    font-size: 1.1em;
-    margin: auto;
-    padding: 0;
-  }
   #Logo {
     transform: scaleY(0);
     transition: 0.4s;
