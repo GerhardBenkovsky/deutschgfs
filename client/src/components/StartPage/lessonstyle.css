@@ -13,7 +13,7 @@
 }
 
 .banner-bar {
-  width: 100vw;
+  width: 100%;
   min-height: var(--nav-height);
   height: min-content;
   margin-bottom: 2em;
@@ -24,27 +24,30 @@
   width: 100%;
   height: min-content;
   padding: 0;
+  margin: auto;
   text-align: center;
   display: grid;
   grid-gap: 0.5em;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, 16vw));
+  grid-template-columns: repeat(auto-fit, minmax(12%, min-content));
 }
 
 .banner-bar ul li {
   position: relative;
   list-style: none;
   cursor: pointer;
-  margin: 2%;
+  margin: auto;
   padding: 0 2%;
+  text-align: center;
 }
 
 .banner-bar ul li p {
-  margin: auto;
   font-size: 1.3em;
 }
 
-.banner-bar ul li:hover {
-  text-decoration: underline double 2px var(--contrast);
+.banner-bar ul li p:hover {
+  -webkit-text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.7);
+  -moz-text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 /* Cards */
@@ -65,6 +68,10 @@
   border-radius: 5px;
   color: white;
   background: var(--card-background);
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+  transition: 1s;
 }
 
 .lessonCard:nth-child(odd) {
@@ -93,6 +100,13 @@
   border-radius: 8px;
   background-color: var(--card-br);
   bottom: -3em;
+}
+
+.lessonCard:hover {
+  -webkit-box-shadow: 0px 0 40px 10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0 40px 10px rgba(0, 0, 0, 0.75);
+  transition: 1s;
 }
 
 /* Video/IMG content div */
@@ -168,23 +182,24 @@
   }
 }
 
+.banner-bar ul {
+  grid-template-columns: repeat(auto-fit, minmax(min-content, 12.5%));
+  grid-gap: 0;
+  width: 100%;
+}
+.banner-bar ul li p {
+  font-size: 1.2em;
+}
+
 @media (max-width: 1000px) {
   .content-wrapper {
     min-height: 100vh;
     margin: auto;
     padding: 0;
   }
-  .banner {
-    margin: auto;
-  }
-
-  .banner-content {
-    height: calc(100vh - calc(2 * var(--nav-height)));
-  }
-
   .banner-bar ul {
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 23%));
-    grid-gap: 0.2em;
+    grid-template-columns: repeat(auto-fit, minmax(25%, min-content));
+    grid-gap: 0;
   }
 
   .banner-bar ul li p {
@@ -241,22 +256,26 @@
 
 @media (max-width: 770px) {
   .banner-bar ul {
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 33%));
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 25%));
     grid-gap: 0;
+    width: 100%;
+  }
+  .banner-bar ul li p {
+    font-size: 1em;
   }
 }
 
 @media (max-width: 650px) {
-  .banner-bar {
+  /* .banner-bar {
     display: none;
+  } */
+  .banner-bar ul {
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 50%));
+    grid-gap: 0;
   }
 }
 
 @media (max-width: 550px) {
-  .banner-bar {
-    display: none;
-  }
-
   .imgcontent {
     width: 100%;
   }

@@ -81,7 +81,7 @@ nav {
   padding: 3%;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   #desktop {
     display: none;
   }

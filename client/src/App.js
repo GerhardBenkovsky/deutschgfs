@@ -33,7 +33,7 @@ class App extends React.Component {
   async getLessons() {
     try {
       const response = await axios.get(
-        "https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1577644136669"
+        "https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1577813826782"
       );
       this.setState({ content: response.data });
     } catch (error) {
