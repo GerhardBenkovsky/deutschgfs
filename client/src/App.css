@@ -10,8 +10,9 @@
   --nav-height: 52px;
   --nav-background: var(--darkgray);
   --logo-color: red;
-  --logo-background: white;
-  --logo-background-hover: crimson;
+  --nav-logo-background: white;
+  --site-logo-back: red;
+  --site-logo-text: var(--nav-background);
 
   /* Banner */
 

@@ -57,7 +57,7 @@ nav {
   font-size: 1.7em;
   place-self: center;
   color: var(--nav-background);
-  background: var(--logo-background);
+  background: var(--nav-logo-background);
   padding: 4px;
   border-radius: 5px;
 }
@@ -69,16 +69,10 @@ nav {
 
 #desktop #Logo {
   margin: 0;
+  margin-left: 5px;
+  height: 100%;
   z-index: 9999;
-}
-
-#desktop #Logo p {
   cursor: pointer;
-  color: var(--logo-color);
-  font-size: 1.7em;
-  font-style: bold;
-  margin: auto;
-  padding: 3%;
 }
 
 @media (max-width: 800px) {
