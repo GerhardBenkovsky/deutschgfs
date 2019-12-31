@@ -197,6 +197,9 @@
     margin: auto;
     padding: 0;
   }
+  .banner-bar {
+    margin: 0;
+  }
   .banner-bar ul {
     grid-template-columns: repeat(auto-fit, minmax(25%, min-content));
     grid-gap: 0;
