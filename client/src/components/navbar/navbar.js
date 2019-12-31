@@ -34,7 +34,7 @@ export default class Navbar extends Component {
 
   handleScroll = event => {
     window.pageYOffset > this.state.prevPageOffset
-      ? this.setState({ navbar: false })
+      ? this.setState({ navbar: false, collapsed: true })
       : this.setState({ navbar: true });
 
     this.setState({ prevPageOffset: window.pageYOffset });
@@ -75,6 +75,9 @@ export default class Navbar extends Component {
             />
           </ul>
         </nav>
+        {
+          //Navs
+        }
         <nav id="hamburger">
           <i className="fas fa-home" onClick={this.scrollToTop}></i>
           <i className="fas fa-bars" onClick={this.handleCollapse}></i>

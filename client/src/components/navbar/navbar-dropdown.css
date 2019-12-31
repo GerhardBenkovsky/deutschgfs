@@ -6,20 +6,23 @@
 #hamburger .fa-bars {
   position: absolute;
   font-size: 2.5em;
-  margin-top: 0.7%;
-  right: 1%;
+  top: calc(var(--nav-height) / 5);
+  right: calc(var(--nav-height) / 4.5);
   cursor: pointer;
+  color: var(--contrast);
 }
 
 #hamburger .fa-home {
   position: absolute;
   font-size: 2.5em;
-  margin-top: 0.7%;
-  left: 1%;
+  top: calc(var(--nav-height) / 5);
+  left: calc(var(--nav-height) / 5);
   cursor: pointer;
+  color: var(--contrast);
 }
 
-#hamburger i:hover {
+#hamburger .fa-bars:hover,
+#hamburger .fa-home:hover {
   color: var(--contrast);
   transition: 0.4s;
 }
@@ -32,8 +35,9 @@
   right: 10px;
   color: var(--nav-link-color);
   background: var(--nav-background);
-  width: 10em;
+  width: 10 em;
   border-radius: 3%;
+  padding: 5 2 5 0;
 }
 
 #hamburger ul li {
@@ -46,10 +50,11 @@
   height: 30px;
   font-size: large;
   font-weight: bold;
+  z-index: 2;
 }
 
 #hamburger ul li:hover {
-  background: calc(var(--nav-background) - 5%);
+  background: var(--contrast);
 }
 
 #hamburger ul li a,
