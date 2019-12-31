@@ -67,12 +67,12 @@ nav {
   transition: 0.3s;
 }
 
-#Logo {
+#desktop #Logo {
   margin: 0;
   z-index: 9999;
 }
 
-#Logo p {
+#desktop #Logo p {
   cursor: pointer;
   color: var(--logo-color);
   font-size: 1.7em;
@@ -83,14 +83,6 @@ nav {
 
 @media (max-width: 1000px) {
   #desktop {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  #Logo {
-    transform: scaleY(0);
-    transition: 0.4s;
     display: none;
   }
 }

@@ -3,11 +3,19 @@
   position: relative;
 }
 
-#hamburger i {
+#hamburger .fa-bars {
+  position: absolute;
   font-size: 2.5em;
-  width: 10%;
-  margin-left: 95%;
   margin-top: 0.7%;
+  right: 1%;
+  cursor: pointer;
+}
+
+#hamburger .fa-home {
+  position: absolute;
+  font-size: 2.5em;
+  margin-top: 0.7%;
+  left: 1%;
   cursor: pointer;
 }
 
@@ -18,8 +26,36 @@
 
 #hamburger ul {
   position: absolute;
-  color: white;
-  width: vw;
+  display: flex;
+  flex-direction: column-reverse;
+  top: calc(var(--nav-height) + 10%);
+  right: 10px;
+  color: var(--nav-link-color);
+  background: var(--nav-background);
+  width: 20%;
+  border-radius: 3%;
+}
+
+#hamburger ul li {
+  text-decoration: none;
+  list-style: none;
+  width: 100%;
+  text-align: end;
+  padding-right: 5%;
+  cursor: pointer;
+  height: 30px;
+  font-size: large;
+  font-weight: bold;
+}
+
+#hamburger ul li:hover {
+  background: calc(var(--nav-background) - 5%);
+}
+
+#hamburger ul li a,
+#hamburger ul li p {
+  text-decoration: none;
+  color: var(--nav-link-color);
 }
 
 @media (min-width: 1000px) {

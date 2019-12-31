@@ -4,13 +4,13 @@ import "./navbar.css";
 import "./navbar-dropdown.css";
 
 import NavbarItem from "./navbaritem";
+import HamburgerMenu from "./HamburgerMenu";
 
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      menu: "#desktop",
-      collapsed: false,
+      collapsed: true,
       navbar: true,
       dropdown: false,
       prevPageOffset: window.pageYOffset
@@ -53,51 +53,13 @@ export default class Navbar extends Component {
 
   handleCollapse() {
     this.setState(prevState => ({ collapsed: !prevState.collapsed }));
-    console.log("hello");
   }
 
   render() {
-    return this.state.hamburgerMenu ? (
+    return (
       <header
         className={this.state.navbar ? "App-header" : "App-header-hidden"}
       >
-        {this.state.collapsed ? (
-          <nav>
-            <div className="dropdown-menu">
-              <i
-                className="fas fa-bars"
-                onClick={() =>
-                  this.state.collapsed
-                    ? this.setState({ collapsed: false })
-                    : this.setState({ collapsed: true })
-                }
-              ></i>
-            </div>
-
-            {this.state.collapsed ? (
-              <div></div>
-            ) : (
-              <ul>
-                <NavbarItem
-                  items={this.props.Navbar}
-                  key={this.props.Navbar}
-                  aboutClick={this.handleAbout.bind(this)}
-                  scrollToTop={this.scrollToTop}
-                />
-              </ul>
-            )}
-          </nav>
-        ) : (
-          <nav></nav>
-        )}
-      </header>
-    ) : (
-      <header
-        className={this.state.navbar ? "App-header" : "App-header-hidden"}
-      >
-        <nav id="hamburger">
-          <i className="fas fa-bars"></i>
-        </nav>
         <nav id="desktop">
           <div id="Logo">
             <p onClick={this.scrollToTop}>Deutschselbsthilfegruppe</p>
@@ -105,6 +67,19 @@ export default class Navbar extends Component {
 
           <ul>
             <NavbarItem
+              items={this.props.Navbar}
+              key={this.props.Navbar}
+              aboutClick={this.handleAbout.bind(this)}
+              scrollToTop={this.scrollToTop}
+              menu={this.state.menu}
+            />
+          </ul>
+        </nav>
+        <nav id="hamburger">
+          <i className="fas fa-home" onClick={this.scrollToTop}></i>
+          <i className="fas fa-bars" onClick={this.handleCollapse}></i>
+          <ul style={this.state.collapsed ? { display: "none" } : {}}>
+            <HamburgerMenu
               items={this.props.Navbar}
               key={this.props.Navbar}
               aboutClick={this.handleAbout.bind(this)}
