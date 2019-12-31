@@ -32,7 +32,7 @@
   right: 10px;
   color: var(--nav-link-color);
   background: var(--nav-background);
-  width: 20%;
+  width: 10em;
   border-radius: 3%;
 }
 
@@ -41,7 +41,7 @@
   list-style: none;
   width: 100%;
   text-align: end;
-  padding-right: 5%;
+  padding-right: 10%;
   cursor: pointer;
   height: 30px;
   font-size: large;
@@ -61,5 +61,11 @@
 @media (min-width: 1000px) {
   #hamburger {
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #hamburger ul {
+    width: 9em;
   }
 }
