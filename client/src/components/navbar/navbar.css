@@ -53,7 +53,6 @@ nav {
 }
 
 #desktop ul li i {
-  color: red;
   font-size: 1.7em;
   place-self: center;
   color: var(--nav-background);
@@ -63,7 +62,8 @@ nav {
 }
 
 #desktop ul li i:hover {
-  background: var(--logo-background-hover);
+  color: var(--nav-logo-background);
+  background: var(--nav-background);
   transition: 0.3s;
 }
 
@@ -73,6 +73,13 @@ nav {
   height: 100%;
   z-index: 9999;
   cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 @media (max-width: 800px) {

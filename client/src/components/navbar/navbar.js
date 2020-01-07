@@ -79,8 +79,8 @@ export default class Navbar extends Component {
                   ></path>
                   <text
                     fill="var(--site-logo-text)"
-                    x="15"
-                    y="39"
+                    x="15.5"
+                    y="40"
                     style={{ fontWeight: "bold", fontSize: "200%" }}
                   >
                     DE
@@ -123,8 +123,8 @@ export default class Navbar extends Component {
                   ></path>
                   <text
                     fill="var(--site-logo-text)"
-                    x="15"
-                    y="39"
+                    x="15.5"
+                    y="40"
                     style={{ fontWeight: "bold", fontSize: "200%" }}
                   >
                     DE

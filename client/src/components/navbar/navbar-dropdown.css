@@ -18,6 +18,13 @@
   height: 100%;
   z-index: 9999;
   cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 #hamburger .fa-bars:hover {
@@ -33,32 +40,45 @@
   right: 10px;
   color: var(--nav-link-color);
   background: var(--nav-background);
-  width: 10 em;
-  border-radius: 3%;
-  padding: 5 2 5 0;
+  width: 10em;
+  border-radius: 5px;
+  padding: 0 5px 0 0;
 }
 
 #hamburger ul li {
   text-decoration: none;
   list-style: none;
   width: 100%;
+  margin: auto;
   text-align: end;
-  padding-right: 10%;
   cursor: pointer;
+  border-radius: 5px;
   height: 30px;
   font-size: large;
   font-weight: bold;
   z-index: 2;
+  background: var(--nav-background);
+  color: var(--nav-link-color);
 }
 
 #hamburger ul li:hover {
   background: var(--contrast);
+  color: var(--nav-background);
 }
 
-#hamburger ul li a,
+#hamburger ul li a {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  color: var(--nav-link-color);
+}
 #hamburger ul li p {
   text-decoration: none;
-  color: var(--nav-link-color);
+  width: 100%;
+}
+
+#hamburger ul li a:hover {
+  color: var(--nav-background);
 }
 
 @media (min-width: 800px) {
