@@ -3,50 +3,32 @@
     "id": "rechtschreibung",
     "title": "Rechtschreibung",
     "description": "Die Orthographie (auch Orthografie; von lateinisch orthographia, altgriechisch ὀρθός orthós „aufrecht“, „richtig“ und -graphie) oder Rechtschreibung ist die allgemein übliche Schreibweise der Wörter einer Sprache in der verwendeten Schrift. Eine davon abweichende Schreibung wird allgemein als Rechtschreibfehler bezeichnet. ",
-    "link1": "https://www.youtube.com/embed/X4t0JxiBeO0"
+    "links": {
+      "link1": "https://rechtschreibpruefung24.de/",
+      "text1": "Rechtschreibungs test",
+      "link2": "https://www.duden.de/sprachwissen/rechtschreibregeln",
+      "text2": "Link mit allen Rechtschreibregeln"
+    }
   },
 
   {
     "id": "grammatik",
     "title": "Grammatik",
     "description": "Die Grammatik oder auch Sprachlehre bezeichnet in der Sprachwissenschaft (Linguistik) jede Form einer systematischen Sprachbeschreibung. Dabei steht der Begriff der Grammatik einmal für das Regelwerk selbst, auf der anderen Seite aber auch für die Theorie über eine bestimmte Sprache oder Sprachfamilie (Grammatiktheorie)",
-    "link1": "https://cdn.pixabay.com/photo/2019/07/25/16/29/background-image-4363006_960_720.png",
-    "link2": "https://deutschtraining.org/deutsche-grammatik/"
-  },
-  {
-    "id": "test",
-    "title": "teeeeeeeest",
-    "description": "wtf is this          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem ",
-    "link1": "https://www.youtube.com/embed/X4t0JxiBeO0"
-  },
-  {
-    "id": "Test",
-    "title": "teeeeeeeest",
-    "description": "wtf is thisContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum",
-    "link1": "https://www.youtube.com/embed/X4t0JxiBeO0"
-  },
-  {
-    "id": "test1",
-    "title": "teeeeeeeest",
-    "description": "wtf is thisContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum",
-    "link1": "https://www.youtube.com/embed/X4t0JxiBeO0"
-  },
-  {
-    "id": "test2",
-    "title": "teeeeeeeest",
-    "description": "wtf is thisContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum",
-    "link1": "https://www.youtube.com/embed/X4t0JxiBeO0"
-  },
-  {
-    "id": "test3",
-    "title": "teeeeeeeest",
-    "description": "wtf is thisContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum",
-    "link1": "https://www.youtube.com/embed/X4t0JxiBeO0"
+    "links": {
+      "link1": "https://cdn.pixabay.com/photo/2019/07/25/16/29/background-image-4363006_960_720.png",
+      "text1": "Image",
+      "link2": "https://deutschtraining.org/deutsche-grammatik/",
+      "text2": "Grammatik"
+    }
   },
   {
     "id": "textanalyse",
     "title": "Textanalyse",
     "description": "Bei einer Textanalyse muss auf ... geachteetwerden",
-    "link1": "https://www.youtube.com/embed/X4t0JxiBeO0"
+    "links": {
+      "link1": "https://www.youtube.com/embed/X4t0JxiBeO0",
+      "text1": "Random Youtube Link"
+    }
   }
 ]

@@ -22,6 +22,11 @@
 
   /* Lesson Cards */
 
+  --card-skewY: -3deg;
+  --card-skewX: -1deg;
+  --card-content-skewY: calc(-1 * var(--card-skewY));
+  --card-content-skewX: calc(-1 * var(--card-skewX));
+
   --card-background: var(--theme);
   --card-br: crimson;
   --card-header: red;
