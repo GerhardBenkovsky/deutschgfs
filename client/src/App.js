@@ -37,6 +37,7 @@ class App extends React.Component {
       );
       this.setState({ content: response.data });
     } catch (error) {
+      console.log(error);
       this.setState({ contentHasError: true });
       if (error.response) {
         this.setState({ contentErrorType: "Server Down" });
