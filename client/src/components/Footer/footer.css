@@ -24,3 +24,8 @@ footer section {
   text-decoration: none;
   color: var(--link-color);
 }
+@media (max=width="1200px") {
+  footer {
+    margin-top: 0;
+  }
+}

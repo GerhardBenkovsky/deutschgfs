@@ -20,6 +20,7 @@
   height: min-content;
   margin-bottom: 2em;
   background: var(--banner-bar-background);
+  margin-bottom: 4%;
 }
 
 .banner-bar ul {
@@ -63,9 +64,10 @@
   flex-direction: row;
   min-height: min-content;
   align-content: center;
-  margin: auto;
   width: 75%;
-  margin-bottom: 5em;
+  margin: auto;
+  margin-bottom: 7em;
+  margin-top: 2em;
   padding: 12px;
   padding-left: 2%;
   padding-right: 2%;
@@ -85,7 +87,7 @@
 }
 
 .lessonCard:nth-last-child(1) {
-  margin-bottom: 3em;
+  margin-bottom: 7em;
   padding-bottom: 0;
 }
 
@@ -100,12 +102,12 @@
 .lessonCard::after {
   position: absolute;
   content: "";
-  height: 5px;
+  height: 6px;
   width: 50%;
   left: 25%;
-  border-radius: 8px;
+  border-radius: 7px;
   background-color: var(--card-br);
-  bottom: -3em;
+  bottom: -3.8em;
   transform: skewX(var(--card-content-skewX)) skewY(var(--card-content-skewY));
 }
 
