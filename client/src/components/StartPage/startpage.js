@@ -6,6 +6,7 @@ import "./lessonstyle.css";
 import Error from "./Error";
 import Banner from "./Banner";
 import BannerBar from "./Banner-bar";
+import { ContentConsumer } from "../Context/contentContext";
 
 class StartPage extends React.Component {
   constructor(props) {
@@ -24,15 +25,13 @@ class StartPage extends React.Component {
   }
 
   render() {
-    const style = {
-      display: "flex",
-      flexDirection: "row"
-    };
     return (
       <div className="content-wrapper">
         <Banner />
         <BannerBar scrollIntoView={this.handleClick} />
-        {this.props.hasError ? <Error /> : <Lessons style={style} />}
+        <ContentConsumer>
+          {context => (context.contentHasError ? <Error /> : <Lessons />)}
+        </ContentConsumer>
       </div>
     );
   }

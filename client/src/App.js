@@ -33,7 +33,7 @@ class App extends React.Component {
   async getLessons() {
     try {
       const response = await axios.get(
-        "https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1577813826782"
+        "https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1579966764735"
       );
       this.setState({ content: response.data });
     } catch (error) {
@@ -67,7 +67,7 @@ class App extends React.Component {
           style={{ paddingBottom: this.state.showNav, transition: "0.4s" }}
         />
 
-        <ContentProvider value={this.state.content}>
+        <ContentProvider value={this.state}>
           <div className="Content" style={body}>
             <Router>
               <Route path="/adminPanel" exact component={AdminPanel} />

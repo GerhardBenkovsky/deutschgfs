@@ -10,8 +10,8 @@ import { ContentConsumer } from "../Context/contentContext";
 function Lessons(props) {
   return (
     <ContentConsumer>
-      {content => {
-        return content.map((item, index) => (
+      {context => {
+        return context.content.map((item, index) => (
           <div key={item.id} className="lessonCard" id={item.title}>
             <div className="text">
               <a href={"/lernen/" + item.id}>{item.title}</a>
@@ -19,7 +19,7 @@ function Lessons(props) {
             </div>
 
             <div className="imgcontent">
-              <Iframe link={item.link1} id={item.id} />
+              <Iframe link={item.logo} id={item.id} />
             </div>
           </div>
         ));

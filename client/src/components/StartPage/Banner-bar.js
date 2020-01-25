@@ -18,9 +18,9 @@ class BannerBar extends Component {
     return (
       <div className="banner-bar">
         <ContentConsumer>
-          {content => (
+          {context => (
             <ul>
-              {content.map((item, index) => (
+              {context.content.map((item, index) => (
                 <li key={item.id + index}>
                   <p onClick={this.props.scrollIntoView}>{item.title}</p>
                 </li>
