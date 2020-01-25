@@ -49,11 +49,11 @@ class App extends React.Component {
         });
       }
     }
+    window.localStorage.setItem("content", true);
   }
 
   componentDidMount() {
     this.getLessons();
-    window.title = "Selbsthilegruppe Deutsch";
   }
 
   render() {
@@ -87,9 +87,9 @@ class App extends React.Component {
               />
             </Router>
           </div>
-        </ContentProvider>
 
-        <Footer links={this.state.Navlinks} />
+          <Footer />
+        </ContentProvider>
       </div>
     );
   }

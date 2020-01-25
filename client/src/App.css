@@ -24,7 +24,7 @@
   /* Lesson Cards */
 
   --card-skewY: -3deg;
-  --card-skewX: -1deg;
+  --card-skewX: 0deg;
   --card-content-skewY: calc(-1 * var(--card-skewY));
   --card-content-skewX: calc(-1 * var(--card-skewX));
 
@@ -46,7 +46,7 @@
 
   /* Footer */
 
-  --footer-background: crimson;
+  --footer-background: #00b600;
 }
 
 #root {

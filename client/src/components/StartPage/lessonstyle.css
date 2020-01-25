@@ -13,6 +13,8 @@
 }
 
 .banner-bar {
+  position: relative;
+  z-index: 100;
   width: 100%;
   min-height: var(--nav-height);
   height: min-content;
@@ -56,6 +58,7 @@
 
 .lessonCard {
   position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: row;
   min-height: min-content;
@@ -184,6 +187,12 @@
 }
 
 @media (min-width: 1200px) {
+  .lessonCard {
+    scale: 1;
+  }
+  .lessonCard:hover {
+    scale: 1.005;
+  }
   .imgcontent {
     width: 40%;
   }
@@ -208,6 +217,7 @@
     margin: auto;
     padding: 0;
   }
+
   .banner-bar {
     margin: 0;
   }
