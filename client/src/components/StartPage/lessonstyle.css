@@ -7,7 +7,7 @@
 }
 
 .banner {
-  height: calc(100vh - var(--nav-height));
+  height: calc(70vh - var(--nav-height));
   background: var(--banner-background);
   width: 100vw;
 }
@@ -27,8 +27,10 @@
   margin: auto;
   text-align: center;
   display: grid;
-  grid-gap: 0.5em;
-  grid-template-columns: repeat(auto-fit, minmax(12%, min-content));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min-content, var(--banner-bar-max-Size))
+  );
 }
 
 .banner-bar ul li {
@@ -80,12 +82,12 @@
 }
 
 .lessonCard:nth-last-child(1) {
-  margin-bottom: 1em;
+  margin-bottom: 3em;
   padding-bottom: 0;
 }
 
 .lessonCard:nth-child(1) {
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 .lessonCard:nth-last-child(1)::after {
@@ -167,7 +169,10 @@
 
 @media (min-width: 1500px) {
   .banner-bar ul {
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 12vw));
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min-content, var(--banner-bar-max-Size))
+    );
   }
 
   .imgcontent {
@@ -185,15 +190,16 @@
   .text {
     width: 60%;
   }
-}
-
-.banner-bar ul {
-  grid-template-columns: repeat(auto-fit, minmax(min-content, 12.5%));
-  grid-gap: 0;
-  width: 100%;
-}
-.banner-bar ul li p {
-  font-size: 1.2em;
+  .banner-bar ul {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min-content, var(--banner-bar-max-Size))
+    );
+    width: 100%;
+  }
+  .banner-bar ul li p {
+    font-size: 1.2em;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -206,8 +212,10 @@
     margin: 0;
   }
   .banner-bar ul {
-    grid-template-columns: repeat(auto-fit, minmax(25%, min-content));
-    grid-gap: 0;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min-content, var(--banner-bar-max-Size))
+    );
   }
 
   .banner-bar ul li p {
@@ -268,8 +276,10 @@
 
 @media (max-width: 770px) {
   .banner-bar ul {
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 25%));
-    grid-gap: 0;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min-content, var(--banner-bar-max-Size) %)
+    );
     width: 100%;
   }
   .banner-bar ul li p {
@@ -282,8 +292,10 @@
     display: none;
   } */
   .banner-bar ul {
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 50%));
-    grid-gap: 0;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min-content, var(--banner-bar-max-Size))
+    );
   }
 }
 

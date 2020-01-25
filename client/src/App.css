@@ -19,6 +19,7 @@
   --banner-background: yellowgreen;
   --banner-bar-background: red;
   --banner-bar-border: black;
+  --banner-bar-max-Size: 33.3333%;
 
   /* Lesson Cards */
 
@@ -73,7 +74,7 @@
 
 .Content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   min-height: 100vh;
   margin: 0;

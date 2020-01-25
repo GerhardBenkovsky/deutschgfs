@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import "./lessonstyle.css";
+import "./sidebarstyle.css";
 
 import { ContentConsumer } from "../Context/contentContext";
 
-class BannerBar extends Component {
+class SideBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,6 +13,16 @@ class BannerBar extends Component {
   }
 
   componentDidMount() {}
+
+  handleClick(event) {
+    event.persist();
+    const element = document.getElementById(event.target.innerText);
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center"
+    });
+  }
 
   render() {
     return (
@@ -33,4 +43,4 @@ class BannerBar extends Component {
   }
 }
 
-export default BannerBar;
+export default SideBar;

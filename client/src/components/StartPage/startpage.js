@@ -4,9 +4,9 @@ import Lessons from "./lessons";
 import "./lessonstyle.css";
 
 import Error from "./Error";
-import Banner from "./Banner";
-import BannerBar from "./Banner-bar";
 import { ContentConsumer } from "../Context/contentContext";
+import SideBar from "./sideBar";
+import Banner from "./Banner";
 
 class StartPage extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class StartPage extends React.Component {
     return (
       <div className="content-wrapper">
         <Banner />
-        <BannerBar scrollIntoView={this.handleClick} />
+        <SideBar scrollIntoView={this.handleClick} />
         <ContentConsumer>
           {context => (context.contentHasError ? <Error /> : <Lessons />)}
         </ContentConsumer>
