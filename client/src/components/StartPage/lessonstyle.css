@@ -41,7 +41,7 @@
   list-style: none;
   cursor: pointer;
   margin: auto;
-  padding: 0 2%;
+  padding: 0;
   text-align: center;
 }
 
@@ -191,6 +191,7 @@
 @media (min-width: 1200px) {
   .lessonCard {
     scale: 1;
+    /* width: 90%; */
   }
   .lessonCard:hover {
     scale: 1.005;
@@ -213,7 +214,19 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1500px) {
+  .lessonCard {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .lessonCard {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1100px) {
   .content-wrapper {
     min-height: 100vh;
     margin: auto;
@@ -245,6 +258,16 @@
     border-radius: 0;
     border: 0;
     transform: skewX(0) skewY(0);
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+    box-shadow: 0;
+    transition: 0;
+  }
+
+  .lessonCard:hover {
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+    box-shadow: 0;
   }
 
   .lessonCard::after {
@@ -258,6 +281,15 @@
     border-radius: 0;
     background-color: var(--card-br);
     transform: skewX(0) skewY(0);
+  }
+
+  .lessonCard:nth-last-child(1) {
+    margin-bottom: 0;
+    padding: 7px;
+  }
+
+  .lessonCard:nth-last-child(1)::after {
+    display: inline;
   }
 
   /* TEXT */
@@ -290,7 +322,7 @@
   .banner-bar ul {
     grid-template-columns: repeat(
       auto-fit,
-      minmax(min-content, var(--banner-bar-max-Size) %)
+      minmax(min-content, var(--banner-bar-max-Size))
     );
     width: 100%;
   }
