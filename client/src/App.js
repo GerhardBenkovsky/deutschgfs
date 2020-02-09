@@ -33,8 +33,8 @@ class App extends React.Component {
   async getLessons() {
     try {
       const response = await axios.get(
-        "https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1579966764735"
-      );
+        "https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1581245270611"
+      ); //"https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1581245270611"
       this.setState({ content: response.data });
     } catch (error) {
       console.log(error);
@@ -49,7 +49,6 @@ class App extends React.Component {
         });
       }
     }
-    window.localStorage.setItem("content", true);
   }
 
   componentDidMount() {
