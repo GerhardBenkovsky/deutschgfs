@@ -6,3 +6,7 @@
 .Video-Wrapper {
   width: 35%;
 }
+
+.Video-Wrapper img {
+  width: 100%;
+}

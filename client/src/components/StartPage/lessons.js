@@ -3,19 +3,29 @@ import "./lessonstyle.css";
 
 import Iframe from "./iframe";
 
-function Lessons(props) {
-  return props.content.map(item => (
-    <div key={item.id} className="lessonCard">
-      <div className="text">
-        <a href={"/lesson/" + item.id}>{item.title}</a>
-        <p>{item.content}</p>
-      </div>
+import StartpageLoader from "../HOC/StartpageLoader";
 
-      <div className="imgcontent">
-        <Iframe link={item.link1} id={item.id} />
-      </div>
-    </div>
-  ));
+import { ContentConsumer } from "../Context/contentContext";
+
+function Lessons(props) {
+  return (
+    <ContentConsumer>
+      {context => {
+        return context.content.map((item, index) => (
+          <div key={item.id} className="lessonCard" id={item.title}>
+            <div className="text">
+              <a href={"/lernen/" + item.id}>{item.title}</a>
+              <p>{item.description}</p>
+            </div>
+
+            <div className="imgcontent">
+              <Iframe link={item.logo} id={item.id} />
+            </div>
+          </div>
+        ));
+      }}
+    </ContentConsumer>
+  );
 }
 
-export default Lessons;
+export default StartpageLoader(Lessons);

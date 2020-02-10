@@ -1,0 +1,8 @@
+.sideBar {
+  background: red;
+}
+
+.sideBar ul {
+  list-style: none;
+  margin: auto;
+}

@@ -3,7 +3,10 @@ import Lessons from "./lessons";
 
 import "./lessonstyle.css";
 
-import StartpageLoader from "../HOC/StartpageLoader";
+import Error from "./Error";
+import { ContentConsumer } from "../Context/contentContext";
+import SideBar from "./sideBar";
+import Banner from "./Banner";
 
 class StartPage extends React.Component {
   constructor(props) {
@@ -11,17 +14,27 @@ class StartPage extends React.Component {
     this.state = {};
   }
 
+  handleClick(event) {
+    event.persist();
+    const element = document.getElementById(event.target.innerText);
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center"
+    });
+  }
+
   render() {
-    const style = {
-      display: "flex",
-      flexDirection: "row"
-    };
     return (
       <div className="content-wrapper">
-        <Lessons content={this.props.content} style={style} />
+        <Banner />
+        <SideBar scrollIntoView={this.handleClick} />
+        <ContentConsumer>
+          {context => (context.contentHasError ? <Error /> : <Lessons />)}
+        </ContentConsumer>
       </div>
     );
   }
 }
 
-export default StartpageLoader(StartPage);
+export default StartPage;

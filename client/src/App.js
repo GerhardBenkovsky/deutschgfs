@@ -10,29 +10,49 @@ import StartPage from "./components/StartPage/startpage";
 import Content from "./components/Content/content";
 import AdminPanel from "./components/Admin/admin";
 
+import { ContentProvider } from "./components/Context/contentContext";
+
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       Navlinks: [
-        { name: "Home", link: "/" },
-        { name: "About", link: "/about" },
         { name: "Help", link: "/help" },
-        { name: "Contact", link: "/contact" }
+        { name: "Contact", link: "/contact" },
+        { name: "About", link: "/about" },
+        { name: "Home", link: "/" }
       ],
+      contentHasError: false,
+      contentErrorType: "",
       content: []
     };
+
+    this.getLessons = this.getLessons.bind(this);
+  }
+
+  async getLessons() {
+    try {
+      const response = await axios.get(
+        "https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1581245270611"
+      ); //"https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1581245270611"
+      this.setState({ content: response.data });
+    } catch (error) {
+      console.log(error);
+      this.setState({ contentHasError: true });
+      if (error.response) {
+        this.setState({ contentErrorType: "Server Down" });
+      } else if (error.request) {
+        this.setState({ contentErrorType: "Connection problem" });
+      } else {
+        this.setState({
+          contentErrorType: "There seems to be a Problem,please try again later"
+        });
+      }
+    }
   }
 
   componentDidMount() {
-    axios
-      .get(
-        `https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1577300605946`
-      )
-      .then(res => {
-        this.setState({ content: res.data });
-      });
-    window.title = "Selbsthilegruppe Deutsch";
+    this.getLessons();
   }
 
   render() {
@@ -42,24 +62,33 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Navbar Navbar={this.state.Navlinks} />
-        <div className="Content" style={body}>
-          <Router>
-            <Route path="/adminPanel" exact component={AdminPanel} />
-            <Route
-              exact
-              path="/"
-              component={() => <StartPage content={this.state.content} />}
-            />
+        <Navbar
+          Navbar={this.state.Navlinks}
+          style={{ paddingBottom: this.state.showNav, transition: "0.4s" }}
+        />
 
-            <Route
-              path="/lesson/:id"
-              exact
-              component={() => <Content content={this.state.content} />}
-            />
-          </Router>
-        </div>
-        <Footer links={this.state.Navlinks} />
+        <ContentProvider value={this.state}>
+          <div className="Content" style={body}>
+            <Router>
+              <Route path="/adminPanel" exact component={AdminPanel} />
+              <Route
+                exact
+                path="/"
+                component={() => (
+                  <StartPage hasError={this.state.contentHasError} />
+                )}
+              />
+
+              <Route
+                path="/lernen/:id"
+                exact
+                component={() => <Content content={this.state.content} />}
+              />
+            </Router>
+          </div>
+
+          <Footer />
+        </ContentProvider>
       </div>
     );
   }

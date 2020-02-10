@@ -1,6 +1,52 @@
 * {
+  /* General Colors */
+  --theme: #343a40;
+  --contrast: #f8f9fa;
+  --darkgray: #0b0c10;
+  --white: white;
+
+  /* NAV Bar */
+
   --nav-height: 52px;
-  --background: #333;
+  --nav-background: var(--darkgray);
+  --logo-color: red;
+  --nav-logo-background: white;
+  --site-logo-back: red;
+  --site-logo-text: var(--nav-background);
+
+  /* Banner */
+
+  --banner-background: yellowgreen;
+  --banner-bar-background: red;
+  --banner-bar-border: black;
+  --banner-bar-max-Size: 33.3333%;
+
+  /* Lesson Cards */
+
+  --card-skewY: -2deg;
+  --card-skewX: 0deg;
+  --card-content-skewY: calc(-1 * var(--card-skewY));
+  --card-content-skewX: calc(-1 * var(--card-skewX));
+
+  --card-background: var(--theme);
+  --card-br: crimson;
+  --card-header: red;
+
+  /* Links */
+
+  --nav-link-color: white;
+  --nav-link-color-hover: white;
+
+  --link-color: white;
+  --link-hover: yellowgreen;
+
+  /* Text */
+
+  --text-color: white;
+
+  /* Footer */
+
+  --footer-background: #00b600;
 }
 
 #root {
@@ -28,7 +74,7 @@
 
 .Content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   min-height: 100vh;
   margin: 0;

@@ -1,0 +1,94 @@
+#hamburger {
+  justify-self: flex-end;
+  position: relative;
+}
+
+#hamburger .fa-bars {
+  position: absolute;
+  font-size: 2.5em;
+  top: calc(var(--nav-height) / 5);
+  right: calc(var(--nav-height) / 4.5);
+  cursor: pointer;
+  color: var(--contrast);
+}
+
+#hamburger #Logo {
+  margin: 0;
+  margin-left: 5px;
+  height: 100%;
+  z-index: 9999;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#hamburger .fa-bars:hover {
+  color: var(--contrast);
+  transition: 0.4s;
+}
+
+#hamburger ul {
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  top: calc(var(--nav-height) + 10%);
+  right: 10px;
+  color: var(--nav-link-color);
+  background: var(--nav-background);
+  width: 10em;
+  border-radius: 5px;
+  padding: 0 5px 0 0;
+}
+
+#hamburger ul li {
+  text-decoration: none;
+  list-style: none;
+  width: 100%;
+  margin: auto;
+  text-align: end;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 30px;
+  font-size: large;
+  font-weight: bold;
+  z-index: 2;
+  background: var(--nav-background);
+  color: var(--nav-link-color);
+}
+
+#hamburger ul li:hover {
+  background: var(--contrast);
+  color: var(--nav-background);
+}
+
+#hamburger ul li a {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  color: var(--nav-link-color);
+}
+#hamburger ul li p {
+  text-decoration: none;
+  width: 100%;
+}
+
+#hamburger ul li a:hover {
+  color: var(--nav-background);
+}
+
+@media (min-width: 800px) {
+  #hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #hamburger ul {
+    width: 9em;
+  }
+}

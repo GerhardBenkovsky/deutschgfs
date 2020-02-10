@@ -4,42 +4,118 @@
 
 .content-wrapper {
   margin: 0;
-  padding-top: 3%;
+}
+
+.banner {
+  height: calc(70vh - var(--nav-height));
+  background: var(--banner-background);
+  width: 100vw;
+}
+
+.banner-bar {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  min-height: var(--nav-height);
+  height: min-content;
+  margin-bottom: 2em;
+  background: var(--banner-bar-background);
+  margin-bottom: 4%;
+}
+
+.banner-bar ul {
+  width: 100%;
+  height: min-content;
+  padding: 0;
+  margin: auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min-content, var(--banner-bar-max-Size))
+  );
+}
+
+.banner-bar ul li {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+}
+
+.banner-bar ul li p {
+  font-size: 1.3em;
+}
+
+.banner-bar ul li p:hover {
+  -webkit-text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.7);
+  -moz-text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 /* Cards */
 
 .lessonCard {
   position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: row;
   min-height: min-content;
   align-content: center;
-  margin: auto;
   width: 75%;
-  margin-bottom: 5em;
-  padding: 7px;
+  margin: auto;
+  margin-bottom: 7em;
+  margin-top: 2em;
+  padding: 12px;
   padding-left: 2%;
   padding-right: 2%;
   border: 2px solid black;
   border-radius: 5px;
   color: white;
-  background: #444;
+  background: var(--card-background);
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+  transition: 1s;
+  transform: skewX(var(--card-skewX)) skewY(var(--card-skewY));
 }
 
 .lessonCard:nth-child(odd) {
   flex-direction: row-reverse;
 }
 
+.lessonCard:nth-last-child(1) {
+  margin-bottom: 7em;
+  padding-bottom: 0;
+}
+
+.lessonCard:nth-child(1) {
+  margin-top: 2em;
+}
+
+.lessonCard:nth-last-child(1)::after {
+  display: none;
+}
+
 .lessonCard::after {
   position: absolute;
   content: "";
-  height: 5px;
+  height: 6px;
   width: 50%;
   left: 25%;
-  border-radius: 8px;
-  background-color: red;
-  bottom: -3em;
+  border-radius: 7px;
+  background-color: var(--card-br);
+  bottom: -3.8em;
+  transform: skewX(var(--card-content-skewX)) skewY(var(--card-content-skewY));
+}
+
+.lessonCard:hover {
+  -webkit-box-shadow: 0px 0 40px 10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0 40px 10px rgba(0, 0, 0, 0.75);
+  transition: 1s;
 }
 
 /* Video/IMG content div */
@@ -48,6 +124,8 @@
   width: 35%;
   display: inline-block;
   align-content: center;
+  transform: skewX(var(--card-content-skewX)) skewY(var(--card-content-skewY))
+    scale(0.95);
 }
 
 /* TEXT CONTENT */
@@ -58,12 +136,13 @@
   display: flex;
   flex-direction: column;
   text-align: start;
+  transform: skewX(var(--card-content-skewX)) skewY(var(--card-content-skewY));
 }
 
 .text a {
   margin-top: 0.6em;
   text-decoration: none;
-  color: red;
+  color: var(--card-header);
   font-size: 2em;
   padding-left: 3%;
 }
@@ -93,16 +172,14 @@
   width: 100%;
 }
 
-@media (min-width: 1200px) {
-  .imgcontent {
-    width: 40%;
-  }
-  .text {
-    width: 60%;
-  }
-}
-
 @media (min-width: 1500px) {
+  .banner-bar ul {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min-content, var(--banner-bar-max-Size))
+    );
+  }
+
   .imgcontent {
     width: 45%;
   }
@@ -111,11 +188,63 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (min-width: 1200px) {
+  .lessonCard {
+    scale: 1;
+    /* width: 90%; */
+  }
+  .lessonCard:hover {
+    scale: 1.005;
+  }
+  .imgcontent {
+    width: 40%;
+  }
+  .text {
+    width: 60%;
+  }
+  .banner-bar ul {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min-content, var(--banner-bar-max-Size))
+    );
+    width: 100%;
+  }
+  .banner-bar ul li p {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 1500px) {
+  .lessonCard {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .lessonCard {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1100px) {
   .content-wrapper {
     min-height: 100vh;
     margin: auto;
     padding: 0;
+  }
+
+  .banner-bar {
+    margin: 0;
+  }
+  .banner-bar ul {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min-content, var(--banner-bar-max-Size))
+    );
+  }
+
+  .banner-bar ul li p {
+    font-size: 1em;
   }
 
   /* CONTENT */
@@ -128,6 +257,17 @@
     display: block;
     border-radius: 0;
     border: 0;
+    transform: skewX(0) skewY(0);
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+    box-shadow: 0;
+    transition: 0;
+  }
+
+  .lessonCard:hover {
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+    box-shadow: 0;
   }
 
   .lessonCard::after {
@@ -139,7 +279,17 @@
     bottom: 0;
     left: 0;
     border-radius: 0;
-    background-color: crimson;
+    background-color: var(--card-br);
+    transform: skewX(0) skewY(0);
+  }
+
+  .lessonCard:nth-last-child(1) {
+    margin-bottom: 0;
+    padding: 7px;
+  }
+
+  .lessonCard:nth-last-child(1)::after {
+    display: inline;
   }
 
   /* TEXT */
@@ -147,6 +297,7 @@
   .text {
     width: 100%;
     height: min-content;
+    transform: skewX(0) skewY(0);
   }
 
   .text a {
@@ -158,10 +309,42 @@
   }
 
   .imgcontent {
-    width: 100%;
+    width: 60%;
+    transform: skewX(0) skewY(0);
   }
 
   .player-wrapper {
     margin: auto;
+  }
+}
+
+@media (max-width: 770px) {
+  .banner-bar ul {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min-content, var(--banner-bar-max-Size))
+    );
+    width: 100%;
+  }
+  .banner-bar ul li p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 650px) {
+  /* .banner-bar {
+    display: none;
+  } */
+  .banner-bar ul {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min-content, var(--banner-bar-max-Size))
+    );
+  }
+}
+
+@media (max-width: 550px) {
+  .imgcontent {
+    width: 100%;
   }
 }

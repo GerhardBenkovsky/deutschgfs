@@ -1,6 +1,12 @@
-header {
+.App-header {
   position: sticky;
   top: 0;
+  transition: 0.5s;
+}
+
+.App-header-hidden {
+  top: -52px;
+  transition: 0.5s;
 }
 
 nav {
@@ -9,11 +15,14 @@ nav {
   z-index: 9998;
   display: flex;
   flex-direction: row;
-  background: #233;
+  background: var(--nav-background);
+}
+
+#desktop {
   justify-content: space-between;
 }
 
-nav ul {
+#desktop ul {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -23,41 +32,58 @@ nav ul {
   place-content: flex-end;
 }
 
-nav ul li {
+#desktop ul li {
   margin: auto 2% auto 15%;
   font-size: 1.3em;
+  cursor: pointer;
 }
 
-nav ul li a,
-nav ul li p {
+#desktop ul li a,
+#desktop ul li p {
   text-decoration: none;
-  color: white;
+  color: var(--nav-link-color);
   margin: auto;
 }
 
-#Logo {
+#desktop ul li a:hover,
+#desktop ul li p:hover {
   text-decoration: none;
+  cursor: pointer;
+  color: var(--nav-link-color-hover);
+}
+
+#desktop ul li i {
+  font-size: 1.7em;
+  place-self: center;
+  color: var(--nav-background);
+  background: var(--nav-logo-background);
+  padding: 4px;
+  border-radius: 5px;
+}
+
+#desktop ul li i:hover {
+  color: var(--nav-logo-background);
+  background: var(--nav-background);
+  transition: 0.3s;
+}
+
+#desktop #Logo {
   margin: 0;
+  margin-left: 5px;
+  height: 100%;
   z-index: 9999;
-  text-align: center;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
-#Logo a {
-  text-decoration: none;
-  color: red;
-  font-size: 2em;
-  font-style: bold;
-}
-
-@media (max-width: 600px) {
-  nav ul li {
-    margin: auto 7% auto 5%;
-    font-size: 1.1em;
-  }
-}
-
-@media (min-width: 900px) {
-  nav ul li {
-    margin: auto 10% auto 30%;
+@media (max-width: 800px) {
+  #desktop {
+    display: none;
   }
 }
