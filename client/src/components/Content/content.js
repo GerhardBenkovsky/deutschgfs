@@ -5,6 +5,7 @@ import "./contentPageStyle.css";
 import Iframe from "../StartPage/iframe";
 import Error from "../StartPage/Error";
 import { ContentConsumer } from "../Context/contentContext";
+import LinkFrame from "./link-frame";
 
 export default class Content extends React.Component {
   constructor(props) {
@@ -25,9 +26,9 @@ export default class Content extends React.Component {
                   <div className="Video-Wrapper">
                     <Iframe link={item.logo} />
                   </div>
-                  {item.link2 ? (
-                    <a href={item.links.link1}>{item.links.text1}</a>
-                  ) : null}
+                  {item.links.map(link => (
+                    <LinkFrame link={link} key={link.text} />
+                  ))}
                 </div>
               ) : null
             )
