@@ -4,12 +4,16 @@
     "title": "Rechtschreibung",
     "description": "Die Orthographie (auch Orthografie; von lateinisch orthographia, altgriechisch ὀρθός orthós „aufrecht“, „richtig“ und -graphie) oder Rechtschreibung ist die allgemein übliche Schreibweise der Wörter einer Sprache in der verwendeten Schrift. Eine davon abweichende Schreibung wird allgemein als Rechtschreibfehler bezeichnet. ",
     "logo": "https://www.sekretaria.de/wp-content/uploads/2015/09/Fotolia_87843122_Subscription_XXL_Website.jpg",
-    "links": {
-      "link1": "https://rechtschreibpruefung24.de/",
-      "text1": "Rechtschreibungs test",
-      "link2": "https://www.duden.de/sprachwissen/rechtschreibregeln",
-      "text2": "Link mit allen Rechtschreibregeln"
-    }
+    "links": [
+      {
+        "link": "https://rechtschreibpruefung24.de/",
+        "text": "Rechtschreibungs test"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln",
+        "text": "Link mit allen Rechtschreibregeln"
+      }
+    ]
   },
 
   {
@@ -17,19 +21,23 @@
     "title": "Grammatik",
     "description": "Die Grammatik oder auch Sprachlehre bezeichnet in der Sprachwissenschaft (Linguistik) jede Form einer systematischen Sprachbeschreibung. Dabei steht der Begriff der Grammatik einmal für das Regelwerk selbst, auf der anderen Seite aber auch für die Theorie über eine bestimmte Sprache oder Sprachfamilie (Grammatiktheorie)",
     "logo": "https://cdn.pixabay.com/photo/2019/07/25/16/29/background-image-4363006_960_720.png",
-    "links": {
-      "link1": "https://deutschtraining.org/deutsche-grammatik/",
-      "text1": "Grammatik"
-    }
+    "links": [
+      {
+        "link": "https://deutschtraining.org/deutsche-grammatik/",
+        "text": "Grammatik"
+      }
+    ]
   },
   {
     "id": "textanalyse",
     "title": "Textanalyse",
     "description": "Bei einer Textanalyse muss auf ... geachteetwerden",
     "logo": "https://www.youtube.com/embed/X4t0JxiBeO0",
-    "links": {
-      "link1": "https://www.youtube.com/embed/X4t0JxiBeO0",
-      "text1": "Random Youtube Link"
-    }
+    "links": [
+      {
+        "link": "https://www.youtube.com/embed/X4t0JxiBeO0",
+        "text": "Random Youtube Link"
+      }
+    ]
   }
 ]
