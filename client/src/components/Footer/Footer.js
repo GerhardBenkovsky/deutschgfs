@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import "./footer.css";
-import { ContentConsumer } from "../Context/contentContext";
+import './footer.css';
+import { ContentConsumer } from '../Context/contentContext';
 
 export default function Footer() {
   return (
@@ -13,15 +13,7 @@ export default function Footer() {
             distinctio quidem corrupti aperiam odio odit molestiae libero
             tenetur dolores dolorem, voluptatibus sapiente ducimus
             necessitatibus quia repudiandae aut rerum repellat adipisci cumque
-            fuga accusamus hic mollitia perferendis officiis. Doloremque minus
-            officiis autem! Exercitationem enim accusamus saepe ipsum, qui eius
-            quia quidem tempora necessitatibus impedit doloribus dignissimos
-            magnam alias, molestias, doloremque sapiente eveniet officia vero ea
-            totam facere non sunt omnis corporis. Id ducimus quo recusandae
-            velit quasi incidunt quam magni maiores minus beatae, quae
-            accusantium iste est reiciendis, suscipit aliquam ex dignissimos
-            voluptate nesciunt. Iusto incidunt distinctio voluptas minus rerum
-            minima.
+            fuga accusamus hic mollitia perferendis officiis.
           </section>
           <section id="footer-right">
             <ul>

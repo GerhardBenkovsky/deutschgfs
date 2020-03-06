@@ -101,7 +101,7 @@
 
 .lessonCard::after {
   position: absolute;
-  content: "";
+  content: '';
   height: 6px;
   width: 50%;
   left: 25%;
@@ -272,7 +272,7 @@
 
   .lessonCard::after {
     position: absolute;
-    content: "";
+    content: '';
     height: 3px;
     width: 100%;
     z-index: 100%;

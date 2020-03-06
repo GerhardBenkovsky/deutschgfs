@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import ReactPlayer from "react-player";
+import ReactPlayer from 'react-player';
 
 function LinkFrame(props) {
-  let splited = props.link.split("/");
-  let yout = splited[2].split(".");
+  let splited = props.link.split('/');
+  let yout = splited[2].split('.');
 
-  if (yout[1] === "youtube") {
+  if (yout[1] === 'youtube') {
     return (
       <div className="player-wrapper">
         <ReactPlayer
@@ -19,15 +19,22 @@ function LinkFrame(props) {
       </div>
     );
   }
-  splited = props.link.split(".");
+  splited = props.link.split('.');
   let img = splited[splited.length - 1];
-  if (img === "png" || img === "jpg" || img === "tiff") {
+  if (img === 'png' || img === 'jpg' || img === 'tiff') {
     return <img className="frame" src={props.link} alt={props.link} />;
   }
   return (
-    <a href={props.link} target="_blank" rel="noopener noreferrer">
-      {props.text}
-    </a>
+    <div>
+      <a
+        href={props.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="link"
+      >
+        {props.text}
+      </a>
+    </div>
   );
 }
 

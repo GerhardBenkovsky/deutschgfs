@@ -25,7 +25,7 @@ footer section {
   color: var(--link-color);
   text-align: center;
 }
-@media (max=width="1200px") {
+@media (max-width: "1200px") {
   footer {
     margin-top: 0;
   }

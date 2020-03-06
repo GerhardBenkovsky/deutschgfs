@@ -3,7 +3,7 @@
   margin: 0em;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   height: 100%;
 }
 
@@ -33,6 +33,28 @@
   margin: 0;
 }
 
+.Link-Wrapper {
+  max-width: 100%;
+  display: grid;
+  grid-gap: 0.7em 0.5em;
+  grid-template-columns: repeat(3, minmax(100px, 33.3%));
+  grid-auto-rows: 50px;
+}
+
+.Link-Wrapper div {
+  width: 100%;
+  height: 100%;
+  background: var(--theme);
+  text-align: center;
+  display: table;
+}
+
+.Link-Wrapper div a {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1.3em;
+}
+
 @media (min-width: 650px) {
   .lesson {
     margin: 0.7em;
@@ -51,11 +73,6 @@
     margin-top: 0.5em;
   }
   .Video-Wrapper {
-    width: 35%;
-    min-width: 300px;
-    max-width: 500px;
-  }
-  .Link-Wrapper {
     width: 35%;
     min-width: 300px;
     max-width: 500px;
