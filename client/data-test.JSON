@@ -143,17 +143,5 @@
         "text": "Satzbau"
       }
     ]
-  },
-  {
-    "id": "textanalyse",
-    "title": "Textanalyse",
-    "description": "Bei einer Textanalyse muss auf ... geachteetwerden",
-    "logo": "https://www.youtube.com/embed/X4t0JxiBeO0",
-    "links": [
-      {
-        "link": "https://www.youtube.com/embed/X4t0JxiBeO0",
-        "text": "Random Youtube Link"
-      }
-    ]
   }
 ]
