@@ -36,6 +36,23 @@
   margin: auto;
 }
 
+.searchResultDiv a,
+.searchResultDiv p {
+  text-decoration: none;
+  color: var(--contrast);
+}
+
+.searchResultDiv h3 a {
+  text-decoration: underline solid #eee 1.5px;
+}
+
+.searchResultDiv .link a {
+  text-decoration: underline;
+  color: gray;
+}
+
+/* Media queries */
+
 @media (max-width: 1500px) {
   #duden {
     width: 80%;
