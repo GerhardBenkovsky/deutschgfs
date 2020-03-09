@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import "./sidebarstyle.css";
+import './sidebarstyle.css';
 
-import { ContentConsumer } from "../Context/contentContext";
+import { ContentConsumer } from '../Context/contentContext';
 
 export default function SideBar(props) {
   return (
@@ -15,6 +15,9 @@ export default function SideBar(props) {
                 <p onClick={props.scrollIntoView}>{item.title}</p>
               </li>
             ))}
+            <li key="duden">
+              <p onClick={props.scrollIntoView}>Wörterbuch</p>
+            </li>
           </ul>
         )}
       </ContentConsumer>

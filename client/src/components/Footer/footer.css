@@ -20,11 +20,12 @@ footer section {
   align-content: center;
 }
 
-#footer-right ul li a {
+#footer-right ul li {
   text-decoration: none;
   color: var(--link-color);
+  text-align: center;
 }
-@media (max=width="1200px") {
+@media (max-width: "1200px") {
   footer {
     margin-top: 0;
   }

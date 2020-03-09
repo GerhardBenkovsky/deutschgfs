@@ -6,12 +6,100 @@
     "logo": "https://www.sekretaria.de/wp-content/uploads/2015/09/Fotolia_87843122_Subscription_XXL_Website.jpg",
     "links": [
       {
-        "link": "https://rechtschreibpruefung24.de/",
-        "text": "Rechtschreibungs test"
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/abkuerzungen",
+        "text": "Abkür­zungen"
       },
       {
-        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln",
-        "text": "Link mit allen Rechtschreibregeln"
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/anfuehrungszeichen",
+        "text": "An­führungs­zei­chen"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/apostroph",
+        "text": "Apostroph"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/auslassungspunkte",
+        "text": "Aus­lassungs­punkte"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/ausrufezeichen",
+        "text": "Aus­rufe­zeichen"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/bindestrich",
+        "text": "Bindestrich"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/datum",
+        "text": "Datum"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/doppelpunkt",
+        "text": "Doppelpunkt"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/fragezeichen",
+        "text": "Fragezeichen"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/fremdwoerter",
+        "text": "Fremdwörter"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/gedankenstrich",
+        "text": "Ge­danken­strich"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/getrennt-und-zusammenschreibung",
+        "text": "Getrennt- und Zu­sammen­schrei­bung"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/Gro%C3%9F-%20und%20Kleinschreibung",
+        "text": "Groß- und Klein­schrei­bung"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/klammern",
+        "text": "Klammern"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/komma",
+        "text": "Komma"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/laut-buchstaben-zuordnung",
+        "text": "Laut-Buchstaben-Zuord­nung"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/namen",
+        "text": "Namen"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/punkt",
+        "text": "Punkt"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/schraegstrich",
+        "text": "Schrägstrich"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/semikolon",
+        "text": "Semikolon"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/doppel-s-und-scharfes-s",
+        "text": "s-Schreibung: s, ss und ß"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/strassennamen",
+        "text": "Straßen­namen"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/worttrennung",
+        "text": "Wort­trennung"
+      },
+      {
+        "link": "https://www.duden.de/sprachwissen/rechtschreibregeln/zahlen-und-ziffern",
+        "text": "Zahlen und Ziffern"
       }
     ]
   },
@@ -23,20 +111,36 @@
     "logo": "https://cdn.pixabay.com/photo/2019/07/25/16/29/background-image-4363006_960_720.png",
     "links": [
       {
-        "link": "https://deutschtraining.org/deutsche-grammatik/",
-        "text": "Grammatik"
-      }
-    ]
-  },
-  {
-    "id": "textanalyse",
-    "title": "Textanalyse",
-    "description": "Bei einer Textanalyse muss auf ... geachteetwerden",
-    "logo": "https://www.youtube.com/embed/X4t0JxiBeO0",
-    "links": [
+        "link": "https://deutschtraining.org/deutsche-grammatik/verben/",
+        "text": "Verben"
+      },
       {
-        "link": "https://www.youtube.com/embed/X4t0JxiBeO0",
-        "text": "Random Youtube Link"
+        "link": "https://deutschtraining.org/deutsche-grammatik/substantive/",
+        "text": "Substantive"
+      },
+      {
+        "link": "https://deutschtraining.org/deutsche-grammatik/artikel/",
+        "text": "Artikel"
+      },
+      {
+        "link": "https://deutschtraining.org/deutsche-grammatik/adjektive/",
+        "text": "Adjektive"
+      },
+      {
+        "link": "https://deutschtraining.org/deutsche-grammatik/adjektive/",
+        "text": "Adverbien"
+      },
+      {
+        "link": "https://deutschtraining.org/deutsche-grammatik/praepositionen/",
+        "text": "Praepositionen"
+      },
+      {
+        "link": "https://deutschtraining.org/deutsche-grammatik/pronomen/",
+        "text": "Pronomen"
+      },
+      {
+        "link": "https://deutschtraining.org/deutsche-grammatik/satzbau/",
+        "text": "Satzbau"
       }
     ]
   }

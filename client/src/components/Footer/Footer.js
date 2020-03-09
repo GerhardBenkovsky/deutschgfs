@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import "./footer.css";
-import { ContentConsumer } from "../Context/contentContext";
+import './footer.css';
+import { ContentConsumer } from '../Context/contentContext';
 
 export default function Footer() {
   return (
@@ -9,21 +9,17 @@ export default function Footer() {
       {context => (
         <footer>
           <section id="footer-left">
-            This Page was build as part of a Scoolproject
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
+            distinctio quidem corrupti aperiam odio odit molestiae libero
+            tenetur dolores dolorem, voluptatibus sapiente ducimus
+            necessitatibus quia repudiandae aut rerum repellat adipisci cumque
+            fuga accusamus hic mollitia perferendis officiis.
           </section>
           <section id="footer-right">
             <ul>
-              {context.Navlinks.map(item =>
-                item.name === "About" ? (
-                  ""
-                ) : item.name === "Home" ? (
-                  ""
-                ) : (
-                  <li key={item.name}>
-                    <a href={item.link}>{item.name}</a>
-                  </li>
-                )
-              )}
+              <li>Email: someemail@email.com</li>
+              <li>Tel:01234556789</li>
+              <li>More Contect info</li>
             </ul>
           </section>
         </footer>

@@ -1,12 +1,13 @@
-import React from "react";
-import Lessons from "./lessons";
+import React from 'react';
+import Lessons from './lessons';
 
-import "./lessonstyle.css";
+import './lessonstyle.css';
 
-import Error from "./Error";
-import { ContentConsumer } from "../Context/contentContext";
-import SideBar from "./sideBar";
-import Banner from "./Banner";
+import Error from './Error';
+import { ContentConsumer } from '../Context/contentContext';
+import SideBar from './sideBar';
+import Banner from './Banner';
+import Duden from './Duden';
 
 class StartPage extends React.Component {
   constructor(props) {
@@ -18,9 +19,9 @@ class StartPage extends React.Component {
     event.persist();
     const element = document.getElementById(event.target.innerText);
     element.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "center"
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'center'
     });
   }
 
@@ -32,6 +33,7 @@ class StartPage extends React.Component {
         <ContentConsumer>
           {context => (context.contentHasError ? <Error /> : <Lessons />)}
         </ContentConsumer>
+        <Duden />
       </div>
     );
   }
