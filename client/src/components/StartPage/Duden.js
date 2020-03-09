@@ -6,7 +6,7 @@ export default class Duden extends Component {
     super(props);
     this.state = {
       wikiSearchReturnValues: [],
-      wikiSearchTerms: ''
+      wikiSearchTerm: ''
     };
   }
 
@@ -19,9 +19,9 @@ export default class Duden extends Component {
 
     const pointerToThis = this;
 
-    var url = 'https://en.wikipedia.org/w/api.php';
+    let url = 'https://de.wikipedia.org/w/api.php';
 
-    var params = {
+    const params = {
       action: 'query',
       list: 'search',
       srsearch: this.state.WikiSearchTerms,
@@ -38,9 +38,9 @@ export default class Duden extends Component {
         return response.json();
       })
       .then(function(response) {
-        // console.log(response);
+        //console.log(response);
 
-        for (var key in response.query.search) {
+        for (let key in response.query.search) {
           pointerToThis.state.wikiSearchReturnValues.push({
             queryResultPageFullURL: 'no link',
             queryResultPageID: response.query.search[key].pageid,
@@ -50,11 +50,11 @@ export default class Duden extends Component {
         }
       })
       .then(function(response) {
-        for (var key2 in pointerToThis.state.wikiSearchReturnValues) {
-          // console.log(pointerToThis.state.wikiSearchReturnValues);
-          let page = pointerToThis.state.wikiSearchReturnValues[key2];
+        for (let key in pointerToThis.state.wikiSearchReturnValues) {
+          //console.log(pointerToThis.state.wikiSearchReturnValues);
+          let page = pointerToThis.state.wikiSearchReturnValues[key];
           let pageID = page.queryResultPageID;
-          let urlForRetrievingPageURLByPageID = `https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=info&pageids=${pageID}&inprop=url&format=json`;
+          let urlForRetrievingPageURLByPageID = `https://de.wikipedia.org/w/api.php?origin=*&action=query&prop=info&pageids=${pageID}&inprop=url&format=json`;
 
           fetch(urlForRetrievingPageURLByPageID)
             .then(function(response) {
@@ -74,44 +74,58 @@ export default class Duden extends Component {
     this.setState({
       WikiSearchTerms: e.target.value
     });
+    console.log(this.state.wikiSearchTerm);
   };
 
   componentDidMount() {}
 
   render() {
     let wikiSearchResults = [];
-    // console.log(this.state.wikiSearchReturnValues);
+    //console.log(this.state.wikiSearchReturnValues);
 
-    for (var key3 in this.state.wikiSearchReturnValues) {
-      wikiSearchResults.push(
-        <div className="searchResultDiv" key={key3}>
-          <h3>
-            <a
-              href={
-                this.state.wikiSearchReturnValues[key3].queryResultPageFullURL
-              }
-            >
-              {this.state.wikiSearchReturnValues[key3].queryResultPageTitle}
-            </a>
-          </h3>
-          <span className="link">
-            <a
-              href={
-                this.state.wikiSearchReturnValues[key3].queryResultPageFullURL
-              }
-            >
-              {this.state.wikiSearchReturnValues[key3].queryResultPageFullURL}
-            </a>
-          </span>
-          <p
-            className="description"
-            dangerouslySetInnerHTML={{
-              __html: this.state.wikiSearchReturnValues[key3]
-                .queryResultPageSnippet
-            }}
-          ></p>
-        </div>
-      );
+    let word;
+
+    if (this.state.wikiSearchReturnValues.length > 0) {
+      word = document.getElementById('search');
+    }
+
+    for (let key in this.state.wikiSearchReturnValues) {
+      if (
+        word.value.toUpperCase() ===
+        this.state.wikiSearchReturnValues[
+          key
+        ].queryResultPageTitle.toUpperCase()
+      ) {
+        wikiSearchResults.push(
+          <div className="searchResultDiv" key={key}>
+            <h3>
+              <a
+                href={
+                  this.state.wikiSearchReturnValues[key].queryResultPageFullURL
+                }
+              >
+                {this.state.wikiSearchReturnValues[key].queryResultPageTitle}
+              </a>
+            </h3>
+            <span className="link">
+              <a
+                href={
+                  this.state.wikiSearchReturnValues[key].queryResultPageFullURL
+                }
+              >
+                {this.state.wikiSearchReturnValues[key].queryResultPageFullURL}
+              </a>
+            </span>
+            <p
+              className="description"
+              dangerouslySetInnerHTML={{
+                __html: this.state.wikiSearchReturnValues[key]
+                  .queryResultPageSnippet
+              }}
+            ></p>
+          </div>
+        );
+      }
     }
 
     return (
@@ -123,6 +137,7 @@ export default class Duden extends Component {
             value={this.state.WikiSearchTerms || ''}
             onChange={this.changeWikiSearchTerms}
             placeholder="Search Wikipedia Articles"
+            id="search"
           />
           <button type="submit" onClick={this.useWikiSearchEngine}>
             Search
