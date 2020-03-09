@@ -137,7 +137,7 @@ export default class Duden extends Component {
     }
 
     return (
-      <div id="duden">
+      <div id="Wörterbuch">
         <h1>Wörterbuch</h1>
         <form action="">
           <input
