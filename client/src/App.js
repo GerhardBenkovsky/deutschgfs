@@ -43,6 +43,7 @@ class App extends React.Component {
       } else if (error.request) {
         this.setState({ contentErrorType: 'Connection problem' });
       } else {
+        //
         this.setState({
           contentErrorType: 'There seems to be a Problem,please try again later'
         });

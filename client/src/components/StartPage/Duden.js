@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+
+import './duden.css';
 
 export default class Duden extends Component {
   constructor(props) {
@@ -97,32 +98,39 @@ export default class Duden extends Component {
         ].queryResultPageTitle.toUpperCase()
       ) {
         wikiSearchResults.push(
-          <div className="searchResultDiv" key={key}>
+          <div className=" searchResultDiv" key={key}>
             <h3>
               <a
                 href={
                   this.state.wikiSearchReturnValues[key].queryResultPageFullURL
                 }
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {this.state.wikiSearchReturnValues[key].queryResultPageTitle}
               </a>
             </h3>
+
+            <p
+              className="description"
+              dangerouslySetInnerHTML={{
+                __html: this.state.wikiSearchReturnValues[
+                  key
+                ].queryResultPageSnippet.split('Siehe auch')[0]
+              }}
+            ></p>
+
             <span className="link">
               <a
                 href={
                   this.state.wikiSearchReturnValues[key].queryResultPageFullURL
                 }
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {this.state.wikiSearchReturnValues[key].queryResultPageFullURL}
               </a>
             </span>
-            <p
-              className="description"
-              dangerouslySetInnerHTML={{
-                __html: this.state.wikiSearchReturnValues[key]
-                  .queryResultPageSnippet
-              }}
-            ></p>
           </div>
         );
       }
@@ -130,20 +138,24 @@ export default class Duden extends Component {
 
     return (
       <div id="duden">
-        <h1>Wikipedia Search Engine</h1>
+        <h1>Wörterbuch</h1>
         <form action="">
           <input
             type="text"
             value={this.state.WikiSearchTerms || ''}
             onChange={this.changeWikiSearchTerms}
-            placeholder="Search Wikipedia Articles"
+            placeholder="Stichwort"
             id="search"
           />
           <button type="submit" onClick={this.useWikiSearchEngine}>
-            Search
+            Suchen
           </button>
         </form>
-        {wikiSearchResults}
+        {wikiSearchResults.length !== 0 ? (
+          wikiSearchResults
+        ) : (
+          <div>Gesuchtes Wort eingeben</div>
+        )}
       </div>
     );
   }

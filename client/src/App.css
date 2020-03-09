@@ -21,6 +21,10 @@
   --banner-bar-border: black;
   --banner-bar-max-Size: 33.3333%;
 
+  /* Content Width */
+
+  --content-width: 80%;
+
   /* Lesson Cards */
 
   --card-skewY: -2deg;
