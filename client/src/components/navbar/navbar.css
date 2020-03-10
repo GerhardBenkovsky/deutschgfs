@@ -20,6 +20,26 @@ nav {
 
 #desktop {
   justify-content: space-between;
+  display: flex;
+}
+
+#desktop #Logo {
+  margin: 0;
+  margin-left: 5px;
+  height: 100%;
+  z-index: 9999;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#desktop #Logo img {
+  height: 100%;
 }
 
 #desktop ul {
@@ -65,21 +85,6 @@ nav {
   color: var(--nav-logo-background);
   background: var(--nav-background);
   transition: 0.3s;
-}
-
-#desktop #Logo {
-  margin: 0;
-  margin-left: 5px;
-  height: 100%;
-  z-index: 9999;
-  cursor: pointer;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 
 @media (max-width: 800px) {

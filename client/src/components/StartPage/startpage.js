@@ -10,11 +10,6 @@ import Banner from './Banner';
 import Duden from './Duden';
 
 class StartPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   handleClick(event) {
     event.persist();
     const element = document.getElementById(event.target.innerText);

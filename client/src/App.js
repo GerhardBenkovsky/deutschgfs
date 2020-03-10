@@ -51,6 +51,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    document.title = 'Deutsch-Selbsthilfe';
     this.getLessons();
   }
 
