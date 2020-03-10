@@ -26,7 +26,8 @@ export default class Duden extends Component {
       action: 'query',
       list: 'search',
       srsearch: this.state.WikiSearchTerms,
-      format: 'json'
+      format: 'json',
+      limit: 3
     };
 
     url = url + '?origin=*';
