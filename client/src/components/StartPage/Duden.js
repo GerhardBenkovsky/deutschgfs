@@ -26,8 +26,7 @@ export default class Duden extends Component {
       action: 'query',
       list: 'search',
       srsearch: this.state.WikiSearchTerms,
-      format: 'json',
-      limit: 3
+      format: 'json'
     };
 
     url = url + '?origin=*';
@@ -40,7 +39,7 @@ export default class Duden extends Component {
         return response.json();
       })
       .then(function(response) {
-        //console.log(response);
+        console.log(response);
 
         for (let key in response.query.search) {
           pointerToThis.state.wikiSearchReturnValues.push({
@@ -76,7 +75,6 @@ export default class Duden extends Component {
     this.setState({
       WikiSearchTerms: e.target.value
     });
-    console.log(this.state.wikiSearchTerm);
   };
 
   componentDidMount() {}
