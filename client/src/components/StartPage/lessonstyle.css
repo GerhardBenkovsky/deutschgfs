@@ -24,6 +24,11 @@
   text-align: center;
   margin: auto;
   font-size: 3em;
+  color: white;
+  /* background: inherit;
+  background-clip: text;
+  color: transparent;
+  filter: invert(1) grayscale(1) contrast(9); */
 }
 
 .banner-bar {
