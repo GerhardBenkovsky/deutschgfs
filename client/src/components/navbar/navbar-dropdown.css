@@ -33,32 +33,29 @@
 }
 
 #hamburger ul {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column-reverse;
-  top: calc(var(--nav-height) + 10%);
-  right: 10px;
+  top: var(--nav-height);
+  right: 0;
   color: var(--nav-link-color);
   background: var(--nav-background);
-  width: 10em;
   border-radius: 5px;
-  padding: 0 5px 0 0;
+  width: 9em;
+  padding: 0;
 }
 
 #hamburger ul li {
   text-decoration: none;
   list-style: none;
-  width: 100%;
-  margin: auto;
-  text-align: end;
   cursor: pointer;
   border-radius: 5px;
-  height: 30px;
   font-size: large;
   font-weight: bold;
   z-index: 2;
   background: var(--nav-background);
   color: var(--nav-link-color);
+  height: 50%;
 }
 
 #hamburger ul li:hover {
@@ -84,11 +81,5 @@
 @media (min-width: 800px) {
   #hamburger {
     display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  #hamburger ul {
-    width: 9em;
   }
 }

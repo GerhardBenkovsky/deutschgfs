@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import "./navbar.css";
-import "./navbar-dropdown.css";
+import './navbar.css';
+import './navbar-dropdown.css';
 
-import NavbarItem from "./navbaritem";
-import HamburgerMenu from "./HamburgerMenu";
+import NavbarItem from './navbaritem';
+import HamburgerMenu from './HamburgerMenu';
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -21,15 +21,15 @@ export default class Navbar extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
 
-    window.innerWidth < "1000px"
-      ? this.setState({ menu: "#hamburger" })
-      : this.setState({ menu: "#desktop" });
+    window.innerWidth < '1000px'
+      ? this.setState({ menu: '#hamburger' })
+      : this.setState({ menu: '#desktop' });
   }
 
   handleScroll = event => {
@@ -41,14 +41,14 @@ export default class Navbar extends Component {
   };
 
   scrollToTop() {
-    window.location.pathname === "/"
-      ? window.scrollTo({ top: 0, behavior: "smooth" })
-      : (window.location.pathname = "/");
+    window.location.pathname === '/'
+      ? window.scrollTo({ top: 0, behavior: 'smooth' })
+      : (window.location.pathname = '/');
   }
 
   handleAbout() {
-    const footer = document.getElementById("footer-left");
-    footer.scrollIntoView({ behavior: "smooth" });
+    const footer = document.getElementById('footer-left');
+    footer.scrollIntoView({ behavior: 'smooth' });
   }
 
   handleCollapse() {
@@ -58,7 +58,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <header
-        className={this.state.navbar ? "App-header" : "App-header-hidden"}
+        className={this.state.navbar ? 'App-header' : 'App-header-hidden'}
       >
         <nav id="desktop">
           <div id="Logo" onClick={this.scrollToTop}>
@@ -66,7 +66,7 @@ export default class Navbar extends Component {
               viewBox="0 0 65 60"
               preserveAspectRatio="xMidYMid meet"
               focusable="false"
-              style={{ height: "100%" }}
+              style={{ height: '100%' }}
             >
               <g viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet">
                 <g>
@@ -81,7 +81,7 @@ export default class Navbar extends Component {
                     fill="var(--site-logo-text)"
                     x="15.5"
                     y="40"
-                    style={{ fontWeight: "bold", fontSize: "200%" }}
+                    style={{ fontWeight: 'bold', fontSize: '200%' }}
                   >
                     DE
                   </text>
@@ -110,7 +110,7 @@ export default class Navbar extends Component {
               viewBox="0 0 65 60"
               preserveAspectRatio="xMidYMid meet"
               focusable="false"
-              style={{ height: "100%" }}
+              style={{ height: '100%' }}
             >
               <g viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet">
                 <g>
@@ -125,7 +125,7 @@ export default class Navbar extends Component {
                     fill="var(--site-logo-text)"
                     x="15.5"
                     y="40"
-                    style={{ fontWeight: "bold", fontSize: "200%" }}
+                    style={{ fontWeight: 'bold', fontSize: '200%' }}
                   >
                     DE
                   </text>
@@ -135,7 +135,7 @@ export default class Navbar extends Component {
           </div>
 
           <i className="fas fa-bars" onClick={this.handleCollapse}></i>
-          <ul style={this.state.collapsed ? { display: "none" } : {}}>
+          <ul style={this.state.collapsed ? { display: 'none' } : {}}>
             <HamburgerMenu
               items={this.props.Navbar}
               key={this.props.Navbar}
