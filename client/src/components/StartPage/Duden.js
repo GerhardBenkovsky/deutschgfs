@@ -52,7 +52,6 @@ export default class Duden extends Component {
       })
       .then(function(response) {
         for (let key in pointerToThis.state.wikiSearchReturnValues) {
-          //console.log(pointerToThis.state.wikiSearchReturnValues);
           let page = pointerToThis.state.wikiSearchReturnValues[key];
           let pageID = page.queryResultPageID;
           let urlForRetrievingPageURLByPageID = `https://de.wikipedia.org/w/api.php?origin=*&action=query&prop=info&pageids=${pageID}&inprop=url&format=json`;
