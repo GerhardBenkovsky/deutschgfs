@@ -11,6 +11,10 @@ footer section {
   width: 25%;
 }
 
+#footer-left {
+  text-align: center;
+}
+
 #footer-right ul {
   display: flex;
   flex-direction: column;
@@ -23,10 +27,20 @@ footer section {
 #footer-right ul li {
   text-decoration: none;
   color: var(--link-color);
-  text-align: center;
+  text-align: left;
 }
-@media (max-width: "1200px") {
+
+@media (max-width: 1200px) {
   footer {
-    margin-top: 0;
+    padding-top: 0.5em;
+    min-height: 20vh;
+    height: min-content;
+  }
+  footer section {
+    width: 50%;
+  }
+  #footer-right ul {
+    text-align: left;
+    padding: 0 7%;
   }
 }

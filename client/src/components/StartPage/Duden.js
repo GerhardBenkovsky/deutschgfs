@@ -39,7 +39,7 @@ export default class Duden extends Component {
         return response.json();
       })
       .then(function(response) {
-        //console.log(response);
+        console.log(response);
 
         for (let key in response.query.search) {
           pointerToThis.state.wikiSearchReturnValues.push({
@@ -52,7 +52,6 @@ export default class Duden extends Component {
       })
       .then(function(response) {
         for (let key in pointerToThis.state.wikiSearchReturnValues) {
-          //console.log(pointerToThis.state.wikiSearchReturnValues);
           let page = pointerToThis.state.wikiSearchReturnValues[key];
           let pageID = page.queryResultPageID;
           let urlForRetrievingPageURLByPageID = `https://de.wikipedia.org/w/api.php?origin=*&action=query&prop=info&pageids=${pageID}&inprop=url&format=json`;
@@ -75,7 +74,6 @@ export default class Duden extends Component {
     this.setState({
       WikiSearchTerms: e.target.value
     });
-    console.log(this.state.wikiSearchTerm);
   };
 
   componentDidMount() {}
@@ -114,9 +112,8 @@ export default class Duden extends Component {
             <p
               className="description"
               dangerouslySetInnerHTML={{
-                __html: this.state.wikiSearchReturnValues[
-                  key
-                ].queryResultPageSnippet.split('Siehe auch')[0]
+                __html: this.state.wikiSearchReturnValues[key]
+                  .queryResultPageSnippet //.split('Siehe auch')[0]
               }}
             ></p>
 

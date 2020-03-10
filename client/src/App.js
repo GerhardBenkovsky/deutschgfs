@@ -17,7 +17,6 @@ class App extends React.Component {
     super();
     this.state = {
       Navlinks: [
-        { name: 'Contact', link: '/contact' },
         { name: 'About', link: '/about' },
         { name: 'Home', link: '/' }
       ],
