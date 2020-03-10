@@ -113,9 +113,8 @@ export default class Duden extends Component {
             <p
               className="description"
               dangerouslySetInnerHTML={{
-                __html: this.state.wikiSearchReturnValues[
-                  key
-                ].queryResultPageSnippet.split('Siehe auch')[0]
+                __html: this.state.wikiSearchReturnValues[key]
+                  .queryResultPageSnippet //.split('Siehe auch')[0]
               }}
             ></p>
 
