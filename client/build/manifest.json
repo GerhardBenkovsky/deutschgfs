@@ -1,0 +1,8 @@
+{
+  "short_name": "Selbsthilfegruppe Deutsch",
+  "name": "Selbsthilfegruppe Deutsch",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ff00ff",
+  "background_color": "#ffffff"
+}
