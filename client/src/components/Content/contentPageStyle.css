@@ -1,6 +1,6 @@
 .lesson {
   text-align: start;
-  margin: 0em;
+  margin: auto;
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -8,7 +8,7 @@
 }
 
 .Video-Wrapper {
-  width: 100%;
+  width: 35%;
 }
 
 .Video-Wrapper img {
@@ -21,7 +21,9 @@
 
 .lesson-description {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  /* width: 80%; */
+  margin: auto;
 }
 
 .lesson-description-text {
@@ -37,8 +39,10 @@
   max-width: 100%;
   display: grid;
   grid-gap: 0.7em 0.5em;
-  grid-template-columns: repeat(3, minmax(100px, 33.3%));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-auto-rows: 50px;
+  width: 70%;
+  margin: auto;
 }
 
 .Link-Wrapper div {
@@ -55,26 +59,40 @@
   font-size: 1.3em;
 }
 
-@media (min-width: 650px) {
+@media (max-width: 1100px) {
   .lesson {
-    margin: 0.7em;
-    /* width: 80%: */
     text-align: start;
     width: 100%;
-    height: 100%;
   }
   .lesson-description {
-    flex-direction: row;
+    width: 100%;
+  }
+  .Video-Wrapper {
+    width: 50%;
+  }
+  .Link-Wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 50px;
+  }
+}
+
+@media (max-width: 650px) {
+  .lesson-description {
+    flex-direction: column;
   }
   .lesson-description-text {
-    width: 70%;
+    width: 100%;
+    margin: auto;
   }
   .lesson-description-text h1 {
     margin-top: 0.5em;
   }
   .Video-Wrapper {
-    width: 35%;
-    min-width: 300px;
-    max-width: 500px;
+    width: 95%;
+    margin: auto;
+  }
+  .Link-Wrapper {
+    width: 100%;
+    margin-bottom: 0.7em;
   }
 }

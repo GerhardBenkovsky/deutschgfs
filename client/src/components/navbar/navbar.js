@@ -81,7 +81,7 @@ export default class Navbar extends Component {
           //Navs
         }
         <nav id="hamburger">
-          <div id="Logo">
+          <div id="Logo" onClick={this.scrollToTop}>
             <img src={logo} alt="Logo" />
           </div>
 

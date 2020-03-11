@@ -1,5 +1,5 @@
 footer {
-  height: 20vh;
+  height: var(--footer-height);
   width: 100%;
   background: var(--footer-background);
   display: flex;
@@ -34,7 +34,7 @@ footer section {
 @media (max-width: 1200px) {
   footer {
     padding-top: 0.5em;
-    min-height: 20vh;
+    min-height: var(--footer-height);
     height: min-content;
     flex-direction: column-reverse;
   }
