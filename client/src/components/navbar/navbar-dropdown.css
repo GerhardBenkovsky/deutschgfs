@@ -27,6 +27,10 @@
   user-select: none;
 }
 
+#hamburger #Logo img {
+  height: 100%;
+}
+
 #hamburger .fa-bars:hover {
   color: var(--contrast);
   transition: 0.4s;

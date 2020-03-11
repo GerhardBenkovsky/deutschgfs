@@ -6,6 +6,8 @@ import './navbar-dropdown.css';
 import NavbarItem from './navbaritem';
 import HamburgerMenu from './HamburgerMenu';
 
+import logo from './Logo.svg';
+
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -62,33 +64,7 @@ export default class Navbar extends Component {
       >
         <nav id="desktop">
           <div id="Logo" onClick={this.scrollToTop}>
-            <svg
-              viewBox="0 0 65 60"
-              preserveAspectRatio="xMidYMid meet"
-              focusable="false"
-              style={{ height: '100%' }}
-            >
-              <g viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet">
-                <g>
-                  <path
-                    fill="var(--site-logo-back)"
-                    d="M63,14.87c-0.72-2.7-2.85-4.83-5.56-5.56C52.54,8,32.88,8,32.88,8S13.23,8,8.32,9.31
-            c-2.7,0.72-4.83,2.85-5.56,5.56C1.45,19.77,1.45,30,1.45,30s0,10.23,1.31,15.13c0.72,2.7,2.85,4.83,5.56,5.56
-            C13.23,52,32.88,52,32.88,52s19.66,0,24.56-1.31c2.7-0.72,4.83-2.85,5.56-5.56C64.31,40.23,64.31,30,64.31,30
-            S64.31,19.77,63,14.87z"
-                  ></path>
-                  <text
-                    fill="var(--site-logo-text)"
-                    x="15.5"
-                    y="40"
-                    style={{ fontWeight: 'bold', fontSize: '200%' }}
-                  >
-                    DE
-                  </text>
-                  <g></g>
-                </g>
-              </g>
-            </svg>
+            <img src={logo} alt="Logo" />
           </div>
 
           <ul>
@@ -105,33 +81,8 @@ export default class Navbar extends Component {
           //Navs
         }
         <nav id="hamburger">
-          <div id="Logo">
-            <svg
-              viewBox="0 0 65 60"
-              preserveAspectRatio="xMidYMid meet"
-              focusable="false"
-              style={{ height: '100%' }}
-            >
-              <g viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet">
-                <g>
-                  <path
-                    fill="var(--site-logo-back)"
-                    d="M63,14.87c-0.72-2.7-2.85-4.83-5.56-5.56C52.54,8,32.88,8,32.88,8S13.23,8,8.32,9.31
-            c-2.7,0.72-4.83,2.85-5.56,5.56C1.45,19.77,1.45,30,1.45,30s0,10.23,1.31,15.13c0.72,2.7,2.85,4.83,5.56,5.56
-            C13.23,52,32.88,52,32.88,52s19.66,0,24.56-1.31c2.7-0.72,4.83-2.85,5.56-5.56C64.31,40.23,64.31,30,64.31,30
-            S64.31,19.77,63,14.87z"
-                  ></path>
-                  <text
-                    fill="var(--site-logo-text)"
-                    x="15.5"
-                    y="40"
-                    style={{ fontWeight: 'bold', fontSize: '200%' }}
-                  >
-                    DE
-                  </text>
-                </g>
-              </g>
-            </svg>
+          <div id="Logo" onClick={this.scrollToTop}>
+            <img src={logo} alt="Logo" />
           </div>
 
           <i className="fas fa-bars" onClick={this.handleCollapse}></i>
