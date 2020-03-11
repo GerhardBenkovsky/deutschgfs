@@ -13,6 +13,7 @@
   background-position: top;
   background-position-y: -100px;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 70vh;
   width: 100%;
   display: flex;
