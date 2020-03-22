@@ -4,7 +4,7 @@
   margin: 0 auto;
   flex-direction: column;
   width: 80%;
-  height: calc(100vh- (var(--footer-height)+var(--nav-height)));
+  height: calc(100vh - (var(--footer-height) + var(--nav-height)));
 }
 
 .Video-Wrapper {
