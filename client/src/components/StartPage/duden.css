@@ -25,10 +25,13 @@
 }
 
 #Wörterbuch form button {
+  border: 0;
+
   font-size: 1.7em;
   width: 20%;
   padding: 0 2px;
   margin: auto;
+  height: 100%;
 }
 
 #Wörterbuch div {
@@ -80,7 +83,7 @@
   #Wörterbuch form input {
     width: 70%;
     height: 100%;
-    font-size: 2em;
+    font-size: 1.6em;
     padding-left: 0.4em;
   }
 
