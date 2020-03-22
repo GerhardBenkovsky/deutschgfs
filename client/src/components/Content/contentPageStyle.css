@@ -4,7 +4,6 @@
   margin: 0 auto;
   flex-direction: column;
   width: 80%;
-  /* height: 100%; */
   height: calc(100vh- (var(--footer-height)+var(--nav-height)));
 }
 
@@ -36,7 +35,6 @@
   display: grid;
   grid-gap: 0.7em 0.5em;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  /* grid-template-rows: repeat(auto-fill, minmax(50px, 1frpx)); */
   grid-auto-rows: minmax(50px, 1fr);
   width: 70%;
   margin: 0 auto;
