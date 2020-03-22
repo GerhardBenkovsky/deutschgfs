@@ -21,10 +21,20 @@ export default class Contact extends React.Component {
         id="contact"
       >
         {/* <!-- add your custom form HTML here --> */}
-        <input type="text" name="Name" placeholder="Name:" />
-        <input type="email" name="email" placeholder="Email:" />
+        <input autocomplete="off" type="text" name="Name" placeholder="Name:" />
+        <input
+          autocomplete="off"
+          type="email"
+          name="email"
+          placeholder="Email:"
+        />
 
-        <textarea type="text" name="message" placeholder="Nachricht:" />
+        <textarea
+          autocomplete="off"
+          type="text"
+          name="message"
+          placeholder="Nachricht:"
+        />
 
         {status === 'SUCCESS' ? <p>Thanks!</p> : <button>Senden</button>}
         {status === 'ERROR' && <p>Ooops! Alle Felder ausfüllen</p>}
