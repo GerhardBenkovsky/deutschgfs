@@ -13,11 +13,11 @@ footer section {
 }
 
 #footer-left {
-  margin: auto;
+  margin: 1em auto;
 }
 
 #footer-right {
-  margin: auto;
+  margin: 1em auto;
 }
 
 @media (max-width: 1200px) {
@@ -26,12 +26,14 @@ footer section {
     flex-direction: column;
   }
   footer section {
-    width: 90%;
+    width: 95%;
   }
   #footer-left {
     text-align: center;
+    margin: auto;
   }
   #footer-right ul {
+    margin: auto;
     text-align: center;
   }
 }

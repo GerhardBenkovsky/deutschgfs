@@ -1,37 +1,41 @@
-$width: 100%;
+:root {
+  $width: 99%;
+  $border-radius: 4px;
+}
 
 #contact {
-  width: $width;
   height: 100%;
+  width: $width;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  margin: 1em auto;
   input {
     padding: 0;
+    height: 3em;
     width: $width;
     margin: 0.2em auto;
-    height: 3em;
-    border: 0;
     font-size: 1em;
+    border: 0;
+    border-radius: $border-radius;
   }
   textarea {
+    height: 10em;
+    width: $width;
     font-family: Roboto;
     font-size: 1em;
-    padding: 0;
-    border: 0;
-    resize: none;
-    width: $width;
-    height: 10em;
     margin: 0.2em auto;
+    border: 0;
+    border-radius: $border-radius;
+    resize: none;
   }
   button {
+    height: 3em;
+    width: 10em;
+    margin: 0 auto;
     background-color: var(--theme);
     font-family: Roboto;
     color: var(--contrast);
     border: 0;
     padding: 0;
-    width: 10em;
-    margin: 0 auto;
-    height: 3em;
   }
 }
