@@ -1,10 +1,10 @@
 .lesson {
   text-align: start;
-  margin: auto;
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
   width: 80%;
-  height: 100%;
+  height: calc(100vh - (var(--footer-height) + var(--nav-height)));
 }
 
 .Video-Wrapper {
@@ -15,14 +15,9 @@
   width: 100%;
 }
 
-.Link-Wrapper {
-  width: 100%;
-}
-
 .lesson-description {
   display: flex;
   flex-direction: row;
-  /* width: 80%; */
   margin: auto;
 }
 
@@ -40,9 +35,9 @@
   display: grid;
   grid-gap: 0.7em 0.5em;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-auto-rows: 50px;
+  grid-auto-rows: minmax(50px, 1fr);
   width: 70%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .Link-Wrapper div {
@@ -50,19 +45,20 @@
   height: 100%;
   background: var(--theme);
   text-align: center;
-  display: table;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .Link-Wrapper div a {
-  display: table-cell;
-  vertical-align: middle;
   font-size: 1.3em;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1325px) {
   .lesson {
     text-align: start;
     width: 100%;
+    height: 100%;
   }
   .lesson-description {
     width: 100%;
@@ -71,12 +67,14 @@
     width: 50%;
   }
   .Link-Wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-auto-rows: 50px;
+    margin: 0 auto;
+  }
+  .Link-Wrapper div a {
+    font-size: 1.2em;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
   .lesson-description {
     flex-direction: column;
   }

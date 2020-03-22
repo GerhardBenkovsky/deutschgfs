@@ -51,7 +51,7 @@
 
   /* Footer */
 
-  --footer-height: 20vh;
+  --footer-height: 25vh;
 
   --footer-background: #00b600;
 }
@@ -76,7 +76,8 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  min-height: calc(100vh - calc(var(--nav-height) + var(--footer-height)));
+  min-height: calc(100vh - (var(--nav-height) + var(--footer-height)));
+  height: 100%;
   margin: 0;
   overflow: hidden;
 }

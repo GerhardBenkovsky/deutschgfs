@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import InputForm from "./InputForm";
-import EditLesson from "./editComp";
+import InputForm from './InputForm';
+import EditLesson from './editComp';
 
-import "./style.css";
+import './style.css';
 
 export default class AdminPanel extends Component {
   constructor(props) {
@@ -14,11 +14,11 @@ export default class AdminPanel extends Component {
   }
 
   renderNewLesson(event) {
-    this.setState(prevstate => ({ render: "newLesson" }));
+    this.setState(prevstate => ({ render: 'newLesson' }));
   }
 
   editLesson(event) {
-    this.setState(prevstate => ({ render: "editLesson" }));
+    this.setState(prevstate => ({ render: 'editLesson' }));
   }
 
   resetRender(event) {
@@ -35,7 +35,7 @@ export default class AdminPanel extends Component {
           Edit existing lesson
         </button>
       </div>
-    ) : this.state.render === "newLesson" ? (
+    ) : this.state.render === 'newLesson' ? (
       <InputForm reset={this.resetRender.bind(this)} />
     ) : (
       <EditLesson reset={this.resetRender.bind(this)} />

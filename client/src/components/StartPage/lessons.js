@@ -1,28 +1,31 @@
-import React from "react";
-import "./lessonstyle.css";
+import React from 'react';
+import './lessonstyle.css';
 
-import Iframe from "./iframe";
+import Iframe from './iframe';
 
-import StartpageLoader from "../HOC/StartpageLoader";
+import StartpageLoader from '../HOC/StartpageLoader';
 
-import { ContentConsumer } from "../Context/contentContext";
+import { ContentConsumer } from '../Context/contentContext';
 
 function Lessons(props) {
   return (
     <ContentConsumer>
       {context => {
-        return context.content.map((item, index) => (
-          <div key={item.id} className="lessonCard" id={item.title}>
-            <div className="text">
-              <a href={"/lernen/" + item.id}>{item.title}</a>
-              <p>{item.description}</p>
-            </div>
+        return context.content.map((item, index) => {
+          const { id, title, description, logo } = item;
+          return (
+            <div key={id} className="lessonCard" id={title}>
+              <div className="text">
+                <a href={'/lernen/' + id}>{title}</a>
+                <p>{description}</p>
+              </div>
 
-            <div className="imgcontent">
-              <Iframe link={item.logo} id={item.id} />
+              <div className="imgcontent">
+                <Iframe link={logo} id={id} />
+              </div>
             </div>
-          </div>
-        ));
+          );
+        });
       }}
     </ContentConsumer>
   );

@@ -8,7 +8,6 @@ import Navbar from './components/navbar/navbar';
 import Footer from './components/Footer/Footer';
 import StartPage from './components/StartPage/startpage';
 import Content from './components/Content/content';
-import AdminPanel from './components/Admin/admin';
 
 import { ContentProvider } from './components/Context/contentContext';
 
@@ -17,7 +16,7 @@ class App extends React.Component {
     super();
     this.state = {
       Navlinks: [
-        { name: 'About', link: '/about' },
+        { name: 'Contact', link: '#' },
         { name: 'Home', link: '/' }
       ],
       contentHasError: false,
@@ -70,7 +69,6 @@ class App extends React.Component {
         <ContentProvider value={this.state}>
           <div className="Content" style={body}>
             <Router>
-              <Route path="/adminPanel" exact component={AdminPanel} />
               <Route
                 exact
                 path="/"
