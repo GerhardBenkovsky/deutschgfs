@@ -69,8 +69,6 @@
     width: 50%;
   }
   .Link-Wrapper {
-    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-auto-rows: 50px; */
     margin: 0 auto;
   }
   .Link-Wrapper div a {

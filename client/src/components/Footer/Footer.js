@@ -2,6 +2,7 @@ import React from 'react';
 
 import './footer.css';
 import { ContentConsumer } from '../Context/contentContext';
+import Contact from '../Contact/contact';
 
 export default function Footer() {
   return (
@@ -9,18 +10,15 @@ export default function Footer() {
       {context => (
         <footer>
           <section id="footer-left">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-            distinctio quidem corrupti aperiam odio odit molestiae libero
-            tenetur dolores dolorem, voluptatibus sapiente ducimus
-            necessitatibus quia repudiandae aut rerum repellat adipisci cumque
-            fuga accusamus hic mollitia perferendis officiis.
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+              illum eligendi assumenda recusandae neque aspernatur amet
+              accusantium minus quos deserunt dolores doloremque nobis animi
+              possimus expedita similique vitae, consectetur voluptates!
+            </p>
           </section>
           <section id="footer-right">
-            <ul>
-              <li>Email: someemail@email.com</li>
-              <li>Tel:01234556789</li>
-              <li>More Contect info</li>
-            </ul>
+            <Contact />
           </section>
         </footer>
       )}

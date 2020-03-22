@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
 export default function NavbarItem(props) {
   return props.items.map(item =>
-    item.name === "About" ? (
+    item.name === 'Contact' ? (
       <li key={item.name} className={item.name}>
         <p onClick={props.aboutClick}>{item.name}</p>
       </li>
-    ) : item.name === "Home" ? (
+    ) : item.name === 'Home' ? (
       <li key={item.name} className={item.name}>
         <i className="fas fa-home" onClick={props.scrollToTop}></i>
       </li>
