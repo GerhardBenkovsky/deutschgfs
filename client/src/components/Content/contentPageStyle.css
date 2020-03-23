@@ -4,7 +4,8 @@
   margin: 0 auto;
   flex-direction: column;
   width: 80%;
-  height: calc(100vh - (var(--footer-height) + var(--nav-height)));
+  height: calc(100% - (var(--footer-height) + var(--nav-height)));
+  margin-bottom: 1em;
 }
 
 .Video-Wrapper {
@@ -25,9 +26,12 @@
   margin-left: 1em;
   width: 100%;
 }
-.lesson-description-text h1,
+.lesson-description-text h1 {
+  color: var(--header-color);
+}
 .lesson-description-text p {
   margin: 0;
+  color: var(--text-color);
 }
 
 .Link-Wrapper {
@@ -52,6 +56,8 @@
 
 .Link-Wrapper div a {
   font-size: 1.3em;
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 @media (max-width: 1325px) {

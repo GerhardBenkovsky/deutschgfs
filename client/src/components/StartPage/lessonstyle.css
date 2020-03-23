@@ -25,11 +25,7 @@
   text-align: center;
   margin: auto;
   font-size: 3em;
-  color: white;
-  /* background: inherit;
-  background-clip: text;
-  color: transparent;
-  filter: invert(1) grayscale(1) contrast(9); */
+  color: var(--banner-header-color);
 }
 
 .banner-bar {
@@ -93,7 +89,7 @@
   padding-right: 2%;
   border: 2px solid black;
   border-radius: 5px;
-  color: white;
+  color: var(--text-color);
   background: var(--card-background);
   -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
@@ -130,14 +126,6 @@
   transform: skewX(var(--card-content-skewX)) skewY(var(--card-content-skewY));
 }
 
-.lessonCard:hover {
-  -webkit-box-shadow: 0px 0 40px 10px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0 40px 10px rgba(0, 0, 0, 0.75);
-  transition: 0.2s;
-  -webkit-transition: 0.2s;
-}
-
 /* Video/IMG content div */
 
 .imgcontent {
@@ -165,6 +153,7 @@
   color: var(--card-header);
   font-size: 2em;
   padding-left: 3%;
+  color: var(--card-header);
 }
 
 .text p {
@@ -172,6 +161,7 @@
   text-align: start;
   font-size: 1em;
   padding-left: 3%;
+  color: var(--card-text);
 }
 
 /* Video */
@@ -212,9 +202,6 @@
   .lessonCard {
     scale: 1;
     /* width: 90%; */
-  }
-  .lessonCard:hover {
-    scale: 1.005;
   }
   .imgcontent {
     width: 40%;
@@ -283,12 +270,6 @@
     box-shadow: 0 0 0 0 #000;
     transition: 0;
     padding: 12px 0;
-  }
-
-  .lessonCard:hover {
-    -webkit-box-shadow: 0 0 0 0 #000;
-    -moz-box-shadow: 0 0 0 0 #000;
-    box-shadow: 0 0 0 0 #000;
   }
 
   .lessonCard::after {

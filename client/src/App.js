@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 
 import './App.css';
+import '../src/index.css';
 
 import Navbar from './components/navbar/navbar';
 import Footer from './components/Footer/Footer';
@@ -21,7 +22,8 @@ class App extends React.Component {
       ],
       contentHasError: false,
       contentErrorType: '',
-      content: []
+      content: [],
+      darkTheme: true
     };
 
     this.getLessons = this.getLessons.bind(this);
@@ -52,7 +54,24 @@ class App extends React.Component {
   componentDidMount() {
     document.title = 'Deutsch-Basics';
     this.getLessons();
+    if (window.localStorage.getItem('theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      window.localStorage.setItem('theme', 'dark');
+    }
   }
+
+  changeTheme = () => {
+    this.setState(prev => ({ darkTheme: !prev.darkTheme }));
+
+    let theme = this.state.darkTheme ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+
+    window.localStorage.setItem(
+      'theme',
+      this.state.darkTheme ? 'dark' : 'light'
+    );
+  };
 
   render() {
     const body = {
@@ -62,6 +81,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar
+          changeTheme={this.changeTheme}
           Navbar={this.state.Navlinks}
           style={{ paddingBottom: this.state.showNav, transition: '0.4s' }}
         />

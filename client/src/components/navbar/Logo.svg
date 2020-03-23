@@ -1,14 +1,14 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:url(#SVGID_1_);}
+	.st3{fill:url(#SVGID_1_);}
 </style>
 <g>
 	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="3" y1="128.5" x2="254" y2="128.5">
 		<stop  offset="0.0295" style="stop-color:#FF0000"/>
 		<stop  offset="0.7479" style="stop-color:#F15A24"/>
 	</linearGradient>
-	<path class="st0" d="M249,254H8c-2.76,0-5-2.24-5-5V8c0-2.76,2.24-5,5-5h241c2.76,0,5,2.24,5,5v241C254,251.76,251.76,254,249,254z
+	<path class="st3" d="M249,254H8c-2.76,0-5-2.24-5-5V8c0-2.76,2.24-5,5-5h241c2.76,0,5,2.24,5,5v241C254,251.76,251.76,254,249,254z
 		"/>
 </g>
 <g>
