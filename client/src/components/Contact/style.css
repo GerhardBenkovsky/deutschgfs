@@ -1,44 +1,45 @@
 #contact {
-  width: 100%;
   height: 100%;
+  width: 99%;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 1em auto;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 #contact input {
   padding: 0;
-  width: 100%;
-  margin: 0.2em auto;
   height: 3em;
-  border: 0;
+  width: 99%;
+  margin: 0.2em auto;
   font-size: 1em;
+  border: 0;
+  border-radius: 4px;
 }
 
 #contact textarea {
+  height: 10em;
+  width: 99%;
   font-family: Roboto;
   font-size: 1em;
-  padding: 0;
-  border: 0;
-  resize: none;
-  width: 100%;
-  height: 10em;
   margin: 0.2em auto;
+  border: 0;
+  border-radius: 4px;
+  resize: none;
 }
 
 #contact button {
+  height: 3em;
+  width: 10em;
+  margin: 0 auto;
   background-color: var(--theme);
   font-family: Roboto;
   color: var(--contrast);
   border: 0;
   padding: 0;
-  width: 10em;
-  margin: 0 auto;
-  height: 3em;
 }
 /*# sourceMappingURL=style.css.map */

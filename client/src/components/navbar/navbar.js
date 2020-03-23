@@ -7,6 +7,7 @@ import NavbarItem from './navbaritem';
 import HamburgerMenu from './HamburgerMenu';
 
 import logo from './Logo.svg';
+import ChangeThemeSVG from './ChangeThemeSVG';
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -68,6 +69,19 @@ export default class Navbar extends Component {
           </div>
 
           <ul>
+            <div
+              onClick={this.props.changeTheme}
+              style={{
+                // minHeight: '52px',
+                // minWidth: '52px',
+                // maxHeight: '52px',
+                // maxWidth: '52px'
+                height: '52px',
+                width: '52px'
+              }}
+            >
+              <ChangeThemeSVG />
+            </div>
             <NavbarItem
               items={this.props.Navbar}
               key={this.props.Navbar}
@@ -78,7 +92,7 @@ export default class Navbar extends Component {
           </ul>
         </nav>
         {
-          //Navs
+          //hamburger Nav
         }
         <nav id="hamburger">
           <div id="Logo" onClick={this.scrollToTop}>

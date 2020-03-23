@@ -1,7 +1,7 @@
 #Wörterbuch {
   width: 100%;
   margin-bottom: 1em;
-  background: var(--theme);
+  background: var(--card-background);
   width: 75%;
   margin: auto;
   padding: 12px;
@@ -10,7 +10,9 @@
 
 #Wörterbuch h1 {
   text-align: start;
+  font-weight: 400;
   margin: auto 3%;
+  color: var(--card-header);
 }
 
 #Wörterbuch form {
@@ -26,7 +28,6 @@
 
 #Wörterbuch form button {
   border: 0;
-
   font-size: 1.7em;
   width: 20%;
   padding: 0 2px;
@@ -43,7 +44,7 @@
 .searchResultDiv a,
 .searchResultDiv p {
   text-decoration: none;
-  color: var(--contrast);
+  color: var(--text-color);
 }
 
 .searchResultDiv h3 a {
@@ -52,7 +53,7 @@
 
 .searchResultDiv .link a {
   text-decoration: underline;
-  color: gray;
+  color: var(--duden-link-color);
 }
 
 /* Media queries */

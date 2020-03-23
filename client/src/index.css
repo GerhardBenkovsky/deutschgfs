@@ -6,8 +6,7 @@ body {
 
 html {
   overflow: auto;
-  /* -ms-overflow-style: none; /* IE 11 */
-  /* scrollbar-width: none; Firefox 64 */
+  background: var(--page-background);
 }
 
 @media (max-width: 1000px) {
