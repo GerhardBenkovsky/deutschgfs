@@ -89,10 +89,6 @@ nav {
   fill: var(--contrast);
 }
 
-.st0[data-theme='light'] {
-  fill: #ffffff;
-}
-
 @media (max-width: 800px) {
   #desktop {
     display: none;
