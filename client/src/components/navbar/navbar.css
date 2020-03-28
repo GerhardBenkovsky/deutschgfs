@@ -1,14 +1,3 @@
-.App-header {
-  position: sticky;
-  top: 0;
-  transition: 0.5s;
-}
-
-.App-header-hidden {
-  top: -52px;
-  transition: 0.5s;
-}
-
 nav {
   height: var(--nav-height);
   margin: 0;
@@ -63,6 +52,13 @@ nav {
   text-decoration: none;
   color: var(--nav-link-color);
   margin: auto;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 #desktop ul li i {

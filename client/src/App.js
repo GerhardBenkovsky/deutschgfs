@@ -12,7 +12,7 @@ import Content from './components/Content/content';
 
 import { ContentProvider } from './components/Context/contentContext';
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -111,5 +111,3 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;

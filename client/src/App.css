@@ -107,17 +107,11 @@
   font-family: 'Roboto';
 }
 
-.App-header {
-  width: 100%;
-  height: var(--nav-height);
-  z-index: 9999;
-}
-
 .Content {
   display: flex;
   flex-direction: row;
   width: 100%;
-  min-height: calc(100vh - (var(--nav-height) + var(--footer-height)));
+  min-height: 95.2vh;
   height: 100%;
   margin: 0;
   overflow: hidden;

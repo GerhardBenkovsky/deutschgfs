@@ -60,9 +60,7 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <header
-        className={this.state.navbar ? 'App-header' : 'App-header-hidden'}
-      >
+      <React.Fragment>
         <nav id="desktop">
           <div id="Logo" onClick={this.scrollToTop}>
             <img src={logo} alt="Logo" />
@@ -72,10 +70,6 @@ export default class Navbar extends Component {
             <div
               onClick={this.props.changeTheme}
               style={{
-                // minHeight: '52px',
-                // minWidth: '52px',
-                // maxHeight: '52px',
-                // maxWidth: '52px'
                 height: '52px',
                 width: '52px'
               }}
@@ -110,7 +104,7 @@ export default class Navbar extends Component {
             />
           </ul>
         </nav>
-      </header>
+      </React.Fragment>
     );
   }
 }
