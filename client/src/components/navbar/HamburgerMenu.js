@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function HamburgerMenu(props) {
   return props.items.map(item =>
-    item.name === 'About' ? (
+    item.name === 'Contact' ? (
       <li key={item.name} className={item.name}>
         <p onClick={props.aboutClick}>{item.name}</p>
       </li>
