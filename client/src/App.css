@@ -115,4 +115,5 @@
   height: 100%;
   margin: 0;
   overflow: hidden;
+  margin-top: var(--nav-height);
 }

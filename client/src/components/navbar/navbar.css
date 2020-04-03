@@ -5,6 +5,15 @@ nav {
   display: flex;
   flex-direction: row;
   background: var(--nav-background);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.hide {
+  top: calc(var(--nav-height) * -1);
+  display: none;
 }
 
 #desktop {

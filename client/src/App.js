@@ -43,7 +43,6 @@ export default class App extends React.Component {
       } else if (error.request) {
         this.setState({ contentErrorType: 'Connection problem' });
       } else {
-        //
         this.setState({
           contentErrorType: 'There seems to be a Problem,please try again later'
         });
@@ -80,11 +79,7 @@ export default class App extends React.Component {
 
     return (
       <div className="App">
-        <Navbar
-          changeTheme={this.changeTheme}
-          Navbar={this.state.Navlinks}
-          style={{ paddingBottom: this.state.showNav, transition: '0.4s' }}
-        />
+        <Navbar changeTheme={this.changeTheme} Navbar={this.state.Navlinks} />
 
         <ContentProvider value={this.state}>
           <div className="Content" style={body}>
