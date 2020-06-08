@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import "./Loader.css";
+import './Loader.css';
 
-const videoLoaderHOC = WrappedComponent => {
+const videoLoaderHOC = (WrappedComponent) => {
   return class LoaderHOC extends React.Component {
     render() {
-      return this.props.link !== "" ? (
+      return this.props.link !== '' ? (
         <WrappedComponent link={this.props.link} id={this.props.id} />
       ) : (
         <div
           className="Loader"
-          style={{ margin: "auto", marginTop: "25%", placeSelf: "center" }}
+          style={{ margin: 'auto', marginTop: '25%', placeSelf: 'center' }}
         ></div>
       );
     }
