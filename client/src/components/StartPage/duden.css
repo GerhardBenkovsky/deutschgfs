@@ -33,6 +33,13 @@
   padding: 0 2px;
   margin: auto;
   height: 100%;
+  cursor: pointer;
+  box-shadow: 0 2px #999;
+}
+
+#Wörterbuch form button:active {
+  box-shadow: 0 1px rgba(0, 0, 0, 0);
+  transform: translateY(2px);
 }
 
 #Wörterbuch div {
