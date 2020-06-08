@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 
@@ -12,7 +12,7 @@ import Content from './components/Content/content';
 
 import { ContentProvider } from './components/Context/contentContext';
 
-export default class App extends React.Component {
+export default class App extends Component {
   constructor() {
     super();
     this.state = {
