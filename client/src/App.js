@@ -18,12 +18,12 @@ export default class App extends React.Component {
     this.state = {
       Navlinks: [
         { name: 'Contact', link: '#' },
-        { name: 'Home', link: '/' }
+        { name: 'Home', link: '/' },
       ],
       contentHasError: false,
       contentErrorType: '',
       content: [],
-      darkTheme: true
+      darkTheme: true,
     };
 
     this.getLessons = this.getLessons.bind(this);
@@ -44,7 +44,8 @@ export default class App extends React.Component {
         this.setState({ contentErrorType: 'Connection problem' });
       } else {
         this.setState({
-          contentErrorType: 'There seems to be a Problem,please try again later'
+          contentErrorType:
+            'There seems to be a Problem,please try again later',
         });
       }
     }
@@ -61,7 +62,7 @@ export default class App extends React.Component {
   }
 
   changeTheme = () => {
-    this.setState(prev => ({ darkTheme: !prev.darkTheme }));
+    this.setState((prev) => ({ darkTheme: !prev.darkTheme }));
 
     let theme = this.state.darkTheme ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', theme);
@@ -74,7 +75,7 @@ export default class App extends React.Component {
 
   render() {
     const body = {
-      display: 'flex'
+      display: 'flex',
     };
 
     return (
