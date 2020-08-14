@@ -74,16 +74,12 @@ export default class App extends Component {
   };
 
   render() {
-    const body = {
-      display: 'flex',
-    };
-
     return (
       <div className="App">
         <Navbar changeTheme={this.changeTheme} Navbar={this.state.Navlinks} />
 
         <ContentProvider value={this.state}>
-          <div className="Content" style={body}>
+          <div className="Content">
             <Router>
               <Route
                 exact

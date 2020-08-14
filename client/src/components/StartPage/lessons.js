@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './lessonstyle.css';
 
 import Iframe from './iframe';
@@ -15,8 +17,11 @@ function Lessons(props) {
           const { id, title, description, logo } = item;
           return (
             <div key={id} className="lessonCard" id={title}>
+              <div className="mp-overlay"></div>
+              <div className="mp-overlay bottom"></div>
+              {/* <div className="mp-text-overlay"></div> */}
               <div className="text">
-                <a href={'/lernen/' + id}>{title}</a>
+                <Link to={'/lernen/' + id}>{title}</Link>
                 <p>{description}</p>
               </div>
 

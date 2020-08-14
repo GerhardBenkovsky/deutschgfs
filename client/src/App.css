@@ -91,11 +91,6 @@
 
   --banner-bar-max-Size: 33.3333%;
 
-  --card-skewY: -2deg;
-  --card-skewX: 0deg;
-  --card-content-skewY: calc(-1 * var(--card-skewY));
-  --card-content-skewX: calc(-1 * var(--card-skewX));
-
   --footer-height: 25vh;
 }
 
@@ -108,8 +103,6 @@
 }
 
 .Content {
-  display: flex;
-  flex-direction: row;
   width: 100%;
   min-height: 95.2vh;
   height: 100%;

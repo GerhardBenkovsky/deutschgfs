@@ -1,11 +1,3 @@
-.content-wrapper {
-  --borderRadius: 5px;
-}
-
-.content-wrapper {
-  margin: 0;
-}
-
 .banner {
   background-image: url('https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1500&w=2320');
   background-size: cover;
@@ -41,9 +33,7 @@
   width: 100%;
   min-height: var(--nav-height);
   height: min-content;
-  margin-bottom: 2em;
   background: var(--banner-bar-background);
-  margin-bottom: 4%;
 }
 
 .banner-bar ul {
@@ -80,78 +70,93 @@
 
 /* Cards */
 
+.mp-overlay {
+  background-image: linear-gradient(
+    -2deg,
+    transparent 49%,
+    var(--page-background) 50%
+  );
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.bottom {
+  bottom: 0;
+  top: initial;
+  transform: scale(-1);
+}
+
 .lessonCard {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: row;
-  min-height: min-content;
-  align-content: center;
-  width: 75%;
-  margin: auto;
-  margin-bottom: 7em;
-  margin-top: 2em;
-  padding: 12px;
-  padding-left: 2%;
-  padding-right: 2%;
-  border: 2px solid black;
-  border-radius: 5px;
-  color: var(--text-color);
   background: var(--card-background);
-  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
-  transform: skewX(var(--card-skewX)) skewY(var(--card-skewY));
+  z-index: 10;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 1.3rem;
 }
 
 .lessonCard:nth-child(odd) {
   flex-direction: row-reverse;
 }
 
-.lessonCard:nth-last-child(1) {
-  margin-bottom: 7em;
-  padding-bottom: 0;
+.lessonCard:nth-child(even) {
+  background: var(--page-background);
 }
 
-.lessonCard:nth-child(1) {
-  margin-top: 2em;
-}
-
-.lessonCard:nth-last-child(1)::after {
-  display: none;
-}
-
-.lessonCard::after {
-  position: absolute;
-  content: '';
-  height: 6px;
-  width: 50%;
-  left: 25%;
-  border-radius: 7px;
-  background-color: var(--card-br);
-  bottom: -3.8em;
-  transform: skewX(var(--card-content-skewX)) skewY(var(--card-content-skewY));
+.lessonCard:nth-child(even) .bottom {
+  background-image: linear-gradient(
+    -2deg,
+    transparent 49%,
+    var(--card-background) 50%
+  );
 }
 
 /* Video/IMG content div */
 
 .imgcontent {
-  width: 35%;
+  width: 50%;
   display: inline-block;
-  align-content: center;
-  transform: skewX(var(--card-content-skewX)) skewY(var(--card-content-skewY))
-    scale(0.95);
+}
+
+.imgcontent img {
+  padding: 0;
+  margin: 0;
 }
 
 /* TEXT CONTENT */
 
 .text {
   height: 100%;
-  width: 65%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   text-align: start;
-  transform: skewX(var(--card-content-skewX)) skewY(var(--card-content-skewY));
+  z-index: 2;
+}
+
+.lessonCard:nth-child(even) > .mp-text-overlay {
+  background: var(--page-background);
+  position: absolute;
+  bottom: -100%;
+  right: 40%;
+  left: -100%;
+  top: 20%;
+  transform: rotate(-15deg);
+}
+
+.mp-text-overlay {
+  background: var(--page-background);
+  position: absolute;
+  bottom: -100%;
+  left: 40%;
+  right: -100%;
+  top: 20%;
+  transform: rotate(15deg);
+  z-index: 1;
 }
 
 .text a {
@@ -189,173 +194,27 @@
   width: 100%;
 }
 
-@media (min-width: 1500px) {
-  .banner-bar ul {
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(min-content, var(--banner-bar-max-Size))
-    );
-  }
-
-  .imgcontent {
-    width: 45%;
-  }
-  .text {
-    width: 55%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .lessonCard {
-    scale: 1;
-    /* width: 90%; */
-  }
-  .imgcontent {
-    width: 40%;
-  }
-  .text {
-    width: 60%;
-  }
-  .banner-bar ul {
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(min-content, var(--banner-bar-max-Size))
-    );
-    width: 100%;
-  }
-  .banner-bar ul li p {
-    font-size: 1.2em;
-  }
-}
-
-@media (max-width: 1500px) {
-  .lessonCard {
-    width: 80%;
-  }
-}
-
-@media (max-width: 1300px) {
-  .lessonCard {
-    width: 90%;
-  }
-}
-
-@media (max-width: 1100px) {
-  .content-wrapper {
-    min-height: 100%;
-    margin: auto;
-    padding: 0;
-  }
-
-  .banner-bar {
-    margin: 0;
-  }
-  .banner-bar ul {
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(min-content, var(--banner-bar-max-Size))
-    );
-  }
-
+@media (max-width: 1000px) {
   .banner-bar ul li p {
     font-size: 1em;
   }
 
-  /* CONTENT */
-
   .lessonCard {
-    width: 100%;
-    min-height: 40%;
-    height: min-content;
-    margin: auto;
-    display: block;
-    border-radius: 0;
-    border: 0;
-    transform: skewX(0) skewY(0);
-    -webkit-box-shadow: 0 0 0 0 #000;
-    -moz-box-shadow: 0 0 0 0 #000;
-    box-shadow: 0 0 0 0 #000;
-    transition: 0;
-    padding: 12px 0;
+    padding: 1rem 0;
   }
 
-  .lessonCard::after {
-    position: absolute;
-    content: '';
-    height: 3px;
-    width: 100%;
-    z-index: 100%;
-    bottom: 0;
-    left: 0;
-    border-radius: 0;
-    background-color: var(--card-br);
-    transform: skewX(0) skewY(0);
+  .lessonCard .imgcontent {
+    display: none;
   }
 
-  .lessonCard:nth-last-child(1) {
-    margin-bottom: 0;
-    padding: 7px;
+  .mp-text-overlay {
+    display: none;
   }
-
-  .lessonCard:nth-last-child(1)::after {
-    display: inline;
-  }
-
-  /* TEXT */
 
   .text {
     width: 100%;
-    height: min-content;
-    transform: skewX(0) skewY(0);
   }
-
-  .text a {
-    margin-top: 0;
-    text-decoration: none;
-    text-align: start;
-    text-decoration: underline 2px;
-    font-size: 1.5em;
-  }
-
-  .imgcontent {
-    width: 60%;
-    transform: skewX(0) skewY(0);
-  }
-
   .player-wrapper {
     margin: auto;
-  }
-}
-
-@media (max-width: 770px) {
-  .banner {
-    background-image: url('https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1160');
-    height: 55vh;
-  }
-
-  .banner-bar ul {
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(min-content, var(--banner-bar-max-Size))
-    );
-    width: 100%;
-  }
-  .banner-bar ul li p {
-    font-size: 1em;
-  }
-}
-
-@media (max-width: 650px) {
-  .banner-bar ul {
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(min-content, var(--banner-bar-max-Size))
-    );
-  }
-}
-
-@media (max-width: 550px) {
-  .imgcontent {
-    width: 100%;
   }
 }

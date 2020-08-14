@@ -21,13 +21,13 @@ export default function StartPage() {
   };
 
   return (
-    <div className="content-wrapper">
+    <React.Fragment>
       <Banner />
       <SideBar scrollIntoView={handleClick} />
       <ContentConsumer>
         {(context) => (context.contentHasError ? <Error /> : <Lessons />)}
       </ContentConsumer>
       <Duden />
-    </div>
+    </React.Fragment>
   );
 }

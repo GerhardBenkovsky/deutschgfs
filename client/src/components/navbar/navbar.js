@@ -50,7 +50,7 @@ export default function Navbar(props) {
   };
 
   const handleAbout = () => {
-    const footer = document.getElementById('footer-left');
+    const footer = document.querySelector('footer');
     footer.scrollIntoView({ behavior: 'smooth' });
   };
 

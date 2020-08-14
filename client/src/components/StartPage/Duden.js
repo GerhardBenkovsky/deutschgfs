@@ -7,15 +7,15 @@ export default class Duden extends Component {
     super(props);
     this.state = {
       wikiSearchReturnValues: [],
-      wikiSearchTerm: ''
+      wikiSearchTerm: '',
     };
   }
 
-  useWikiSearchEngine = e => {
+  useWikiSearchEngine = (e) => {
     e.preventDefault();
 
     this.setState({
-      wikiSearchReturnValues: []
+      wikiSearchReturnValues: [],
     });
 
     const pointerToThis = this;
@@ -26,19 +26,19 @@ export default class Duden extends Component {
       action: 'query',
       list: 'search',
       srsearch: this.state.WikiSearchTerms,
-      format: 'json'
+      format: 'json',
     };
 
     url = url + '?origin=*';
-    Object.keys(params).forEach(key => {
+    Object.keys(params).forEach((key) => {
       url += '&' + key + '=' + params[key];
     });
 
     fetch(url)
-      .then(function(response) {
+      .then(function (response) {
         return response.json();
       })
-      .then(function(response) {
+      .then(function (response) {
         console.log(response);
 
         for (let key in response.query.search) {
@@ -46,21 +46,21 @@ export default class Duden extends Component {
             queryResultPageFullURL: 'no link',
             queryResultPageID: response.query.search[key].pageid,
             queryResultPageTitle: response.query.search[key].title,
-            queryResultPageSnippet: response.query.search[key].snippet
+            queryResultPageSnippet: response.query.search[key].snippet,
           });
         }
       })
-      .then(function(response) {
+      .then(function (response) {
         for (let key in pointerToThis.state.wikiSearchReturnValues) {
           let page = pointerToThis.state.wikiSearchReturnValues[key];
           let pageID = page.queryResultPageID;
           let urlForRetrievingPageURLByPageID = `https://de.wikipedia.org/w/api.php?origin=*&action=query&prop=info&pageids=${pageID}&inprop=url&format=json`;
 
           fetch(urlForRetrievingPageURLByPageID)
-            .then(function(response) {
+            .then(function (response) {
               return response.json();
             })
-            .then(function(response) {
+            .then(function (response) {
               page.queryResultPageFullURL =
                 response.query.pages[pageID].fullurl;
 
@@ -70,9 +70,9 @@ export default class Duden extends Component {
       });
   };
 
-  changeWikiSearchTerms = e => {
+  changeWikiSearchTerms = (e) => {
     this.setState({
-      WikiSearchTerms: e.target.value
+      WikiSearchTerms: e.target.value,
     });
   };
 
@@ -113,7 +113,7 @@ export default class Duden extends Component {
               className="description"
               dangerouslySetInnerHTML={{
                 __html: this.state.wikiSearchReturnValues[key]
-                  .queryResultPageSnippet //.split('Siehe auch')[0]
+                  .queryResultPageSnippet, //.split('Siehe auch')[0]
               }}
             ></p>
 

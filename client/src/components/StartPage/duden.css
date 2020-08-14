@@ -1,11 +1,10 @@
 #Wörterbuch {
   width: 100%;
-  margin-bottom: 1em;
   background: var(--card-background);
-  width: 75%;
-  margin: auto;
   padding: 12px;
   border-radius: 3px 3px 0 0;
+  position: relative;
+  z-index: 1;
 }
 
 #Wörterbuch h1 {
@@ -64,19 +63,7 @@
 }
 
 /* Media queries */
-
-@media (max-width: 1500px) {
-  #Wörterbuch {
-    width: 80%;
-  }
-}
-
-@media (max-width: 1300px) {
-  #Wörterbuch {
-    width: 90%;
-  }
-}
-
+/* 
 @media (max-width: 1100px) {
   #Wörterbuch {
     width: 100%;
@@ -99,4 +86,4 @@
     font-size: 1.6em;
     width: 26%;
   }
-}
+} */

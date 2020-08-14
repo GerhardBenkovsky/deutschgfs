@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function NavbarItem(props) {
-  return props.items.map(item =>
+  return props.items.map((item) =>
     item.name === 'Contact' ? (
       <li key={item.name} className={item.name}>
         <p onClick={props.aboutClick}>{item.name}</p>
@@ -12,7 +13,7 @@ export default function NavbarItem(props) {
       </li>
     ) : (
       <li key={item.name} className={item.name}>
-        <a href={item.link}>{item.name}</a>
+        <Link to={'/' + item.link}>{item.name}</Link>
       </li>
     )
   );
