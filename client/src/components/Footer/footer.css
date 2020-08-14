@@ -12,11 +12,6 @@ footer section {
   width: 48%;
 }
 
-#footer-left {
-  margin: 1em auto;
-  display: none;
-}
-
 #footer-right {
   margin: 1em auto;
 }
@@ -28,10 +23,6 @@ footer section {
   }
   footer section {
     width: 95%;
-  }
-  #footer-left {
-    text-align: center;
-    margin: auto;
   }
   #footer-right ul {
     margin: auto;

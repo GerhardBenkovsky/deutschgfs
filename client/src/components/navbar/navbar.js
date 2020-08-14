@@ -27,7 +27,7 @@ export default function Navbar(props) {
     setCollapse(() => !collapsed);
   };
 
-  const handleScroll = event => {
+  const handleScroll = (event) => {
     if (window.pageYOffset < prevPageOffset) {
       setNavbar(() => true);
     } else {
@@ -67,7 +67,7 @@ export default function Navbar(props) {
             onClick={props.changeTheme}
             style={{
               height: '52px',
-              width: '52px'
+              width: '52px',
             }}
           >
             <ChangeThemeSVG />
