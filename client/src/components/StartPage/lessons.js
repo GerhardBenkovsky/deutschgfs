@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import './lessonstyle.css';
 
@@ -20,7 +20,7 @@ function Lessons(props) {
               <div className="mp-overlay"></div>
               <div className="mp-overlay bottom"></div>
               <div className="text">
-                <Link to={'/lernen/' + id}>{title}</Link>
+                <a href={'/lernen/' + id}>{title}</a>
                 <p>{description}</p>
               </div>
 

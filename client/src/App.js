@@ -17,7 +17,7 @@ export default class App extends Component {
     super();
     this.state = {
       Navlinks: [
-        { name: 'Kontakt', link: '#' },
+        { name: 'Kontakt', link: '#contact' },
         { name: 'Home', link: '/' },
       ],
       contentHasError: false,
