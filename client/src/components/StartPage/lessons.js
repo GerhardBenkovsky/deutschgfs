@@ -19,7 +19,6 @@ function Lessons(props) {
             <div key={id} className="lessonCard" id={title}>
               <div className="mp-overlay"></div>
               <div className="mp-overlay bottom"></div>
-              {/* <div className="mp-text-overlay"></div> */}
               <div className="text">
                 <Link to={'/lernen/' + id}>{title}</Link>
                 <p>{description}</p>

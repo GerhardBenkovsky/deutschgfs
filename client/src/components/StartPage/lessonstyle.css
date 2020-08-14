@@ -138,27 +138,6 @@
   z-index: 2;
 }
 
-.lessonCard:nth-child(even) > .mp-text-overlay {
-  background: var(--page-background);
-  position: absolute;
-  bottom: -100%;
-  right: 40%;
-  left: -100%;
-  top: 20%;
-  transform: rotate(-15deg);
-}
-
-.mp-text-overlay {
-  background: var(--page-background);
-  position: absolute;
-  bottom: -100%;
-  left: 40%;
-  right: -100%;
-  top: 20%;
-  transform: rotate(15deg);
-  z-index: 1;
-}
-
 .text a {
   margin-top: 0.6em;
   text-decoration: none;

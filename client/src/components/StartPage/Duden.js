@@ -147,6 +147,7 @@ export default class Duden extends Component {
           <button type="submit" onClick={this.useWikiSearchEngine}>
             Suchen
           </button>
+          <p id="warning">Ergebnisse ungenau</p>
         </form>
         {wikiSearchResults.length !== 0 ? (
           wikiSearchResults
