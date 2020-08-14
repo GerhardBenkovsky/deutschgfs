@@ -10,7 +10,7 @@ import { ContentConsumer } from '../Context/contentContext';
 function Lessons(props) {
   return (
     <ContentConsumer>
-      {context => {
+      {(context) => {
         return context.content.map((item, index) => {
           const { id, title, description, logo } = item;
           return (
