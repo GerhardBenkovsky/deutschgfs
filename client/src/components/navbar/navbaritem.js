@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function NavbarItem(props) {
   return props.items.map((item) =>
-    item.name === 'Contact' ? (
+    item.name === 'Kontakt' ? (
       <li key={item.name} className={item.name}>
         <p onClick={props.aboutClick}>{item.name}</p>
       </li>

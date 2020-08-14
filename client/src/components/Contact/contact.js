@@ -7,7 +7,7 @@ export default class Contact extends React.Component {
     super(props);
     this.submitForm = this.submitForm.bind(this);
     this.state = {
-      status: ''
+      status: '',
     };
   }
 
@@ -20,7 +20,7 @@ export default class Contact extends React.Component {
         method="POST"
         id="contact"
       >
-        {/* <!-- add your custom form HTML here --> */}
+        <h2 style={{ textAlign: 'start', padding: 0, margin: 0 }}>Kontakt:</h2>
         <input autoComplete="off" type="text" name="Name" placeholder="Name:" />
         <input
           autoComplete="off"
