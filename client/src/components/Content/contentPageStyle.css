@@ -9,22 +9,25 @@
   --delay: 100ms;
 }
 
-.Video-Wrapper {
-  width: 35%;
+.lp-img {
+  max-width: 25%;
 }
 
-.Video-Wrapper img {
+.lp-img img {
   width: 100%;
 }
 
 .lesson-description {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  text-align: start;
+  width: 100%;
 }
 
 .lesson-description-text {
   margin-left: 1em;
-  width: 100%;
+  width: 54%;
 }
 .lesson-description-text h1 {
   color: var(--header-color);
@@ -35,12 +38,11 @@
 }
 
 .Link-Wrapper {
-  max-width: 100%;
   display: grid;
-  grid-gap: 0.7em 0.5em;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 0.7rem 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
   grid-auto-rows: minmax(50px, 1fr);
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -58,6 +60,7 @@
   font-size: 1.3em;
   color: var(--text-color);
   text-decoration: none;
+  padding: 0.5rem;
 }
 
 @media (max-width: 1325px) {
@@ -69,8 +72,11 @@
   .lesson-description {
     width: 100%;
   }
-  .Video-Wrapper {
-    width: 50%;
+  .lesson-description-text {
+    width: 70%;
+  }
+  .lp-img {
+    max-width: 30%;
   }
   .Link-Wrapper {
     margin: 0 auto;
@@ -90,10 +96,13 @@
   }
   .lesson-description-text h1 {
     margin-top: 0.5em;
+    margin-left: 1rem;
   }
-  .Video-Wrapper {
-    width: 95%;
-    margin: auto;
+  .lesson-description-text p {
+    padding: 0 1rem;
+  }
+  .lp-img {
+    display: none;
   }
   .Link-Wrapper {
     width: 100%;

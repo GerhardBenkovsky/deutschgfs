@@ -20,10 +20,9 @@ function Lessons(props) {
               <div className="mp-overlay"></div>
               <div className="mp-overlay bottom"></div>
               <div className="text">
-                <a href={'/lernen/' + id}>{title}</a>
+                <a href={`/lernen/${id}`}>{title}</a>
                 <p>{description}</p>
               </div>
-
               <div className="imgcontent">
                 <Iframe link={logo} id={id} />
               </div>

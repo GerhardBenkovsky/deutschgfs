@@ -34,6 +34,7 @@
   min-height: var(--nav-height);
   height: min-content;
   background: var(--banner-bar-background);
+  margin-bottom: 2rem;
 }
 
 .banner-bar ul {

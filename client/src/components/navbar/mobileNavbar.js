@@ -5,7 +5,7 @@ import HamburgerMenu from './HamburgerMenu';
 import logo from './Logo.svg';
 import ChangeThemeSVG from './ChangeThemeSVG';
 
-const MobileNavbar = props => {
+const MobileNavbar = (props) => {
   return (
     <nav id="hamburger" style={props.navbar ? {} : { display: 'none' }}>
       <div id="Logo" onClick={props.scrollToTop}>
@@ -21,14 +21,7 @@ const MobileNavbar = props => {
           scrollToTop={props.scrollToTop}
           menu={props.menu}
         />
-        <div
-          onClick={props.changeTheme}
-          style={{
-            height: '52px ',
-            width: '52px',
-            margin: 'auto'
-          }}
-        >
+        <div onClick={props.changeTheme}>
           <ChangeThemeSVG />
         </div>
       </ul>

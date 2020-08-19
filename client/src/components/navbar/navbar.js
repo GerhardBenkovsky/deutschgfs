@@ -12,7 +12,8 @@ import MobileNavbar from './mobileNavbar';
 export default function Navbar(props) {
   const [navbar, setNavbar] = useState(true);
 
-  const [collapsed, setCollapse] = useState(true);
+  // Change back to true !!!
+  const [collapsed, setCollapse] = useState(false);
 
   const [prevPageOffset, setPageOffset] = useState(window.pageYOffset);
 

@@ -9,16 +9,17 @@ import LinkFrame from './link-frame';
 export default function Content() {
   return (
     <ContentConsumer>
-      {context => {
+      {(context) => {
         const { contentHasError, content } = context;
 
         return !contentHasError ? (
-          content.map(item => {
+          content.map((item) => {
             const { id, logo, title, description, links } = item;
             return id === window.location.pathname.split('/')[2] ? (
-              <div key={id} className="lesson">
+              <React.Fragment>
+                {/* <div key={id} className="lesson"> */}
                 <div className="lesson-description">
-                  <div className="Video-Wrapper">
+                  <div className="lp-img">
                     <LinkFrame link={logo} />
                   </div>
                   <div className="lesson-description-text">
@@ -32,16 +33,17 @@ export default function Content() {
                     height: '2px',
                     background: 'red',
                     marginTop: '1em',
-                    marginBottom: '1em'
+                    marginBottom: '1em',
                   }}
                 ></hr>
                 <div className="Link-Wrapper">
-                  {links.map(item => {
+                  {links.map((item) => {
                     const { link, text } = item;
                     return <LinkFrame link={link} text={text} key={text} />;
                   })}
                 </div>
-              </div>
+                {/* </div> */}
+              </React.Fragment>
             ) : null;
           })
         ) : (
