@@ -12,8 +12,7 @@ import MobileNavbar from './mobileNavbar';
 export default function Navbar(props) {
   const [navbar, setNavbar] = useState(true);
 
-  // Change back to true !!!
-  const [collapsed, setCollapse] = useState(false);
+  const [collapsed, setCollapse] = useState(true);
 
   const [prevPageOffset, setPageOffset] = useState(window.pageYOffset);
 
@@ -64,13 +63,7 @@ export default function Navbar(props) {
 
         <ul>
           {' '}
-          <div
-            onClick={props.changeTheme}
-            style={{
-              height: '52px',
-              width: '52px',
-            }}
-          >
+          <div onClick={props.changeTheme}>
             <ChangeThemeSVG />
           </div>
           <NavbarItem

@@ -70,6 +70,11 @@ nav {
   user-select: none;
 }
 
+#desktop ul div {
+  height: 75%;
+  margin: auto;
+}
+
 #desktop ul li i {
   font-size: 1.7em;
   place-self: center;
