@@ -49,11 +49,6 @@ export default function Navbar(props) {
       : (window.location.pathname = '/');
   };
 
-  const handleAbout = () => {
-    const footer = document.querySelector('footer');
-    footer.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <React.Fragment>
       <nav id="desktop" style={navbar ? {} : { display: 'none' }}>
@@ -62,17 +57,15 @@ export default function Navbar(props) {
         </div>
 
         <ul>
-          {' '}
           <div onClick={props.changeTheme}>
             <ChangeThemeSVG />
           </div>
           <NavbarItem
             items={props.Navbar}
             key={props.Navbar}
-            aboutClick={handleAbout}
             scrollToTop={scrollToTop}
             menu={menu}
-          />{' '}
+          />
         </ul>
       </nav>
       {
@@ -81,7 +74,6 @@ export default function Navbar(props) {
       <MobileNavbar
         scrollToTop={scrollToTop}
         Navbar={props.Navbar}
-        handleAbout={handleAbout}
         menu={menu}
         changeTheme={props.changeTheme}
         navbar={navbar}

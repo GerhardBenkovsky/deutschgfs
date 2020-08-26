@@ -3,8 +3,6 @@ import Lessons from './lessons';
 
 import './lessonstyle.css';
 
-import Error from './Error';
-import { ContentConsumer } from '../Context/contentContext';
 import SideBar from './sideBar';
 import Banner from './Banner';
 import Duden from './Duden';
@@ -24,9 +22,7 @@ export default function StartPage() {
     <React.Fragment>
       <Banner />
       <SideBar scrollIntoView={handleClick} />
-      <ContentConsumer>
-        {(context) => (context.contentHasError ? <Error /> : <Lessons />)}
-      </ContentConsumer>
+      <Lessons />
       <Duden />
     </React.Fragment>
   );
