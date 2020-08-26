@@ -6,9 +6,10 @@ import './App.css';
 import '../src/index.css';
 
 import Navbar from './components/navbar/navbar';
-import Footer from './components/Footer/Footer';
+import Contact from './components/Contact/contact';
 import StartPage from './components/StartPage/startpage';
 import Content from './components/Content/content';
+import Error from './components/StartPage/Error';
 
 import { ContentProvider } from './components/Context/contentContext';
 
@@ -17,7 +18,7 @@ export default class App extends Component {
     super();
     this.state = {
       Navlinks: [
-        { name: 'Kontakt', link: '#contact' },
+        { name: 'Kontakt', link: '/kontakt' },
         { name: 'Home', link: '/' },
       ],
       contentHasError: false,
@@ -32,21 +33,24 @@ export default class App extends Component {
   async getLessons() {
     try {
       const response = await axios.get(
-        'https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1583770577314'
-      ); //"https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1583770577314"
+        'https://deuch-basics-api.glitch.me/getAppData/'
+      );
       this.setState({ content: response.data });
     } catch (error) {
       console.log(error);
-      this.setState({ contentHasError: true });
+
+      this.setState((prevState) => ({ contentHasError: true }));
+
       if (error.response) {
-        this.setState({ contentErrorType: 'Server Down' });
+        this.setState({ contentErrorType: 'serverDown' });
       } else if (error.request) {
-        this.setState({ contentErrorType: 'Connection problem' });
+        this.setState((prevState) => ({
+          contentErrorType: 'connectionProblem',
+        }));
       } else {
-        this.setState({
-          contentErrorType:
-            'There seems to be a Problem,please try again later',
-        });
+        this.setState((prevState) => ({
+          contentErrorType: 'other',
+        }));
       }
     }
   }
@@ -54,50 +58,62 @@ export default class App extends Component {
   componentDidMount() {
     document.title = 'Deutsch-Basics';
     this.getLessons();
-    if (window.localStorage.getItem('theme') === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light');
-    } else {
-      window.localStorage.setItem('theme', 'dark');
+    if (window.localStorage.getItem('theme') !== undefined) {
+      if (window.localStorage.getItem('theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        this.setState((prev) => ({ darkTheme: false }));
+      } else {
+        window.localStorage.setItem('theme', 'dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
+        this.setState((prev) => ({ darkTheme: true }));
+      }
     }
   }
 
   changeTheme = () => {
     this.setState((prev) => ({ darkTheme: !prev.darkTheme }));
 
-    let theme = this.state.darkTheme ? 'dark' : 'light';
+    const theme = this.state.darkTheme ? 'dark' : 'light';
+
     document.documentElement.setAttribute('data-theme', theme);
 
-    window.localStorage.setItem(
-      'theme',
-      this.state.darkTheme ? 'dark' : 'light'
-    );
+    window.localStorage.setItem('theme', theme);
   };
 
   render() {
     return (
       <div className="App">
-        <Navbar changeTheme={this.changeTheme} Navbar={this.state.Navlinks} />
-
         <ContentProvider value={this.state}>
-          <div className="Content">
-            <Router>
-              <Route
-                exact
-                path="/"
-                component={() => (
-                  <StartPage hasError={this.state.contentHasError} />
-                )}
+          {this.state.contentHasError ? (
+            <Error />
+          ) : (
+            <React.Fragment>
+              <Navbar
+                changeTheme={this.changeTheme}
+                Navbar={this.state.Navlinks}
               />
 
-              <Route
-                path="/lernen/:id"
-                exact
-                component={() => <Content content={this.state.content} />}
-              />
-            </Router>
-          </div>
+              <div className="Content">
+                <Router>
+                  <Route
+                    exact
+                    path="/"
+                    component={() => (
+                      <StartPage hasError={this.state.contentHasError} />
+                    )}
+                  />
 
-          <Footer />
+                  <Route
+                    path="/lernen/:id"
+                    exact
+                    component={() => <Content content={this.state.content} />}
+                  />
+
+                  <Route exact path="/kontakt" component={Contact} />
+                </Router>
+              </div>
+            </React.Fragment>
+          )}
         </ContentProvider>
       </div>
     );

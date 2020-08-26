@@ -4,7 +4,6 @@
   padding: 12px;
   border-radius: 3px 3px 0 0;
   position: relative;
-  z-index: 1;
 }
 
 #Wörterbuch h1 {
@@ -15,30 +14,39 @@
 }
 
 #Wörterbuch form {
-  margin: auto;
+  margin: 0;
+  padding: 0;
   text-align: start;
   margin: auto auto auto 3%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: 1 1;
 }
 
 #Wörterbuch form input {
+  padding: 0;
+  border: 0;
   width: 75%;
-  font-size: 2em;
+  height: 100%;
+  font-size: 1.7em;
 }
 
 #Wörterbuch form button {
+  display: inline-block;
   border: 0;
   font-size: 1.7em;
-  width: 20%;
-  padding: 0 2px;
-  margin: auto;
+  font-weight: bold;
   height: 100%;
+  width: 20%;
+  margin: auto;
   cursor: pointer;
-  box-shadow: 0 2px #999;
+  background: var(--page-background);
+  color: var(--text-color);
 }
 
-#Wörterbuch form button:active {
-  box-shadow: 0 1px rgba(0, 0, 0, 0);
-  transform: translateY(2px);
+#Wörterbuch form button:hover {
+  transition: 0.4s;
+  filter: brightness(150%);
 }
 
 #Wörterbuch div {
@@ -66,7 +74,7 @@
   text-align: start;
   padding: 0;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 /* Media queries */
@@ -85,12 +93,10 @@
   #Wörterbuch form input {
     width: 70%;
     height: 100%;
-    font-size: 1.6em;
     padding-left: 0.4em;
   }
 
   #Wörterbuch form button {
-    font-size: 1.6em;
     width: 26%;
   }
 }

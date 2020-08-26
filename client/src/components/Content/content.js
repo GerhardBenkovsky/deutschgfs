@@ -17,7 +17,6 @@ export default function Content() {
             const { id, logo, title, description, links } = item;
             return id === window.location.pathname.split('/')[2] ? (
               <React.Fragment>
-                {/* <div key={id} className="lesson"> */}
                 <div className="lesson-description">
                   <div className="lp-img">
                     <LinkFrame link={logo} />
@@ -34,6 +33,7 @@ export default function Content() {
                     background: 'red',
                     marginTop: '1em',
                     marginBottom: '1em',
+                    border: 0,
                   }}
                 ></hr>
                 <div className="Link-Wrapper">
@@ -42,7 +42,6 @@ export default function Content() {
                     return <LinkFrame link={link} text={text} key={text} />;
                   })}
                 </div>
-                {/* </div> */}
               </React.Fragment>
             ) : null;
           })
