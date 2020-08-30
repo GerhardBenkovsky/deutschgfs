@@ -137,19 +137,16 @@ export default class Duden extends Component {
       <div id="Wörterbuch">
         <h1>Wörterbuch</h1>
         <form action="">
-          <label>
-            <input
-              type="text"
-              value={this.state.WikiSearchTerms || ''}
-              onChange={this.changeWikiSearchTerms}
-              placeholder="Stichwort"
-              id="search"
-            ></input>
-            <button type="submit" onClick={this.useWikiSearchEngine}>
-              Suchen
-            </button>
-          </label>
-
+          <input
+            type="text"
+            value={this.state.WikiSearchTerms || ''}
+            onChange={this.changeWikiSearchTerms}
+            placeholder="Stichwort"
+            id="search"
+          />
+          <button type="submit" onClick={this.useWikiSearchEngine}>
+            Suchen
+          </button>
           <p id="warning">Ergebnisse ungenau</p>
         </form>
         {wikiSearchResults.length !== 0 ? (

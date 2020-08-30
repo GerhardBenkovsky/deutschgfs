@@ -18,7 +18,7 @@ export default class Contact extends React.Component {
         onSubmit={this.submitForm}
         action="https://formspree.io/xyypbken"
         method="POST"
-        id="kontakt"
+        id="contact"
       >
         <h2 style={{ textAlign: 'start', padding: 0, margin: 0 }}>Kontakt:</h2>
         <input autoComplete="off" type="text" name="Name" placeholder="Name:" />
@@ -27,12 +27,6 @@ export default class Contact extends React.Component {
           type="email"
           name="email"
           placeholder="Email:"
-        />
-        <input
-          autoComplete="off"
-          type="text"
-          name="Grund"
-          placeholder="Grund:"
         />
         <textarea
           autoComplete="off"

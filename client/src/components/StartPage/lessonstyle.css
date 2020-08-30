@@ -29,6 +29,7 @@
 
 .banner-bar {
   position: relative;
+  z-index: 100;
   width: 100%;
   min-height: var(--nav-height);
   height: min-content;
@@ -91,6 +92,7 @@
 
 .lessonCard {
   background: var(--card-background);
+  z-index: 10;
   position: relative;
   display: flex;
   align-items: center;
@@ -134,6 +136,7 @@
   display: flex;
   flex-direction: column;
   text-align: start;
+  z-index: 2;
 }
 
 .text a {

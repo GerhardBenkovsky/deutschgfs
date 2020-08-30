@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 
 export default function NavbarItem(props) {
   return props.items.map((item) =>
-    item.name === 'Home' ? (
+    item.name === 'Kontakt' ? (
+      <li key={item.name} className={item.name}>
+        <p onClick={props.aboutClick}>{item.name}</p>
+      </li>
+    ) : item.name === 'Home' ? (
       <li key={item.name} className={item.name}>
 <<<<<<< HEAD
         <i className="fas fa-home" onClick={props.scrollToTop}></i>

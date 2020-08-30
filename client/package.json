@@ -1,6 +1,6 @@
 {
-  "name": "Deutsch-Basics",
-  "version": "1.1.1",
+  "name": "selbsthilfegruppedeutsch",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -12,7 +12,7 @@
     "react-player": "^1.15.3",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.3"
+    "react-scripts": "^3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,6 +38,6 @@
   "description": "School Project",
   "main": "index.js",
   "devDependencies": {},
-  "author": "Gerhard Benkovsky",
+  "author": "Gerhard Benkovksy",
   "license": "MIT"
 }

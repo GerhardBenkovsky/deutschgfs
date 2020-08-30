@@ -6,7 +6,7 @@ import './App.css';
 import '../src/index.css';
 
 import Navbar from './components/navbar/navbar';
-import Contact from './components/Contact/contact';
+import Footer from './components/Footer/Footer';
 import StartPage from './components/StartPage/startpage';
 import Content from './components/Content/content';
 import Error from './components/StartPage/Error';
@@ -19,7 +19,7 @@ export default class App extends Component {
     super();
     this.state = {
       Navlinks: [
-        { name: 'Kontakt', link: '/kontakt' },
+        { name: 'Kontakt', link: '#contact' },
         { name: 'Home', link: '/' },
       ],
       contentHasError: false,
@@ -34,24 +34,21 @@ export default class App extends Component {
   async getLessons() {
     try {
       const response = await axios.get(
-        'https://deuch-basics-api.glitch.me/getAppData/'
-      );
+        'https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1583770577314'
+      ); //"https://cdn.glitch.com/cfefdc52-4f33-4755-8ef1-756a1551887c%2Fdata-test.JSON?v=1583770577314"
       this.setState({ content: response.data });
     } catch (error) {
       console.log(error);
-
-      this.setState((prevState) => ({ contentHasError: true }));
-
+      this.setState({ contentHasError: true });
       if (error.response) {
-        this.setState({ contentErrorType: 'serverDown' });
+        this.setState({ contentErrorType: 'Server Down' });
       } else if (error.request) {
-        this.setState((prevState) => ({
-          contentErrorType: 'connectionProblem',
-        }));
+        this.setState({ contentErrorType: 'Connection problem' });
       } else {
-        this.setState((prevState) => ({
-          contentErrorType: 'other',
-        }));
+        this.setState({
+          contentErrorType:
+            'There seems to be a Problem,please try again later',
+        });
       }
     }
   }
@@ -59,31 +56,30 @@ export default class App extends Component {
   componentDidMount() {
     document.title = 'Deutsch-Basics';
     this.getLessons();
-    if (window.localStorage.getItem('theme') !== undefined) {
-      if (window.localStorage.getItem('theme') === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        this.setState((prev) => ({ darkTheme: false }));
-      } else {
-        window.localStorage.setItem('theme', 'dark');
-        document.documentElement.setAttribute('data-theme', 'dark');
-        this.setState((prev) => ({ darkTheme: true }));
-      }
+    if (window.localStorage.getItem('theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      window.localStorage.setItem('theme', 'dark');
     }
   }
 
   changeTheme = () => {
     this.setState((prev) => ({ darkTheme: !prev.darkTheme }));
 
-    const theme = this.state.darkTheme ? 'dark' : 'light';
-
+    let theme = this.state.darkTheme ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', theme);
 
-    window.localStorage.setItem('theme', theme);
+    window.localStorage.setItem(
+      'theme',
+      this.state.darkTheme ? 'dark' : 'light'
+    );
   };
 
   render() {
     return (
       <div className="App">
+        <Navbar changeTheme={this.changeTheme} Navbar={this.state.Navlinks} />
+
         <ContentProvider value={this.state}>
           {this.state.contentHasError ? (
             <Error />

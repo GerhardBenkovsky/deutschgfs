@@ -38,14 +38,14 @@ export default function Navbar(props) {
   };
 
   const scrollToTop = () => {
-<<<<<<< HEAD
     window.location.pathname === '/'
       ? window.scrollTo({ top: 0, behavior: 'smooth' })
       : (window.location.pathname = '/');
-=======
-    if (window.location.pathname === '/')
-      window.scrollTo({ top: 0, behavior: 'smooth' });
->>>>>>> clientdev
+  };
+
+  const handleAbout = () => {
+    const footer = document.querySelector('footer');
+    footer.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -58,17 +58,15 @@ export default function Navbar(props) {
         </div>
 
         <ul>
+          {' '}
           <div onClick={props.changeTheme}>
             <ChangeTheme />
           </div>
           <NavbarItem
             items={props.Navbar}
             key={props.Navbar}
+            aboutClick={handleAbout}
             scrollToTop={scrollToTop}
-<<<<<<< HEAD
-            menu={menu}
-=======
->>>>>>> clientdev
           />
         </ul>
       </nav>
@@ -78,10 +76,7 @@ export default function Navbar(props) {
       <MobileNavbar
         scrollToTop={scrollToTop}
         Navbar={props.Navbar}
-<<<<<<< HEAD
-        menu={menu}
-=======
->>>>>>> clientdev
+        handleAbout={handleAbout}
         changeTheme={props.changeTheme}
         navbar={navbar}
         collapsed={collapsed}

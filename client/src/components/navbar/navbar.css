@@ -1,13 +1,14 @@
 nav {
   height: var(--nav-height);
-  width: 100%;
   margin: 0;
+  z-index: 9998;
   display: flex;
   flex-direction: row;
   background: var(--nav-background);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1;
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .hide {
@@ -24,6 +25,7 @@ nav {
   margin: 0;
   margin-left: 5px;
   height: 100%;
+  z-index: 9999;
   cursor: pointer;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
