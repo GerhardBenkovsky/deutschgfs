@@ -13,6 +13,7 @@
   --duden-link-color: gray;
 
   --link-color: white;
+
   /* NAV Bar */
 
   --nav-background: #111113;
@@ -34,10 +35,6 @@
   --card-background: var(--theme);
   --card-br: red;
   --card-header: red;
-
-  /* Footer */
-
-  --footer-background: #00b600;
 }
 
 /* <---------------- Light Theme ---------------> */
@@ -76,10 +73,6 @@
   --card-background: var(--theme);
   --card-br: red;
   --card-header: black;
-
-  /* Footer */
-
-  --footer-background: #00b600;
 }
 
 /* <------------ Size Variables ---------------> */
@@ -90,23 +83,18 @@
   --nav-height: 52px;
 
   --banner-bar-max-Size: 33.3333%;
-
-  --footer-height: 25vh;
 }
 
 /* <------------ App ---------------> */
 
 .App {
   text-align: center;
-  min-height: 100%;
-  font-family: 'Roboto';
+  font-family: 'Roboto,Calibri';
 }
 
 .Content {
   width: 100%;
-  min-height: 95.2vh;
   height: 100%;
   margin: 0;
   overflow: hidden;
-  margin-top: var(--nav-height);
 }

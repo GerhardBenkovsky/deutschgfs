@@ -20,7 +20,6 @@ export default function Navbar(props) {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    // window.addEventListener('resize', handleResize);
   });
 
   const handleCollapse = () => {
@@ -38,14 +37,8 @@ export default function Navbar(props) {
   };
 
   const scrollToTop = () => {
-    window.location.pathname === '/'
-      ? window.scrollTo({ top: 0, behavior: 'smooth' })
-      : (window.location.pathname = '/');
-  };
-
-  const handleAbout = () => {
-    const footer = document.querySelector('footer');
-    footer.scrollIntoView({ behavior: 'smooth' });
+    if (window.location.pathname === '/')
+      window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -58,14 +51,12 @@ export default function Navbar(props) {
         </div>
 
         <ul>
-          {' '}
           <div onClick={props.changeTheme}>
             <ChangeTheme />
           </div>
           <NavbarItem
             items={props.Navbar}
             key={props.Navbar}
-            aboutClick={handleAbout}
             scrollToTop={scrollToTop}
           />
         </ul>
@@ -76,7 +67,6 @@ export default function Navbar(props) {
       <MobileNavbar
         scrollToTop={scrollToTop}
         Navbar={props.Navbar}
-        handleAbout={handleAbout}
         changeTheme={props.changeTheme}
         navbar={navbar}
         collapsed={collapsed}

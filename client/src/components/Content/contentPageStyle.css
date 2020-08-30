@@ -40,7 +40,7 @@
 .Link-Wrapper {
   display: grid;
   grid-gap: 0.7rem 0.7rem;
-  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-rows: minmax(50px, 1fr);
   width: 80%;
   margin: 0 auto;
@@ -105,7 +105,7 @@
     display: none;
   }
   .Link-Wrapper {
-    width: 100%;
+    width: 95%;
     margin-bottom: 0.7em;
   }
 }
