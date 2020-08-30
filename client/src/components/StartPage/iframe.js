@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import ReactPlayer from "react-player";
+import ReactPlayer from 'react-player';
 
-import videoLoader from "../HOC/videoLoader";
+import videoLoader from '../HOC/videoLoader';
 
 function Iframe(props) {
-  let splited = props.link.split("/");
-  let yout = splited[2].split(".");
+  let splited = props.link.split('/');
+  let yout = splited[2].split('.');
 
-  if (yout[1] === "youtube") {
+  if (yout[1] === 'youtube') {
     return (
       <div className="player-wrapper">
         <ReactPlayer
@@ -22,7 +22,7 @@ function Iframe(props) {
     );
   }
 
-  return <img className="frame" src={props.link} alt={props.link} />;
+  return null;
 }
 
 export default videoLoader(Iframe);

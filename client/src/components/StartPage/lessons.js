@@ -1,8 +1,10 @@
 import React from 'react';
+<<<<<<< HEAD
+=======
+import { Link } from 'react-router-dom';
+>>>>>>> clientdev
 
 import './lessonstyle.css';
-
-import Iframe from './iframe';
 
 import StartpageLoader from '../HOC/StartpageLoader';
 
@@ -19,11 +21,11 @@ function Lessons(props) {
               <div className="mp-overlay"></div>
               <div className="mp-overlay bottom"></div>
               <div className="text">
-                <a href={`/lernen/${id}`}>{title}</a>
+                <Link to={`/lernen/${id}`}>{title}</Link>
                 <p>{description}</p>
               </div>
               <div className="imgcontent">
-                <Iframe link={logo} id={id} />
+                <img src={logo} alt={logo} id={id} />
               </div>
             </div>
           );

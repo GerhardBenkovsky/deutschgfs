@@ -8,7 +8,7 @@ export default function SideBar(props) {
   return (
     <div className="banner-bar">
       <ContentConsumer>
-        {context => (
+        {(context) => (
           <ul>
             {context.content.map((item, index) => (
               <li key={item.id + index}>
