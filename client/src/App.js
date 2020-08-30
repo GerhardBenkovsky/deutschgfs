@@ -10,10 +10,7 @@ import Contact from './components/Contact/contact';
 import StartPage from './components/StartPage/startpage';
 import Content from './components/Content/content';
 import Error from './components/StartPage/Error';
-<<<<<<< HEAD
-=======
 import ScrollToTop from './components/scrollToTop';
->>>>>>> clientdev
 
 import { ContentProvider } from './components/Context/contentContext';
 
@@ -92,32 +89,6 @@ export default class App extends Component {
             <Error />
           ) : (
             <React.Fragment>
-<<<<<<< HEAD
-              <Navbar
-                changeTheme={this.changeTheme}
-                Navbar={this.state.Navlinks}
-              />
-
-              <div className="Content">
-                <Router>
-                  <Route
-                    exact
-                    path="/"
-                    component={() => (
-                      <StartPage hasError={this.state.contentHasError} />
-                    )}
-                  />
-
-                  <Route
-                    path="/lernen/:id"
-                    exact
-                    component={() => <Content content={this.state.content} />}
-                  />
-
-                  <Route exact path="/kontakt" component={Contact} />
-                </Router>
-              </div>
-=======
               <Router>
                 <Navbar
                   changeTheme={this.changeTheme}
@@ -141,7 +112,6 @@ export default class App extends Component {
                   </div>
                 </Switch>
               </Router>
->>>>>>> clientdev
             </React.Fragment>
           )}
         </ContentProvider>
