@@ -25,7 +25,7 @@ function Error() {
           </div>
         ) : (
           <div>
-            There seems to be a Problem{' '}
+            There seems to be a Problem
             <span role="img" aria-label="frownig face">
               ☹️
             </span>

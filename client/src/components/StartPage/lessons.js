@@ -5,31 +5,23 @@ import './lessonstyle.css';
 
 import StartpageLoader from '../HOC/StartpageLoader';
 
-import { ContentConsumer } from '../Context/contentContext';
-
 function Lessons(props) {
-  return (
-    <ContentConsumer>
-      {(context) => {
-        return context.content.map((item, index) => {
-          const { id, title, description, logo } = item;
-          return (
-            <div key={id} className="lessonCard" id={title}>
-              <div className="mp-overlay"></div>
-              <div className="mp-overlay bottom"></div>
-              <div className="text">
-                <Link to={`/lernen/${id}`}>{title}</Link>
-                <p>{description}</p>
-              </div>
-              <div className="imgcontent">
-                <img src={logo} alt={logo} id={id} />
-              </div>
-            </div>
-          );
-        });
-      }}
-    </ContentConsumer>
-  );
+  return props.content.content.map((item) => {
+    const { id, title, description, logo } = item;
+    return (
+      <div key={id} className="lessonCard" id={title}>
+        <div className="mp-overlay"></div>
+        <div className="mp-overlay bottom"></div>
+        <div className="text">
+          <Link to={`/lernen/${id}`}>{title}</Link>
+          <p>{description}</p>
+        </div>
+        <div className="imgcontent">
+          <img src={logo} alt={logo} id={id} />
+        </div>
+      </div>
+    );
+  });
 }
 
 export default StartpageLoader(Lessons);

@@ -9,12 +9,12 @@ import Navbar from './components/navbar/navbar';
 import Contact from './components/Contact/contact';
 import StartPage from './components/StartPage/startpage';
 import Content from './components/Content/content';
-import Error from './components/StartPage/Error';
+import Error from './components/HOC/Error';
 import ScrollToTop from './components/scrollToTop';
 
 import { ContentProvider } from './components/Context/contentContext';
 
-export default class App extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -25,7 +25,6 @@ export default class App extends Component {
       contentHasError: false,
       contentErrorType: '',
       content: [],
-      darkTheme: true,
     };
 
     this.getLessons = this.getLessons.bind(this);
@@ -37,6 +36,8 @@ export default class App extends Component {
         'https://deuch-basics-api.glitch.me/getAppData/'
       );
       this.setState({ content: response.data });
+      this.setState((prevState) => ({ contentHasError: false }));
+      window.localStorage.setItem('data', JSON.stringify(response.data));
     } catch (error) {
       console.log(error);
 
@@ -58,23 +59,29 @@ export default class App extends Component {
 
   componentDidMount() {
     document.title = 'Deutsch-Basics';
-    this.getLessons();
+
+    if (window.localStorage.getItem('data')) {
+      this.setState({
+        content: JSON.parse(window.localStorage.getItem('data')),
+      });
+    } else {
+      this.getLessons();
+    }
+
     if (window.localStorage.getItem('theme') !== undefined) {
       if (window.localStorage.getItem('theme') === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
-        this.setState((prev) => ({ darkTheme: false }));
       } else {
         window.localStorage.setItem('theme', 'dark');
-        document.documentElement.setAttribute('data-theme', 'dark');
-        this.setState((prev) => ({ darkTheme: true }));
       }
     }
   }
 
   changeTheme = () => {
-    this.setState((prev) => ({ darkTheme: !prev.darkTheme }));
-
-    const theme = this.state.darkTheme ? 'dark' : 'light';
+    const theme =
+      document.documentElement.getAttribute('data-theme') === 'dark'
+        ? 'light'
+        : 'dark';
 
     document.documentElement.setAttribute('data-theme', theme);
 
@@ -88,34 +95,34 @@ export default class App extends Component {
           {this.state.contentHasError ? (
             <Error />
           ) : (
-            <React.Fragment>
-              <Router>
-                <Navbar
-                  changeTheme={this.changeTheme}
-                  Navbar={this.state.Navlinks}
-                />
+            <Router>
+              <Navbar
+                changeTheme={this.changeTheme}
+                Navbar={this.state.Navlinks}
+              />
 
-                <ScrollToTop />
-                <div className="Content">
-                  <Switch>
-                    <Route
-                      exact
-                      path="/"
-                      component={() => (
-                        <StartPage hasError={this.state.contentHasError} />
-                      )}
-                    />
+              <ScrollToTop />
+              <div className="Content">
+                <Switch>
+                  <Route
+                    exact
+                    path="/"
+                    component={() => (
+                      <StartPage hasError={this.state.contentHasError} />
+                    )}
+                  />
 
-                    <Route path="/lernen/:id" exact component={Content} />
+                  <Route path="/lernen/:id" exact component={Content} />
 
-                    <Route exact path="/kontakt" component={Contact} />
-                  </Switch>
-                </div>
-              </Router>
-            </React.Fragment>
+                  <Route exact path="/kontakt" component={Contact} />
+                </Switch>
+              </div>
+            </Router>
           )}
         </ContentProvider>
       </div>
     );
   }
 }
+
+export default App;
