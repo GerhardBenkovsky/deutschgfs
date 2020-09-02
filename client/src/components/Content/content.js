@@ -15,7 +15,7 @@ export default function Content() {
           const { id, logo, title, description, links } = item;
 
           return id === window.location.pathname.split('/')[2] ? (
-            <React.Fragment>
+            <React.Fragment key={Math.random().toString(7)}>
               <div className="lesson-description">
                 <div className="lp-img">
                   <LinkFrame link={logo} />

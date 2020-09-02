@@ -96,8 +96,8 @@ export default class App extends Component {
                 />
 
                 <ScrollToTop />
-                <Switch>
-                  <div className="Content">
+                <div className="Content">
+                  <Switch>
                     <Route
                       exact
                       path="/"
@@ -109,8 +109,8 @@ export default class App extends Component {
                     <Route path="/lernen/:id" exact component={Content} />
 
                     <Route exact path="/kontakt" component={Contact} />
-                  </div>
-                </Switch>
+                  </Switch>
+                </div>
               </Router>
             </React.Fragment>
           )}

@@ -20,7 +20,6 @@ export default function Navbar(props) {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    // window.addEventListener('resize', handleResize);
   });
 
   const handleCollapse = () => {
