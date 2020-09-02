@@ -25,6 +25,7 @@ class App extends Component {
       contentHasError: false,
       contentErrorType: '',
       content: [],
+      timestamp: '',
     };
 
     this.getLessons = this.getLessons.bind(this);
@@ -35,9 +36,17 @@ class App extends Component {
       const response = await axios.get(
         'https://deuch-basics-api.glitch.me/getAppData/'
       );
-      this.setState({ content: response.data });
-      this.setState((prevState) => ({ contentHasError: false }));
-      window.localStorage.setItem('data', JSON.stringify(response.data));
+
+      const timestamp = response.data.shift();
+
+      if (this.state.timestamp.id !== timestamp.id) {
+        this.setState({ content: response.data });
+        this.setState((prevState) => ({ contentHasError: false }));
+        window.localStorage.setItem(
+          'data',
+          JSON.stringify([timestamp, ...response.data])
+        );
+      }
     } catch (error) {
       console.log(error);
 
@@ -61,10 +70,13 @@ class App extends Component {
     document.title = 'Deutsch-Basics';
 
     if (window.localStorage.getItem('data')) {
-      this.setState({
-        content: JSON.parse(window.localStorage.getItem('data')),
-      });
-    } else {
+      let data = JSON.parse(window.localStorage.getItem('data'));
+      const timestamp = data.shift();
+      this.setState({ timestamp: timestamp });
+      this.setState({ content: data });
+    }
+    if (window.navigator.onLine) {
+      console.log(window.navigator.onLine);
       this.getLessons();
     }
 
@@ -92,33 +104,38 @@ class App extends Component {
     return (
       <div className="App">
         <ContentProvider value={this.state}>
-          {this.state.contentHasError ? (
-            <Error />
-          ) : (
-            <Router>
-              <Navbar
-                changeTheme={this.changeTheme}
-                Navbar={this.state.Navlinks}
-              />
+          <Router>
+            {this.state.contentHasError ? (
+              <Router>
+                <Route path="/" exact component={Error} />
+                <Route path="/lernen/:id" exact component={Content} />
+              </Router>
+            ) : (
+              <React.Fragment>
+                <Navbar
+                  changeTheme={this.changeTheme}
+                  Navbar={this.state.Navlinks}
+                />
 
-              <ScrollToTop />
-              <div className="Content">
-                <Switch>
-                  <Route
-                    exact
-                    path="/"
-                    component={() => (
-                      <StartPage hasError={this.state.contentHasError} />
-                    )}
-                  />
+                <ScrollToTop />
+                <div className="Content">
+                  <Switch>
+                    <Route
+                      exact
+                      path="/"
+                      component={() => (
+                        <StartPage hasError={this.state.contentHasError} />
+                      )}
+                    />
 
-                  <Route path="/lernen/:id" exact component={Content} />
+                    <Route path="/lernen/:id" exact component={Content} />
 
-                  <Route exact path="/kontakt" component={Contact} />
-                </Switch>
-              </div>
-            </Router>
-          )}
+                    <Route exact path="/kontakt" component={Contact} />
+                  </Switch>
+                </div>
+              </React.Fragment>
+            )}
+          </Router>
         </ContentProvider>
       </div>
     );

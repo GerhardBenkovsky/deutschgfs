@@ -17,7 +17,7 @@ export default function Lesson(props) {
   };
 
   return (
-    <React.Fragment key={Math.random().toString(36).substring(2)}>
+    <React.Fragment key={Math.random().toString()}>
       <div className="lesson-description">
         <div className="lp-img">
           <LinkFrame link={logo} />
