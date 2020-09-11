@@ -24,18 +24,6 @@ function LinkFrame(props) {
   if (img === 'png' || img === 'jpg' || img === 'tiff') {
     return <img className="frame" src={props.link} alt={props.link} />;
   }
-  return (
-    <div>
-      <a
-        href={props.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="link"
-      >
-        {props.text}
-      </a>
-    </div>
-  );
 }
 
 export default LinkFrame;

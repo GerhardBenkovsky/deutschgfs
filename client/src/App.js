@@ -9,12 +9,12 @@ import Navbar from './components/navbar/navbar';
 import Contact from './components/Contact/contact';
 import StartPage from './components/StartPage/startpage';
 import Content from './components/Content/content';
-import Error from './components/StartPage/Error';
+import Error from './components/HOC/Error';
 import ScrollToTop from './components/scrollToTop';
 
 import { ContentProvider } from './components/Context/contentContext';
 
-export default class App extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -25,7 +25,7 @@ export default class App extends Component {
       contentHasError: false,
       contentErrorType: '',
       content: [],
-      darkTheme: true,
+      timestamp: '',
     };
 
     this.getLessons = this.getLessons.bind(this);
@@ -36,7 +36,17 @@ export default class App extends Component {
       const response = await axios.get(
         'https://deuch-basics-api.glitch.me/getAppData/'
       );
-      this.setState({ content: response.data });
+
+      const timestamp = response.data.shift();
+
+      if (this.state.timestamp.id !== timestamp.id) {
+        this.setState({ content: response.data });
+        this.setState((prevState) => ({ contentHasError: false }));
+        window.localStorage.setItem(
+          'data',
+          JSON.stringify([timestamp, ...response.data])
+        );
+      }
     } catch (error) {
       console.log(error);
 
@@ -58,23 +68,32 @@ export default class App extends Component {
 
   componentDidMount() {
     document.title = 'Deutsch-Basics';
-    this.getLessons();
+
+    if (window.localStorage.getItem('data')) {
+      let data = JSON.parse(window.localStorage.getItem('data'));
+      const timestamp = data.shift();
+      this.setState({ timestamp: timestamp });
+      this.setState({ content: data });
+    }
+    if (window.navigator.onLine) {
+      console.log(window.navigator.onLine);
+      this.getLessons();
+    }
+
     if (window.localStorage.getItem('theme') !== undefined) {
       if (window.localStorage.getItem('theme') === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
-        this.setState((prev) => ({ darkTheme: false }));
       } else {
         window.localStorage.setItem('theme', 'dark');
-        document.documentElement.setAttribute('data-theme', 'dark');
-        this.setState((prev) => ({ darkTheme: true }));
       }
     }
   }
 
   changeTheme = () => {
-    this.setState((prev) => ({ darkTheme: !prev.darkTheme }));
-
-    const theme = this.state.darkTheme ? 'dark' : 'light';
+    const theme =
+      document.documentElement.getAttribute('data-theme') === 'dark'
+        ? 'light'
+        : 'dark';
 
     document.documentElement.setAttribute('data-theme', theme);
 
@@ -85,19 +104,22 @@ export default class App extends Component {
     return (
       <div className="App">
         <ContentProvider value={this.state}>
-          {this.state.contentHasError ? (
-            <Error />
-          ) : (
-            <React.Fragment>
+          <Router>
+            {this.state.contentHasError ? (
               <Router>
+                <Route path="/" exact component={Error} />
+                <Route path="/lernen/:id" exact component={Content} />
+              </Router>
+            ) : (
+              <React.Fragment>
                 <Navbar
                   changeTheme={this.changeTheme}
                   Navbar={this.state.Navlinks}
                 />
 
                 <ScrollToTop />
-                <Switch>
-                  <div className="Content">
+                <div className="Content">
+                  <Switch>
                     <Route
                       exact
                       path="/"
@@ -109,13 +131,15 @@ export default class App extends Component {
                     <Route path="/lernen/:id" exact component={Content} />
 
                     <Route exact path="/kontakt" component={Contact} />
-                  </div>
-                </Switch>
-              </Router>
-            </React.Fragment>
-          )}
+                  </Switch>
+                </div>
+              </React.Fragment>
+            )}
+          </Router>
         </ContentProvider>
       </div>
     );
   }
 }
+
+export default App;
