@@ -9,7 +9,6 @@ import Navbar from './components/navbar/navbar';
 import Contact from './components/Contact/contact';
 import StartPage from './components/StartPage/startpage';
 import Content from './components/Content/content';
-import Error from './components/HOC/Error';
 import ScrollToTop from './components/scrollToTop';
 
 import { ContentProvider } from './components/Context/contentContext';
@@ -104,36 +103,27 @@ class App extends Component {
       <div className="App">
         <ContentProvider value={this.state}>
           <Router>
-            {this.state.contentHasError ? (
-              <Router>
-                <Route path="/" exact component={Error} />
-                <Route path="/lernen/:id" exact component={Content} />
-              </Router>
-            ) : (
-              <React.Fragment>
-                <Navbar
-                  changeTheme={this.changeTheme}
-                  Navbar={this.state.Navlinks}
+            <Navbar
+              changeTheme={this.changeTheme}
+              Navbar={this.state.Navlinks}
+            />
+
+            <ScrollToTop />
+            <div className="Content">
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  component={() => (
+                    <StartPage hasError={this.state.contentHasError} />
+                  )}
                 />
 
-                <ScrollToTop />
-                <div className="Content">
-                  <Switch>
-                    <Route
-                      exact
-                      path="/"
-                      component={() => (
-                        <StartPage hasError={this.state.contentHasError} />
-                      )}
-                    />
+                <Route path="/lernen/:id" exact component={Content} />
 
-                    <Route path="/lernen/:id" exact component={Content} />
-
-                    <Route exact path="/kontakt" component={Contact} />
-                  </Switch>
-                </div>
-              </React.Fragment>
-            )}
+                <Route exact path="/kontakt" component={Contact} />
+              </Switch>
+            </div>
           </Router>
         </ContentProvider>
       </div>
