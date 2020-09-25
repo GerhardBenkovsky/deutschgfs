@@ -76,7 +76,6 @@ class App extends Component {
       this.setState({ content: data });
     }
     if (window.navigator.onLine) {
-      console.log(window.navigator.onLine);
       this.getLessons();
     }
 
