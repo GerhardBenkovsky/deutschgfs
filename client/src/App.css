@@ -37,44 +37,6 @@
   --card-header: red;
 }
 
-/* <---------------- Light Theme ---------------> */
-*[data-theme='light'] {
-  /* General Colors */
-
-  --theme: #d8d9da;
-  --contrast: #343a40;
-  --page-background: white;
-
-  /* Text  and Links */
-
-  --header-color: red;
-  --text-color: black;
-  --duden-link-color: gray;
-
-  --link-color: white;
-  /* NAV Bar */
-
-  --nav-background: #111113;
-  --logo-color: red;
-  --nav-logo-background: white;
-  --nav-link-color: white;
-  --nav-link-color-hover: white;
-
-  /* Banner */
-
-  --banner-header-color: white;
-
-  --banner-background: yellowgreen;
-  --banner-bar-background: red;
-  --banner-bar-border: black;
-
-  /* Lesson Cards */
-
-  --card-background: var(--theme);
-  --card-br: red;
-  --card-header: black;
-}
-
 /* <------------ Size Variables ---------------> */
 
 * {

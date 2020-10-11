@@ -77,33 +77,13 @@ class App extends Component {
     if (window.navigator.onLine) {
       this.getLessons();
     }
-
-    if (window.localStorage.getItem('theme') !== undefined) {
-      if (window.localStorage.getItem('theme') === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-      } else {
-        window.localStorage.setItem('theme', 'dark');
-      }
-    }
   }
-
-  changeTheme = () => {
-    const theme =
-      document.documentElement.getAttribute('data-theme') === 'dark'
-        ? 'light'
-        : 'dark';
-
-    document.documentElement.setAttribute('data-theme', theme);
-
-    window.localStorage.setItem('theme', theme);
-  };
 
   render() {
     return (
         <ContentProvider value={this.state}>
           <Router>
             <Navbar
-              changeTheme={this.changeTheme}
               Navbar={this.state.Navlinks}
             />
 

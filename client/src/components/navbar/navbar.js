@@ -5,10 +5,9 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 import './navbar-dropdown.css';
 
-import NavbarItem from './navbaritem';
+import NavbarItems from './navbaritems';
 
 import logo from './Logo.svg';
-import ChangeTheme from './ChangeThemeSVG';
 import MobileNavbar from './mobileNavbar';
 
 export default function Navbar(props) {
@@ -51,12 +50,7 @@ export default function Navbar(props) {
         </div>
 
         <ul>
-          <li>
-            <div onClick={props.changeTheme}>
-              <ChangeTheme /> 
-            </div>
-          </li>
-          <NavbarItem
+          <NavbarItems
             items={props.Navbar}
             key={props.Navbar}
             scrollToTop={scrollToTop}
@@ -69,7 +63,6 @@ export default function Navbar(props) {
       <MobileNavbar
         scrollToTop={scrollToTop}
         Navbar={props.Navbar}
-        changeTheme={props.changeTheme}
         navbar={navbar}
         collapsed={collapsed}
         handleCollapse={handleCollapse}

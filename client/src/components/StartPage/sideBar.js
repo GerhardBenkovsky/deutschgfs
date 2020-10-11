@@ -9,8 +9,8 @@ export default function SideBar(props) {
         {(context) => (
           <ul>
             {context.content.map((item, index) => (
-              <li key={item.id + index}>
-                <p onClick={props.scrollIntoView}>{item.title}</p>
+              <li key={item.id + index} onClick={props.scrollIntoView}>
+                <p>{item.title}</p>
               </li>
             ))}
             <li key="duden">

@@ -1,8 +1,7 @@
 import React from 'react';
 
 import logo from './Logo.svg';
-import ChangeThemeSVG from './ChangeThemeSVG';
-import NavbarItem from './navbaritem';
+import NavbarItems from './navbaritems';
 import { Link } from 'react-router-dom';
 
 const MobileNavbar = (props) => {
@@ -16,16 +15,13 @@ const MobileNavbar = (props) => {
 
       <i className="fas fa-bars" onClick={props.handleCollapse}></i>
       <ul style={props.collapsed ? { display: 'none' } : {}}>
-        <NavbarItem
+        <NavbarItems
           items={props.Navbar}
           key={props.Navbar}
           aboutClick={props.handleAbout}
           scrollToTop={props.scrollToTop}
           menu={props.menu}
         />
-        <div onClick={props.changeTheme}>
-          <ChangeThemeSVG />
-        </div>
       </ul>
     </nav>
   );
