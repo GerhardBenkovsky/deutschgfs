@@ -30,23 +30,17 @@
 .banner-bar {
   position: relative;
   width: 100%;
-  min-height: var(--nav-height);
-  height: min-content;
+  height: var(--nav-height);
   background: var(--banner-bar-background);
   margin-bottom: 2rem;
 }
 
 .banner-bar ul {
   width: 100%;
-  height: min-content;
   padding: 0;
   margin: auto;
   text-align: center;
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min-content, var(--banner-bar-max-Size))
-  );
+  display: flex;
 }
 
 .banner-bar ul li {
@@ -60,12 +54,6 @@
 
 .banner-bar ul li p {
   font-size: 1.3em;
-}
-
-.banner-bar ul li p:hover {
-  -webkit-text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.7);
-  -moz-text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.7);
-  text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 /* Cards */
@@ -172,10 +160,6 @@
 }
 
 @media (max-width: 1000px) {
-  .banner-bar ul li p {
-    font-size: 1em;
-  }
-
   .lessonCard {
     padding: 1rem 0;
   }

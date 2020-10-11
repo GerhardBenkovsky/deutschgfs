@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './sidebarstyle.css';
-
 import { ContentConsumer } from '../Context/contentContext';
 
 export default function SideBar(props) {

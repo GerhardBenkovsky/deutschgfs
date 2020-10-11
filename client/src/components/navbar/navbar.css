@@ -5,7 +5,7 @@ nav {
   display: flex;
   flex-direction: row;
   background: var(--nav-background);
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
 }
