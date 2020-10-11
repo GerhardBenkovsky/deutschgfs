@@ -8,7 +8,7 @@ export default function ChangeThemeSVG() {
       x="0px"
       y="0px"
       viewBox="0 0 256 256"
-      style={{ height: '100%', margin: 'auto' }}
+      style={{ height: '40px', margin: 'auto' }}
     >
       <circle className="st1" cx="128" cy="128" r="128" />
       <g>

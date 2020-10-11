@@ -51,9 +51,11 @@ export default function Navbar(props) {
         </div>
 
         <ul>
-          <div onClick={props.changeTheme}>
-            <ChangeTheme />
-          </div>
+          <li>
+            <div onClick={props.changeTheme}>
+              <ChangeTheme /> 
+            </div>
+          </li>
           <NavbarItem
             items={props.Navbar}
             key={props.Navbar}

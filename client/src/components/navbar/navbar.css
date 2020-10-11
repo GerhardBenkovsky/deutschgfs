@@ -45,12 +45,14 @@ nav {
   text-align: right;
   height: 100%;
   margin: 0;
+  padding: 0;
   place-content: flex-end;
 }
 
 #desktop ul li {
   margin: auto 2% auto 15%;
   font-size: 1.3em;
+  max-height: 100%;
   cursor: pointer;
 }
 
@@ -68,7 +70,7 @@ nav {
   user-select: none;
 }
 
-#desktop ul div {
+#desktop ul li div {
   height: 75%;
   margin: auto;
 }
