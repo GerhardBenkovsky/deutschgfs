@@ -5,7 +5,6 @@ import './lessonstyle.css';
 
 import SideBar from './sideBar';
 import Banner from './Banner';
-import Duden from './Duden';
 
 export default function StartPage() {
   let handleClick = (event) => {
@@ -23,7 +22,6 @@ export default function StartPage() {
       <Banner />
       <SideBar scrollIntoView={handleClick} />
       <Lessons />
-      <Duden />
     </React.Fragment>
   );
 }

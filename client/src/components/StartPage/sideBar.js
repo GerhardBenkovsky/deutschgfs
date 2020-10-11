@@ -13,9 +13,6 @@ export default function SideBar(props) {
                 <p>{item.title}</p>
               </li>
             ))}
-            <li key="duden">
-              <p onClick={props.scrollIntoView}>Wörterbuch</p>
-            </li>
           </ul>
         )}
       </ContentConsumer>
