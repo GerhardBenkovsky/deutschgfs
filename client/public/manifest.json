@@ -1,7 +1,7 @@
 {
   "short_name": "Selbsthilfegruppe Deutsch",
   "name": "Selbsthilfegruppe Deutsch",
-  "start_url": ".",
+  "start_url": "deutschbasics-dev.netlify.app",
   "display": "standalone",
   "theme_color": "#ff00ff",
   "background_color": "#ffffff"
