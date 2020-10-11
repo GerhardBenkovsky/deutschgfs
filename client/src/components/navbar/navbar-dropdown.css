@@ -62,7 +62,7 @@
   height: 3rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 801px) {
   #hamburger {
     display: none;
   }

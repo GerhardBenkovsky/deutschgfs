@@ -5,8 +5,8 @@ export default function NavbarItems(props) {
   return props.items.map((item) =>
     item.name === 'Home' ? (
       <li key={item.link}>
-        <Link to={item.link}>
-          <i className="fas fa-home" onClick={props.scrollToTop}></i>
+        <Link to={item.link} onClick={props.scrollToTop}>
+        {item.name}
         </Link>
       </li>
     ) : (

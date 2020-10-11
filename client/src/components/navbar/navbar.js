@@ -8,7 +8,6 @@ import './navbar-dropdown.css';
 import NavbarItems from './navbaritems';
 
 import logo from './Logo.svg';
-import MobileNavbar from './mobileNavbar';
 
 export default function Navbar(props) {
   const [navbar, setNavbar] = useState(true);
@@ -22,7 +21,8 @@ export default function Navbar(props) {
   });
 
   const handleCollapse = () => {
-    setCollapse(() => !collapsed);
+    console.log("Collapsed")
+    setCollapse(!collapsed);
   };
 
   const handleScroll = (event) => {
@@ -42,31 +42,40 @@ export default function Navbar(props) {
 
   return (
     <React.Fragment>
-      <nav id="desktop" style={navbar ? {} : { display: 'none' }}>
+      <nav style={navbar ? {} : { display: 'none' }}>
         <div id="Logo" onClick={scrollToTop}>
           <Link to="/">
             <img src={logo} alt="Logo" />
           </Link>
         </div>
 
-        <ul>
+        <ul id="desktop" >
           <NavbarItems
             items={props.Navbar}
             key={props.Navbar}
             scrollToTop={scrollToTop}
           />
         </ul>
-      </nav>
       {
         //hamburger Nav
       }
-      <MobileNavbar
-        scrollToTop={scrollToTop}
-        Navbar={props.Navbar}
-        navbar={navbar}
-        collapsed={collapsed}
-        handleCollapse={handleCollapse}
-      />
+
+        
+        <div id="mobile-button" onClick={handleCollapse}>
+          {" "}
+        </div>
+          
+
+        <ul id="mobile"  style={collapsed ? { display: 'none' } : {}}
+        onClick={handleCollapse}
+        >
+          <NavbarItems
+            items={props.Navbar}
+            key={props.Navbar}
+            scrollToTop={scrollToTop}
+            />
+        </ul>
+      </nav>
     </React.Fragment>
   );
 }
