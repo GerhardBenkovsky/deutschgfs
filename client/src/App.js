@@ -100,7 +100,6 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
         <ContentProvider value={this.state}>
           <Router>
             <Navbar
@@ -126,7 +125,6 @@ class App extends Component {
             </div>
           </Router>
         </ContentProvider>
-      </div>
     );
   }
 }
