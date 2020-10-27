@@ -6,7 +6,6 @@ body {
 }
 
 html {
-  overflow: auto;
   background: var(--page-background);
 }
 

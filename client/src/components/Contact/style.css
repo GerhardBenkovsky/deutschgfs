@@ -1,7 +1,7 @@
 #kontakt {
   height: 100%;
   width: 90%;
-  margin: auto;
+  margin: calc(var(--nav-height) + 1rem) auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

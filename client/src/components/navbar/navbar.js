@@ -62,7 +62,6 @@ export default function Navbar(props) {
 
         
         <div id="mobile-button" onClick={handleCollapse}>
-          {" "}
         </div>
           
 
