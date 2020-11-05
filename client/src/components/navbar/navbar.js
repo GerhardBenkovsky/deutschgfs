@@ -10,8 +10,6 @@ import NavbarItems from './navbaritems';
 import logo from './Logo.svg';
 
 export default function Navbar(props) {
-  const [navbar, setNavbar] = useState(true);
-
   const [collapsed, setCollapse] = useState(true);
 
   const [prevPageOffset, setPageOffset] = useState(window.pageYOffset);
@@ -21,15 +19,11 @@ export default function Navbar(props) {
   });
 
   const handleCollapse = () => {
-    console.log("Collapsed")
     setCollapse(!collapsed);
   };
 
   const handleScroll = (event) => {
-    if (window.pageYOffset < prevPageOffset) {
-      setNavbar(() => true);
-    } else {
-      setNavbar(() => false);
+    if (!window.pageYOffset < prevPageOffset) {
       setCollapse(() => true);
     }
     setPageOffset(() => window.pageYOffset);
@@ -42,7 +36,7 @@ export default function Navbar(props) {
 
   return (
     <React.Fragment>
-      <nav style={navbar ? {} : { display: 'none' }}>
+      <nav>
         <div id="Logo" onClick={scrollToTop}>
           <Link to="/">
             <img src={logo} alt="Logo" />

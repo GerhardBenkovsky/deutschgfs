@@ -1,57 +1,57 @@
 /* <-------------- Dark Theme ---------------> */
 *[data-theme='dark'] {
-  /* General Colors */
+	/* General Colors */
 
-  --theme: #343a40;
-  --contrast: #f8f9fa;
-  --page-background: #222223;
+	--theme: #343a40;
+	--contrast: #f8f9fa;
+	--page-background: #222223;
 
-  /* Text  and Links*/
+	/* Text  and Links*/
 
-  --header-color: crimson;
-  --text-color: white;
-  --duden-link-color: gray;
+	--header-color: crimson;
+	--text-color: white;
+	--duden-link-color: gray;
 
-  --link-color: white;
+	--link-color: white;
 
-  /* NAV Bar */
+	/* NAV Bar */
 
-  --nav-background: #111113;
-  --logo-color: red;
-  --nav-logo-background: white;
-  --nav-link-color: white;
-  --nav-link-color-hover: white;
+	--nav-background: #111113;
+	--logo-color: red;
+	--nav-logo-background: white;
+	--nav-link-color: white;
+	--nav-link-color-hover: white;
 
-  /* Banner */
+	/* Banner */
 
-  --banner-header-color: white;
+	--banner-header-color: white;
 
-  --banner-background: yellowgreen;
-  --banner-bar-background: red;
-  --banner-bar-border: black;
+	--banner-background: yellowgreen;
+	--banner-bar-background: red;
+	--banner-bar-border: black;
 
-  /* Lesson Cards */
+	/* Lesson Cards */
 
-  --card-background: var(--theme);
-  --card-br: red;
-  --card-header: red;
+	--card-background: var(--theme);
+	--card-br: red;
+	--card-header: red;
 }
 
 /* <------------ Size Variables ---------------> */
 
 * {
-  --content-width: 80%;
+	--content-width: 80%;
 
-  --nav-height: 52px;
+	--nav-height: 52px;
 
-  --banner-bar-max-Size: 33.3333%;
+	--banner-bar-max-Size: 33.3333%;
 }
 
 /* <------------ App ---------------> */
 
 .Content {
-  padding-top: var(--nav-height);
-  width: 100%;
-  height: 100%;
-  margin: 0;
+	/* padding-top: var(--nav-height); */
+	width: 100%;
+	height: 100%;
+	margin: 0;
 }
